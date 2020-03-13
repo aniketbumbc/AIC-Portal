@@ -1,0 +1,66 @@
+<app-breadcrumbs page="Projects" [breadcrums]="breadCrumb"></app-breadcrumbs>
+<!-- Main Content Badges -->
+<section class="section novi-background section-50 section-sm-50 fixed-min-height ">
+  <div class="container">
+    <div class="row">
+      <div class="col-1">
+        <div class="filterWrapper mt30">
+          Search:
+        </div>
+      </div>
+      <!-- filter search -->
+      <div class="col-3 ">
+        <div class="filter">
+          <ng-select class="filterZ" [items]="simpleItems" [searchable]="false" (change)="onFocus($event)" (clear)="onClose()"
+            placeholder="Select options">
+          </ng-select>
+        </div>
+      </div>
+      <!-- search -->
+      <div class="col-4 ">
+        <div class="mb-3">
+          <!-- <ng-select   [items]="projectSearchData" bindLabel="name" (change)="onChange($event)"
+            placeholder="Search" multiple="true"></ng-select> -->
+          <div class="input-group errorToolTip" tooltip = '{{isFocus ? null : "First select options"}}'>
+            <p-autoComplete class="autoseach-project autoSearch" [ngClass]="{'searchButton-disable': !isFocus}" #autocomplete [disabled]="!isFocus"  placeholder="Search text.."  
+              scrollHeight="250px"  [suggestions]="projectGetData"
+              (completeMethod)="filterProject($event)" (onSelect)="searchInput($event)">
+            </p-autoComplete>
+            <div class="input-group-append">
+              <button class="form-control" 
+                type="submit" (click)="searchInput($event)" [disabled]="true" [ngClass]="{'searchButton-disable': true}"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+          <!-- <ng-select [config]="amConfig" [items]="tempClientData" bindLabel="name"
+          placeholder="Select Account Managers" multiple="true" formControlName="accountManagers"
+          (search)="onSearch($event)" [(ngModel)]="clientData.accountManagers">
+        </ng-select> -->
+        </div>
+      </div>
+      <div class="col-4 ">
+        <div class="addprojBtn  btnFlex">
+          <a [routerLink]="['/project/new/project']" class="routeLink">
+            <button class="btn btn-sm btn-primary btn-icon btn-icon-left addBlog">
+              <span class="icon novi-icon icon-xxs mdi mdi-plus">
+              </span> Add Project
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <app-project-list *ngIf="!filteredMode" [projectList]="projectData" [fetchData]="fetchDetails"
+      (window:scroll)="onScroll($event)">
+    </app-project-list>
+    <ng-container *ngIf="count; else noDataFound">
+      <app-project-list *ngIf="filteredMode" [projectList]="filteredProjectData" [fetchData]="fetchDetails">
+      </app-project-list>
+    </ng-container>
+    <div *ngIf="showloader" class="spinLoaderProject">
+      <img class="loader-img" src="../../../../../assets/images/Loader.gif" alt="Breeze" />
+    </div>
+  </div>
+  <ng-template #noDataFound>
+    <div *ngIf="showNoResult">No Records Found</div>
+  </ng-template>
+</section>
+<!-- ... end Main Content Badges -->

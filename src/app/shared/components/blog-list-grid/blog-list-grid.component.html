@@ -1,0 +1,23 @@
+<div class="row justify-content-sm-center offset-top-20">
+  <div
+    class="col-sm-10 col-md-8 col-lg-4 offset-top-66 offset-lg-top-0"
+    *ngFor="let blog of blogList">  
+    <article class="post post-modern blog-grid">
+      <!-- Blog 2 -->
+      <div class="post-media p-4 blog-img">
+        <a [routerLink]="['/blog/', blog.id]">
+          <img
+            class="img-fluid img-cover"
+            src="{{ baseUrl }}{{ blog.thumbnail }}"
+            alt="blog-name"
+          />
+        </a>
+      </div>
+      <h6 class="post-title">{{ blog.name }}</h6>
+      <p class="blog-desc">
+        {{ blog.description }}
+      </p>
+    </article>
+  </div>
+</div>
+

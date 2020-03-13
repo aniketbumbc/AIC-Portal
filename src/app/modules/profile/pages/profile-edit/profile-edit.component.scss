@@ -1,0 +1,413 @@
+@import 'variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:700');
+
+// serachInput css starts here
+.container1 {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 560px;
+  width: 300px;
+  height: 80px;
+  .search {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 55px;
+    height: 55px;
+    background: $green;
+    border-radius: 50%;
+    transition: all 1s;
+    z-index: 4;
+    &:hover {
+      cursor: pointer;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      margin: auto;
+      top: 22px;
+      right: 0;
+      bottom: 0;
+      left: 22px;
+      width: 12px;
+      height: 2px;
+      background: white;
+      transform: rotate(45deg);
+      transition: all 0.5s;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      margin: auto;
+      top: -5px;
+      right: 0;
+      bottom: 0;
+      left: -5px;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      border: 2px solid white;
+      transition: all 0.5s;
+    }
+  }
+
+  input {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 55px;
+    height: 55px;
+    outline: none;
+    border: none;
+    background: $green;
+    color: white;
+    padding: 0 80px 0 20px;
+    border-radius: 30px;
+    transition: all 1s;
+    opacity: 0;
+    z-index: 5;
+    font-weight: bolder;
+    letter-spacing: 0.1em;
+    &:hover {
+      cursor: pointer;
+    }
+    &:focus {
+      width: 300px;
+      opacity: 1;
+      cursor: text;
+    }
+    &:focus ~ .search {
+      right: -250px;
+      background: #151515;
+      z-index: 6;
+      &::before {
+        top: 0;
+        left: 0;
+        width: 25px;
+      }
+      &::after {
+        top: 0;
+        left: 0;
+        width: 25px;
+        height: 2px;
+        border: none;
+        background: white;
+        border-radius: 0%;
+        transform: rotate(-45deg);
+      }
+    }
+    &::placeholder {
+      color: white;
+      opacity: 0.5;
+      font-weight: bolder;
+    }
+  }
+}
+
+// searchInput css ends here
+::ng-deep .ngx-dropdown-container {
+  .ngx-dropdown-button {
+    outline: none;
+    height: 50px;
+    min-height: 0px;
+  }
+}
+
+::ng-deep .ngx-dropdown-list-container {
+  max-height: 450% !important;
+  z-index: 4 !important;
+  hr {
+    display: none;
+  }
+  ul.available-items {
+    text-align: left;
+  }
+  ul.selected-items {
+    text-align: left;
+    display: block;
+    width: 100%;
+    li {
+      position: relative;
+      &::before {
+        position: absolute;
+        right: 8px;
+        top: 2px;
+        content: 'X';
+        font-weight: normal;
+        font-style: normal;
+      }
+    }
+    li.nsdicon-close {
+      display: none;
+    }
+  }
+}
+
+::ng-deep .modalTitle .titles {
+  margin-bottom: 0px !important;
+  margin-top: 5px;
+}
+
+::ng-deep .buttonDrop {
+  text-transform: capitalize;
+  font-size: 12px;
+}
+
+.alertMsgSucess.alert-success {
+  background-color: $theme2 !important;
+  font-weight: 400 !important;
+  width: 22%;
+  left: 39%;
+}
+
+
+.aboutMe {
+  .aboutDesc {
+    font-size: 13px;
+  }
+}
+
+.sectionUserImg {
+  .editProfile {
+    text-align: left !important;
+    position: relative;
+    .authorMenu {
+      position: absolute;
+      right: 10px;
+      top: 45px;
+      z-index: 0;
+      cursor: pointer;
+      color: $primary !important;
+      pointer-events: none;
+    }
+    .titles {
+      font-size: 16px;
+      font-weight: 600;
+      font-style: initial;
+    }
+    .closeIcon {
+      text-align: right !important;
+      top: 2px;
+    }
+  }
+
+  // selected option from dropdown
+  ::ng-deep .editLoc ul.selected-items {
+    display: block;
+    text-align: left;
+    width: 100%;
+    li {
+      position: relative;
+      &::before {
+        position: absolute;
+        right: 8px;
+        top: 2px;
+        content: 'X';
+        font-weight: normal;
+        font-style: normal;
+      }
+    }
+    li.nsdicon-close {
+      display: none;
+    }
+  }
+
+  // selected option from dropdown
+  ::ng-deep .editCOE ul.selected-items {
+    display: block;
+    text-align: left;
+    width: 100%;
+    li {
+      position: relative;
+      &::before {
+        position: absolute;
+        right: 8px;
+        top: 2px;
+        content: 'X';
+        font-weight: normal;
+        font-style: normal;
+      }
+    }
+    li.nsdicon-close {
+      display: none;
+    }
+  }
+
+  .dropDownCat {
+    max-height: 259px;
+    overflow: hidden;
+    min-height: 0px;
+    position: absolute;
+    transform: translate3d(0px, -2px, 0px);
+    top: 0px;
+    left: 0px;
+    will-change: transform;
+  }
+  .dropCategory {
+    text-align: center !important;
+    color: $primary;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .dropCategory:hover {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .editProfileTitle {
+    text-align: left !important;
+    margin-bottom: 0px !important;
+
+    .customRadio {
+      display: inline-flex;
+      width: 50%;
+    }
+  }
+  .editInfo {
+    text-align: left !important;
+  }
+
+  .memLevel {
+    width: 160px;
+  }
+
+  .radioMemLevel.custom-control-label:before {
+    box-shadow: none !important;
+  }
+
+  .radioMemLevel.custom-control-label:after {
+    background-image: none !important;
+  }
+
+  .shortIntro {
+    padding: 10px;
+    line-height: 5px !important;
+  }
+
+  .detailIntro {
+    height: 370px;
+  }
+
+  .modalProject {
+    margin-top: 80px;
+    .profileImg {
+      height: 200px;
+      width: 200px;
+    }
+  }
+
+  // Image Upload Css
+  img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+  }
+  .hoverable {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+  }
+  .hoverable .hover-text {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  .hoverable .background {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .hoverable:hover .hover-text {
+    display: block;
+  }
+  .hoverable:hover .background {
+    display: block;
+  }
+
+  #fileInput {
+    display: none;
+  }
+}
+
+::ng-deep .sectionUserImg .radioMemLevel.custom-control-label{
+  &:before {
+    background-color: lightgrey;
+  }
+}
+.userImg {
+  border-radius: 50%;
+  .uploadImg {
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+  }
+}
+::ng-deep .btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #ffffff;
+  background-color: lighten(#34905c, 15%) !important;
+  border-color: lighten(#34905c, 15%) !important;
+}
+::ng-deep button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+.color-red {
+  color: red;
+}
+
+.animated {
+  background-repeat: no-repeat;
+  background-position: left top;
+  padding-top: 10px;
+  // margin-bottom: 10px;
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}

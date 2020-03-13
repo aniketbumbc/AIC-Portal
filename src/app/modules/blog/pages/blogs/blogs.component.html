@@ -1,0 +1,60 @@
+<app-breadcrumbs [page]="breadcrumb" [breadcrums]="breadCrumb"></app-breadcrumbs>
+
+<!-- Section Blog Grid 2 Columns-->
+<section class="section novi-background section-50 section-sm-50 fixed-min-height ">
+  <div class="container">
+    <div class="row">
+      <div class="col-1">
+        <div class="filterWrapper mt30">
+            Search:
+        </div>
+      </div>
+
+      <!-- filter search -->
+      <div class="col-3 ">
+        <div class="filter ">
+          <ng-select class="filterZ" [items]="simpleItems" [searchable]="false" (change)="onFocus($event)" (clear)="onClose()" placeholder="Select options">
+          </ng-select>
+        </div>
+      </div>
+
+      <!-- search -->
+      <div class="col-4 ">
+          <div class="input-group mb-3"  tooltip = '{{isFocus ? null : "First select options"}}'>
+            <input id="search" name="search" type="search" class="form-control fontClass" placeholder="Search text.." [disabled]="!isFocus" [ngClass]="{'searchButton-disable': !isFocus}"
+              (keyup.enter)="searchInput()" [(ngModel)]="searchText" autocomplete="off" >
+            <div class="input-group-append">
+              <button class="form-control" [disabled]="!isFocus" [ngClass]="{'searchButton-disable': !isFocus}" type="submit" (click)="searchInput()"><i class="fa fa-search"></i></button>
+            </div>
+          </div>        
+      </div>
+
+      <!-- create btn -->
+      <div class="col-4 ">
+        <div class="addBlogBtn">
+          <a [routerLink]="['/blog/create/blog']" class="routeLink">
+            <button class="btn btn-sm btn-primary btn-icon btn-icon-left addBlog">
+              <span class="icon novi-icon icon-xxs mdi mdi-plus">
+              </span> Create Blog
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <app-blog-list-masonry *ngIf="!filteredMode" [blogList]="blogData" (window:scroll)="onScroll($event)">
+    </app-blog-list-masonry>
+    <ng-container *ngIf="count; else noDataFound">
+      <app-blog-list-masonry *ngIf="filteredMode" [blogList]="filteredBlogData">
+      </app-blog-list-masonry>
+    </ng-container>
+    <div *ngIf="showloader" class="spinLoaderBlog">
+      <img class="loader-img" src="../../../../../assets/images/Loader.gif" alt="Breeze" />
+    </div>
+  </div>
+  <ng-template #noDataFound>
+    <div *ngIf="showNoResult">No Records Found</div>
+  </ng-template>
+</section>
+<!-- [loader]="showloader" -->
+

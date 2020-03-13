@@ -1,0 +1,611 @@
+@import '~mixin.scss';
+@import '~variables.scss';
+a,
+a:not([href]):not([tabindex]) {
+  cursor: pointer;
+}
+::ng-deep .modal-body {
+  margin-bottom: -20px;
+  .ngx-dropdown-container {
+    width: 100% !important;
+    font-size: 13px;
+    .ngx-dropdown-button {
+      outline: none;
+      height: 50px;
+    }
+  }
+}
+
+.leftname{
+  text-align: left;
+}
+
+::ng-deep {
+  .ui-confirmdialog.ui-dialog .ui-dialog-content {
+    text-align: left !important;
+  }
+  .ui-dialog .ui-dialog-titlebar {
+    text-align: left !important;
+  }
+  .projectDate .ui-calendar.ui-calendar-w-btn input {
+    border-right: 1px solid #d9d9d9 !important;
+    }
+    .ui-calendar.ui-calendar-w-btn .ui-inputtext:enabled:hover:not(.ui-state-error), .ui-calendar.ui-calendar-w-btn .ui-inputtext:enabled:focus:not(.ui-state-error) {
+    border-right: 1px solid #212121 !important;
+    }
+    .ui-calendar.ui-calendar-w-btn .ui-inputtext:enabled:focus:not(.ui-state-error) {
+    border-right: 1px solid #007ad9 !important;
+    }
+}
+
+.edit-margin {
+  margin-bottom: 0px !important;
+  margin-right: 5px;
+}
+
+
+::ng-deep .ui-datepicker td > a{
+  cursor: pointer;
+}
+::ng-deep .nmMember .ngx-dropdown-button::after {
+  content: '\f6b5';
+  font-family: 'Material Design Icons';
+  position: relative;
+  top: 0px;
+  left: 232px;
+}
+.dropCategory.selectpicker::after {
+  content: '\f6b5';
+  font-family: 'Material Design Icons';
+  position: relative;
+  top: 6px;
+  left: 232px;
+}
+::ng-deep .btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #ffffff;
+  background-color: lighten(#34905c, 15%) !important;
+  border-color: lighten(#34905c, 15%) !important;
+}
+::ng-deep button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+.edit-team-member {
+  // margin-top:105px !important;
+  .modal-body {
+    text-align: left !important;
+  }
+}
+.titles {
+  font-size: 16px;
+  font-weight: 600;
+  font-style: initial;
+}
+::ng-deep .teamImg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0px;
+  img {
+    border-radius: 50%;
+    box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.15);
+    @include transition(all, 0.5s, linear);
+
+    &:hover {
+      @include scale(1.1);
+    }
+  }
+  ngx-avatar {
+    display: inline-block;
+    cursor: pointer;
+
+    .avatar-content {
+      box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.15);
+      @include transition(all, 0.5s, linear);
+      &:hover {
+        @include scale(1.1);
+      }
+    }
+  }
+  div {
+    text-align: center;
+  }
+  .clickable {
+    cursor: pointer;
+  }
+  .center {
+    text-align: center;
+  }
+}
+.editIcon {
+  opacity: 1;
+  position: absolute;
+  display: block;
+  top: 15px;
+  right: 25px;
+}
+.teamMembers {
+  width: 100%;
+  height: auto;
+  transition: 0.5s ease;
+  display: block;
+  position: relative;
+  backface-visibility: hidden;
+  &:hover {
+    background-color: #434345;
+    border-color: #434345;
+    color: $secondary;
+    .editIcon {
+      opacity: 1;
+      display: block;
+      top: 15px;
+      right: 15px;
+      
+
+      .edit-Icon {
+        top: 5px;
+        right: 15px;
+        
+      }
+    }
+  }
+}
+.mdi-pencil:before {
+  // content: '\f4da';
+  color: grey;
+}
+.mdi-delete:before {
+  // content: '\f2b5';
+  color: red;
+}
+::ng-deep .startDate1 {
+  input {
+    z-index: 4 !important;
+  }
+  .ui-widget-content {
+    z-index: 6 !important;
+  }
+  .projectDate {
+    .ui-inputtext {
+      width: 552px;
+    }
+    .ui-calendar.ui-calendar-w-btn input {
+      border-radius: 4px;
+    }
+  }
+  // :focus {
+  //   top: 50px;
+  // }
+}
+
+::ng-deep .endDate1 {
+  input {
+    z-index: 4 !important;
+  }
+  .ui-widget-content {
+    z-index: 6 !important;
+  }
+  .projectDate {
+    .ui-inputtext {
+      width: 552px;
+    }
+    .ui-calendar.ui-calendar-w-btn input {
+      border-radius: 4px;
+    }
+  }
+}
+
+.projectDate1 {
+  z-index: 9999 !important;
+  .ui-inputtext {
+    width: 552px;
+  }
+  .ui-calendar.ui-calendar-w-btn input {
+    border-radius: 4px;
+  }
+}
+
+.modal-team {
+  padding-right: 15px;
+  // margin-top: 55px!important;
+  .close-icon {
+    margin-top: 5px;
+    // text-align: right;
+  }
+  .modalTitle .titles {
+    margin-bottom: 0px !important;
+    margin-top: 5px;
+  }
+  .modal-body {
+    .startDate,
+    .endDate {
+      &::-ms-clear {
+        display: none;
+        -webkit-appearance: none;
+      }
+    }
+  }
+}
+
+
+
+::ng-deep .custom-checkbox .custom-control-label::before {
+  border-radius: 0px;
+  top: 0.26rem;
+  left: -1.5rem;
+  display: block;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+::ng-deep .custom-checkbox .custom-control-label::after {
+  left: -1.4rem;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-clear-button {
+  display: none;
+}
+h5 {
+  margin: 0 0 10px;
+  padding: 0 8px;
+}
+.designation {
+  font-size: 16px;
+}
+::ng-deep .list-unstyled {
+  margin-top: 10px;
+  li {
+    &:first-child {
+      margin-bottom: 10px;
+    }
+    .blinkImg {
+      margin-left: 5px;
+      img {
+        border-radius: 2px;
+      }
+    }
+    .mdi-map-marker {
+      color: $theme1;
+    }
+    .mdi-linkedin-box {
+      color: #0077af;
+    }
+  }
+}
+
+.simpleShadow {
+  box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.15);
+  padding: 15px 0;
+  display: flex;
+  min-height: 420px;
+  justify-content: center;
+  flex-direction: column;
+  // cursor: pointer;
+}
+// @media (max-width: 1280px) {
+//   .simpleShadow {
+//     min-height: 332px;
+//   }
+// }
+.color-red {
+  color: #dc3545;
+    font-size: 12px;
+    padding-top: 5px;
+}
+
+/* Add member css */
+::ng-deep .editProfileList{
+  .ui-inputtext {
+    height: 40px !important;
+    // width: 555px !important;
+  }
+  .ui-calendar.ui-calendar-w-btn input {
+    border-radius: 4px !important;
+  }
+
+  .profile-list-member {
+    background:rgb(170, 170, 170);
+    width: 568px;
+    height: 45px;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+::ng-deep .addmoreControl {
+  p-autoComplete{
+    width: 100%
+  }
+  .ui-autocomplete  {
+    width: 100%;
+  }
+  input{
+    width: 100% !important;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    // height: 40px !important;
+  }
+  p-calendar{
+    width: 100%;
+    margin-bottom: 10px;
+
+  }
+  .ui-calendar{
+    width: 100%
+  }
+}
+::ng-deep .projMember{
+  .nav {
+  border: none;
+  }
+  .modal-body{
+    height: 430px;
+    // overflow-y: auto;
+    }
+  .tab-content{
+    // height: 415px;  
+    margin: 0px -15px;
+    border-top:1px solid #e5e5e5;
+    padding: 15px;
+  // overflow-y: auto;
+  }
+  .nav-tabs {
+  justify-content: flex-start !important;
+  // border-bottom: 1px solid #e5e5e5;
+
+  .nav-link {
+
+  border: none;
+  text-transform: none;
+  border-bottom: 1px solid transparent !important;
+  }
+  .nav-item {
+  margin-right: 20px;
+  margin-bottom: 10px;
+  }
+  }
+  .nav-link {
+  padding: 0.3rem 0;
+  &.active {
+  color: $green;
+  border-bottom: 2px solid $green !important;
+  }
+  }
+  .invalid-feedback{
+  text-align: left;
+  }
+  }
+.margintop{
+  margin-top: -65px;
+  .addicon{
+    width: 120px;
+    height: 120px;cursor: pointer;
+  }
+  .iconcircle{
+    border-radius: 100%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(26, 188, 156);
+    font: 40px/120px Helvetica, Arial, sans-serif;
+    @include transition(all, 0.5s, linear);
+
+  &:hover {
+    @include scale(1.1);
+  }
+}
+}
+.member{
+  margin-right: 0px !important;
+  margin-bottom: -10px !important; 
+  // height: 390px;
+  //   overflow-y: auto;
+  .addmoreControl{
+    padding-right: 0px;
+  }
+}
+.newadd{
+  // height: 390px;
+  // overflow-y: auto;
+  // overflow-x: hidden;
+}
+.addmoreControl{
+  padding-right: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  .color-red {
+    color: #dc3545;
+    font-size: 12px;
+    padding-top: 5px;
+
+  }
+  
+  input{
+    height: 36px;
+  }
+  .endDate{
+    display: flex;
+    align-items: center;
+  }
+
+
+.singleSelectDDl {
+  width: 100%;
+  position: relative;
+  .icon {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    z-index: 0;
+    cursor: pointer;
+    color: $primary !important;
+    pointer-events: none;
+  }
+  ::ng-deep .ngx-dropdown-button {
+    height: 40px !important;
+  }
+  ::ng-deep .ngx-dropdown-container .ngx-dropdown-list-container {
+    ul.selected-items li {
+      position: relative;
+      text-align: left;
+      &:after {
+        position: absolute;
+        right: 8px;
+        top: 2px;
+        content: "X";
+        font-weight: normal;
+        font-style: normal;
+      }
+    }
+  }
+}
+
+::ng-deep .tagSkill {
+  width: 100%;
+  .bootstrap.ng2-tag-input,
+  .bootstrap.ng2-tag-input.ng2-tag-input--focused {
+    border: 0;
+  }
+  .ng2-tag-input__text-input {
+    // height: 40px !important;
+    padding-left: 0px !important;
+    height: 30px !important;
+  }
+  .bootstrap svg {
+    height: 13px;
+    vertical-align: middle;
+  }
+  tag-input-form {
+    display: flex;
+    align-items: center;
+  }
+  .ng2-tags-container {
+    min-height: 40px;
+    font-size: 13px;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.25rem;
+    padding: 4px 0.75rem;
+    tag {
+      background: $theme2 !important;
+      height: 23px !important;
+      padding: 0px 10px 0px 10px !important;
+      line-height: 23px !important;
+      border-radius: 25px !important;
+      color: $secondary !important;
+      margin: 2px 0.3rem;
+  
+    }
+    .bootstrap path {
+      fill: $primary;
+    }
+  }
+}
+.addenddate{
+  margin-bottom: 12px;
+}
+}
+::ng-deep {
+  .ng-select-searchable {
+    width: 100%;
+  }
+}
+::ng-deep .addmoreControl{
+  .ui-inputtext {
+    height: 40px !important;
+    // width: 555px !important;
+  }
+}
+::ng-deep .editmember{
+  .ui-inputtext {
+    height: 40px !important;
+    // width: 555px !important;
+  }
+}
+.saveMember {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-bottom: -16px;
+  padding-bottom: 0px !important;
+  padding-right: 30px;
+
+}
+
+.invalid-feedbackNGX{
+width: 100%;
+margin-top: 0.25rem;
+font-size: 80%;
+color: #dc3545;
+text-align: left;
+}
+
+.text-middle {
+  cursor: pointer;
+}
+.text-size{
+  font-size: 14px;
+}
+.dateWrapper {
+  display: flex;
+  flex-direction: column;
+}
+::ng-deep div#highlight span.highlightSpan {
+  color: red;
+}
+::ng-deep .searchText em{
+  background: yellow;
+  font-style: normal;
+  color:#42b574;
+  text-transform: capitalize;
+}
+// .imgWrapper {
+//   // height: 210px;
+// }
+.addressWrapper  {
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.desg {
+  margin-bottom:10px;
+  display: flex;
+  justify-content: center;
+}
+
+.fixedHeight{
+ height: 62px;
+}
+
+.autoHeight {
+  height: auto;
+}
+::ng-deep .singleSelectDDl .ngx-dropdown-container .ngx-dropdown-list-container {
+  .available-items {
+    text-align: left;
+  }
+}
+// ::ng-deep modal-body {
+//   overflow-y: none!important;
+// }
+// ::ng-deep .ng-tns-c12-8 .ui-calendar .ui-calendar-w-btn {
+//  &.ng-trigger .ng-trigger-overlayAnimation .ng-tns-c12-8 .ui-datepicker .ui-widget .ui-widget-content .ui-helper-clearfix .ui-corner-all .ui-shadow .ng-star-inserted {
+//   top:0px!important;
+// }
+// }
+// @media screen and ( max-height: 670px ){
+  
+
+//   ::ng-deep.modal-dialog{
+//     height: 200px!important;
+//     background-color: red;
+//   }
+// }
+  

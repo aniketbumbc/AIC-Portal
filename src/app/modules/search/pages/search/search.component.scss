@@ -1,0 +1,52 @@
+::ng-deep .myTabs{
+    ul.nav-tabs{
+        display: flex;
+        justify-content: center;
+        border: none;
+        li.nav-item {
+            position: relative;  
+            a{
+                border: none;
+            }
+            
+            span{
+                position: relative;
+                display: inline-block;
+                padding: 0 0 13px;
+                font-size: 16px;
+                font-weight: 700;
+                color: #9b9b9b;
+                text-transform: uppercase;
+                list-style-type: none;
+                cursor: pointer;
+                transition: color .2s ease-in;
+            }
+            &.active{ 
+                &:before{
+                    position: absolute;
+                    // left: 50%;
+                    bottom: 0;
+                    // width: 0;
+                    width: 100%;
+                    left: 0;
+                    height: 1px;
+                    background-color: #434345;
+                    content: '';
+                }
+                span{
+                color: #434345;
+                }
+                
+                
+                
+            }
+        }
+    }
+}
+.spinLoader {
+	display:flex;
+  justify-content:center;
+  img{
+    height: 100px;
+  }
+}

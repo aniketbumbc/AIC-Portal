@@ -1,0 +1,582 @@
+<div class="row">
+
+  <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" [acceptButtonStyleClass]="'btn btn-success'"
+    [rejectButtonStyleClass]="'btn btn-danger'"></p-confirmDialog>
+  <!-- profile list shared component -->
+  <div class="col-md-6 col-lg-4 col-xl-3 section-bottom-34"
+    *ngFor="let profile of profileList; trackBy: trackByFunction">
+    <div *ngIf="profile.id" class="simpleShadow" [ngClass]="pageEdit ? 'teamMembers' : null">
+      <div class="landing-item">
+        <div class="landing-item-thumb">
+          <div class="overlay overlay-dark"></div>
+          <div class="editIcon" *ngIf="showAddMember">
+            <a data-toggle="modal" data-target="#edit-team-member" title="Edit Member"
+              (click)="editMember($event, profile,value)">
+              <span class="icon novi-icon icon-xxs mdi mdi-pencil edit-Icon"></span>
+            </a>
+            <a data-toggle="modal" data-target="#remove-member" title="Delete Member"
+              class="icon novi-icon icon-xxs mdi mdi-delete edit-Icon" (click)="confirm(profile)">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mainWrapper">
+        <div class="imgWrapper" [ngClass]="projEdit ? 'class' : null">
+          <div class="teamImg">
+            <a [routerLink]="['/profile/', profile.id]" target="_blank">
+              <ngx-avatar *ngIf="profile.name" src="{{ imageUrl }}{{ profile?.picture?.url }}{{
+                decached
+              }}" name="{{(profile.name).replace('<em>','').replace('</em>','')}}" size="120"></ngx-avatar>
+            </a>
+          </div>
+          <div class="text-center offset-top-20">
+            <div [ngClass]="profile.startDate ? 'autoHeight' : 'fixedHeight'">
+              <h5 class="font-weight-bold text-primary searchText">
+                <a *ngIf="profile.id" [innerHTML]="profile.name | titlecase" [routerLink]="['/profile/', profile.id]"
+                  target="_blank"></a>
+              </h5>
+              <div class="desg">
+                <span class="designation searchText" [innerHTML]="profile?.role || profile?.designation"></span>
+              </div>
+
+              <div class="dateWrapper">
+                <span *ngIf="profile.startDate">
+                  <label class="edit-margin"> <b>Start Date: </b> </label>
+                  <span class="searchText" [innerHTML]="profile?.startDate"></span>
+                </span>
+                <span *ngIf="profile.endDate">
+                  <label class="edit-margin"><b> End Date: </b> </label>
+                  <span class="searchText" [innerHTML]="profile?.endDate"></span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="addressWrapper ">
+          <address class="contact-info text-center">
+            <ul class="list-unstyled p">
+              <li class="d-block" *ngIf="profile?.location">
+                <span class="icon icon-xxs novi-icon mdi mdi-map-marker text-middle"></span>
+                <span class="d-inline-block text-middle searchText" [innerHTML]="profile?.location.location">
+                </span>
+              </li>
+              <li class="d-block email-ellipsis" *ngIf="profile?.email">
+                <span class="d-inline-block text-middle text-size searchText" [innerHTML]="profile?.email"></span>
+              </li>
+            </ul>
+            <ul class="list-unstyled p">
+              <li class="d-inline-block">
+                <span title="Coming Soon">
+                  <span class="icon icon-xxs novi-icon mdi mdi-linkedin-box text-middle"></span>
+                </span>
+              </li>
+              <li class="d-inline-block">
+                <span title="Coming Soon" class="blinkImg"><img src="assets/images/blink.jpeg" alt="Breeze" /></span>
+              </li>
+            </ul>
+          </address>
+        </div>
+      </div>
+
+
+      <!-- <div class="modal fade modalProject" id="remove-member" tabindex="-1"
+      role="dialog" aria-labelledby="edit-widget-remove-photo-confirmation"
+      aria-hidden="true">
+      <div
+        class="projDocModal modal-dialog window-popup edit-widget-remove-photo-confirmation"
+        role="document">
+        <div class="modal-content">
+          <div class="modal-header modalTitle">
+            <label class="titles"><b>Do you want to delete member ?</b></label>
+          </div> -->
+
+      <!-- <div class="modal-footer confirmButton">
+            <div class="deleteButton">
+              <button class="btn btn-primary"  data-toggle="modal"  type="button" (click)="delete(profile,$event)">
+                Yes
+              </button>
+            </div>
+            <div class="cancelButton">
+              <button class="btn btn-danger" data-dismiss="modal" type="button">
+                No
+              </button>
+            </div> -->
+      <!-- </div> 
+         </div>
+      </div>
+    </div>  -->
+    </div>
+    <!-- Project member code.... -->
+    <div *ngIf="profile?.member" class="simpleShadow" [ngClass]="pageEdit ? 'teamMembers' : null">
+      <div class="landing-item">
+        <div class="landing-item-thumb">
+          <div class="overlay overlay-dark"></div>
+          <div class="editIcon">
+            <a data-toggle="modal" data-target="#edit-team-member" title="Edit Member"
+              class="icon novi-icon icon-xxs mdi mdi-pencil edit-Icon" (click)="editMember($event, profile)">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="teamImg">
+        <ngx-avatar *ngIf="profile.members" src="{{ imageUrl }}{{ profile?.picture?.url }}{{
+            decached
+          }}" name="{{ profile.member | name }} " size="120" [routerLink]="['/profile/', profile?.member | trim]">
+        </ngx-avatar>
+      </div>
+      <div class="text-center offset-top-20">
+        <div>
+          <h5 class="font-weight-bold text-primary ">
+            <a *ngIf="profile.member" (click)="clickBySlug(profile.member)">{{
+              (fetchDetails?.rlNameAndPhoto)[profile.member | trim]?.name
+                | name
+                | titlecase
+            }}</a>
+          </h5>
+          <span class="designation">{{ profile?.role }}</span>
+        </div>
+      </div>
+      <address class="contact-info text-center">
+        <ul class="list-unstyled p">
+          <li class="d-block" *ngIf="profile.location">
+            <span class="icon icon-xxs novi-icon mdi mdi-map-marker text-middle"></span>
+            <span class="d-inline-block text-middle">{{
+              profile?.location
+            }}</span>
+          </li>
+          <li class="d-block email-ellipsis" *ngIf="profile.email">
+            <span class="d-inline-block text-middle">{{
+              profile.email
+            }}</span>
+          </li>
+        </ul>
+        <ul class="list-unstyled p">
+          <li class="d-inline-block">
+            <span title="Coming Soon">
+              <span class="icon icon-xxs novi-icon mdi mdi-linkedin-box text-middle"></span>
+            </span>
+          </li>
+          <li class="d-inline-block">
+            <span title="Coming Soon" class="blinkImg"><img src="assets/images/blink.jpeg" alt="Breeze" /></span>
+          </li>
+        </ul>
+      </address>
+    </div>
+  </div>
+  <div *ngIf="showAddMember" class="col-md-6 col-lg-4 col-xl-3 section-bottom-34" (click)="addMember()">
+    <div class="simpleShadow addmember" data-toggle="modal" data-target="#add-team-member">
+      <div class="teamImg margintop">
+        <div class="addicon">
+          <div class="iconcircle">
+            <span class="text-middle mdi mdi-account-plus mdi-account-plus-circle-outline icon-xlg"
+              title="Add Member"></span>
+          </div>
+        </div>
+      </div>
+      <div class="text-center offset-top-20">
+        <h5 class="font-weight-bold text-primary ">
+          <a>Add Member</a>
+        </h5>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
+  <!-- add member modal -->
+</div>
+<span *ngIf="showActiveButton">
+  <div class="modal fade modal-team  modalProject" *ngIf="showModel" id="add-team-member" tabindex="-1" role="dialog"
+    aria-labelledby="add-team-member" aria-hidden="true">
+    <div class="modal-dialog window-popup  edit-widget add-team-member" role="document">
+      <div class="modal-content">
+        <div class="modal-body projMember">
+          <div>
+            <span class="icon novi-icon icon-xxs mdi close mdi-close closeIcon" data-dismiss="modal"
+              (click)="resetAddForm()" aria-label="Close"></span>
+          </div>
+
+          <tabset (ngModelChange)="onChangeofOptions($event)">
+            <tab heading="Existing Member" active="true" (select)="changeTab($event)" class="member">
+              <!-- <input
+          [(ngModel)]="member"
+            [typeahead]="states"
+            [typeaheadSelectFirstItem]="false"
+            [typeaheadAsync]="false"
+            [minLength] = "3"
+            class="form-control"
+          />
+          {{member}} 
+          {{states | json}} -->
+              <form [formGroup]="memberForm">
+                <div class="addmoreControl">
+                  <label class="titles">Member
+                    <span class="color-red">*</span>
+                  </label>
+                  <ng-select class="leftname" [items]="tempEmployeeData" bindLabel="name" placeholder="Select Members"
+                    formControlName="member" (search)="onSearch($event)">
+                  </ng-select>
+                  <!-- <p-autoComplete class="dataListAuthor" [suggestions]="newUserName" formControlName="member"
+                  (completeMethod)="filterRemoveUsers($event)" placeholder="Search Member" required name="usernames"
+                  [forceSelection]="true" [ngClass]="{
+                            'is-invalid':
+                              memberForm.get('member').touched &&
+                              memberForm.get('member').touched
+                          }">
+                </p-autoComplete> -->
+                  <div *ngIf="m.member.touched && m.member.invalid" class="color-red">
+                    <span *ngIf="m.member.touched && m.member.invalid">
+                      Name is required
+                    </span>
+                  </div>
+                </div>
+                <div class="addmoreControl">
+                  <label class="titles">Role
+                    <span class="color-red">*</span>
+                  </label>
+                  <!-- <p-autoComplete 
+                formControlName="role" placeholder="Search Role" required >
+                </p-autoComplete>  -->
+                  <input type="text" id="demo" name="demo" required maxlength="30" class="profile-list-member"
+                    formControlName="role" autocomplete="off">
+
+                  <div *ngIf="   memberForm.controls['role'].invalid &&
+                  (memberForm.controls['role'].dirty ||
+                  memberForm.controls['role'].touched)" class=" color-red">
+
+                    <div *ngIf="memberForm.controls['role'].errors.required">
+                      Role is required.
+                    </div>
+
+
+                  </div>
+                  <!-- <div *ngIf="m.role.invalid && m.role.dirty || m.role.touched" class=" color-red">            
+                      <span> Role is required </span>
+                    </div>            
+                      <div *ngIf="m.role.errors.maxlength  " class ="color-red" >
+                        Role must be in 15 characters
+                      </div>   
+                      <div *ngIf=" m.role.errors.minlength " class ="color-red" >
+                        Role must be in 2 characters 
+                      </div>       
+                 -->
+                </div>
+
+                <div class="addmoreControl">
+                  <label class="titles" for="input-labels-1">
+                    Start Date
+                    <span class="color-red">*</span>
+                  </label>
+                  <p-calendar class="projectDate" formControlName="start_date" 
+                    [monthNavigator]="true" [yearNavigator]="true" yearRange="1980:2080" [showIcon]="true"
+                    [readonlyInput]="true" dateFormat="dd/mm/yy" (onSelect)="memberSelectStartDate($event)" [maxDate]="maxDateValueStartDate">
+                  </p-calendar>
+                  <div *ngIf="m.start_date.touched && m.start_date.errors" class="color-red">
+                    <span *ngIf="m.start_date.errors && m.start_date.invalid">
+                      Start date required
+                    </span>
+                  </div>
+                </div>
+                <div class="addmoreControl">
+                  <div class="endDate">
+                    <label class="titles" for="input-labels-1">
+                      End Date
+                      <span class="color-red">*</span>
+                    </label>
+                    <div class="custom-control custom-checkbox addenddate d-inline-block mx-2">
+                      <input class="custom-control-input" id="memberEndDateOngoing" name="input-group-checkbox"
+                        value="checkbox-1" type="checkbox" [checked]="present" (change)="dateChange($event)" />
+                      <label class="custom-control-label" for="memberEndDateOngoing">
+                        Ongoing
+                      </label>
+                    </div>
+                  </div>
+                  <p-calendar class="projectDate" *ngIf="!present" formControlName= "end_date"
+                    [disabledDates]="invalidDates"  [monthNavigator]="true"
+                    [yearNavigator]="true" yearRange="1980:2080" [showIcon]="true" [readonlyInput]="true"
+                    dateFormat="dd/mm/yy" (onSelect)="memberSelectEndDate($event)" [minDate]="minDateValueEndDate">
+                  </p-calendar>
+                  <div *ngIf="!present && m.end_date.touched && m.end_date.errors" class="color-red">
+                    <span *ngIf="m.end_date.errors && m.end_date.invalid">
+                      End date required
+                    </span>
+                  </div>
+                </div>
+              </form>
+              <!-- </div> -->
+              <!-- <div class="modal-footer  saveMember">
+                <button class="btn btn-primary" 
+                data-dismiss="modal"
+                [disabled]="!memberForm.valid"
+                type="button"
+                (click)="onSave()">
+                  Save
+                </button>
+              </div> -->
+            </tab>
+
+            <tab (select)="changeTab($event)" heading="New Requirement" class="newadd">
+              <form [formGroup]="newmemberForm">
+                <div class="addmoreControl">
+                  <label class="titles">Role
+                    <span class="color-red">*</span>
+                    <!-- <span class="color-red">*</span> -->
+                  </label>
+
+                  <input class="dataListAuthor form-control" placeholder="Enter Role" type="text" id="demo" name="demo"
+                    formControlName="role" autocomplete="off" required maxlength="30">
+
+                  <div *ngIf="  newmemberForm .controls['role'].invalid &&
+                    (newmemberForm .controls['role'].dirty ||
+                    newmemberForm .controls['role'].touched)" class=" color-red">
+
+                    <div *ngIf="newmemberForm .controls['role'].errors.required">
+                      Role is required.
+                    </div>
+
+                  </div>
+
+                  <!-- <p-autoComplete
+                  class="dataListAuthor"
+                  [suggestions]="roles"
+                  formControlName="role"
+                  (completeMethod)="serachRoles($event)"
+                  placeholder="Search Role"
+                  required
+                  [ngClass]="{
+                    'is-invalid':
+                      newmember.role.invalid && newmember.role.touched
+                  }"
+                  [forceSelection]="true"
+                >
+                </p-autoComplete> -->
+                  <!-- <div
+                  *ngIf="newmember['role'].invalid && newmember['role'].touched"
+                  class="color-red"
+                >
+                  <div *ngIf="newmember['role'].invalid">Role is required</div>
+                </div> -->
+                </div>
+                <div class="addmoreControl">
+                  <label class="titles">Skill set
+                    <span class="color-red">*</span>
+                  </label>
+                  <div class="tagSkill">
+                    <tag-input [(ngModel)]="skillset" [separatorKeyCodes]="[9]" blinkIfDupe="true" theme="bootstrap"
+                      formControlName="skillset">
+
+
+                    </tag-input>
+                    <div *ngIf="
+                      newmember['skillset'].errors &&
+                      (newmember['skillset'].dirty ||
+                        newmember['skillset'].touched)
+                    " class="invalid-feedbackNGX">
+                      <div *ngIf="newmember['skillset'].errors.required">
+                        Tags are required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="addmoreControl">
+                  <label class="titles">
+                    Open Position
+                    <span class="color-red">*</span>
+                  </label>
+                  <input class="form-control" placeholder="Enter Position" type="number" formControlName="position"
+                    required name="position" min="1" id="pos" [ngClass]="{
+                    'is-invalid':
+                      newmember.position.invalid && newmember.position.touched
+                  }" />
+                  <div *ngIf="
+                    newmember['position'].invalid &&
+                    newmember['position'].touched
+                  " class="invalid-feedback">
+                    <div *ngIf="newmember['position'].invalid">
+                      Position is required
+                    </div>
+                  </div>
+                </div>
+                <div class="addmoreControl">
+                  <label class="titles">
+                    Preferred Location
+                    <!-- <span class="color-red">*</span> -->
+                  </label>
+                  <div class="singleSelectDDl" *ngIf="newlocations && newlocations.length">
+                    <ngx-select-dropdown tab-index="0" [config]="configLocation" [options]="newlocations"
+                      [multiple]="false" formControlName="location">
+                    </ngx-select-dropdown>
+                    <span _ngcontent-c11=""
+                      class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-menu-down"></span>
+                  </div>
+                  <!-- <div
+                  *ngIf="
+                    newmember['location'].invalid ||
+                    newmember['location'].dirty ||
+                    newmember['location'].touched
+                  " class="invalid-feedbackNGX">
+                  <div *ngIf="submitted && newmember['location'].invalid">
+                    Location is required.
+                  </div>
+                </div> -->
+                </div>
+                <div class="addmoreControl">
+                  <label class="titles">
+                    Project Name
+                    <span class="color-red">*</span>
+                  </label>
+                  <input class="form-control" placeholder="Enter Project Name" type="text" formControlName="projectName"
+                    required name="projectName" [(ngModel)]="newReqProject" [ngClass]="{
+                    'is-invalid':
+                      submitted &&
+                      newmember.projectName.errors
+                  }" disabled />
+
+
+                  <div *ngIf="
+                    submitted &&
+                    newmember['projectName'].errors &&
+                    newmember['projectName'].touched
+                  " class="invalid-feedback">
+                    <div *ngIf="newmember['projectName'].errors.required">
+                      Position is required
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="addmoreControl">
+                <label class="titles">
+                  Raised By
+                  <span class="color-red">*</span>
+                </label>
+                <input class="form-control" placeholder="Name" formControlName="raisedByName" type="text" disabled />
+              </div>
+              <div class="addmoreControl">
+                <label class="titles">
+                  Request Number
+                  <span class="color-red">*</span>
+                </label>
+                <input class="form-control" placeholder="Number" type="text" formControlName="requestNumber" disabled />
+              </div> -->
+              </form>
+              <!-- <div class="modal-footer  saveMember">
+                <button class="btn btn-primary saveMembe" [disabled]="!newmemberForm.valid"  data-dismiss="modal" type="button" (click)="newmemberSubmit(newmemberForm.value)" >
+                  Save
+                </button>
+              </div> -->
+            </tab>
+            <!-- <div  class="modal-footer  saveMember">
+                <button *ngIf="activeTab =='New Member'" class="btn btn-primary saveMembe" [disabled]="!newmemberForm.valid"  data-dismiss="modal" type="button" (click)="newmemberSubmit(newmemberForm.value)" >
+                  Save
+                </button>
+              </div> -->
+          </tabset>
+        </div>
+        <div class="modal-footer">
+
+          <button class="btn btn-primary" *ngIf="activeTab == 'Existing Member'" data-dismiss="modal" type="button"
+            (click)="submitExistingMember(memberForm.value)" [disabled]="memberForm.invalid">
+            Save
+          </button>
+
+          <button *ngIf="activeTab == 'New Requirement'" class="btn btn-primary saveMembe" data-dismiss="modal"
+            [disabled]="!newmemberForm.valid" type="button" (click)="newmemberSubmit(newmemberForm.value)">
+            Save
+          </button>
+          <!-- <button *ngIf="activeTab == 1"> Save </button> -->
+          <!-- <button *ngIf="activeTab == 2"> Update </button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</span>
+<!-- code of model when click the edit project member -->
+<form class="editProfileList" [formGroup]="memberEditForm" *ngIf="memberDetails && showModel"
+  [hidden]="isEditmodelShow">
+  <div class="modal fade modal-team" id="edit-team-member" tabindex="-1" role="dialog"
+    aria-labelledby="edit-team-member" aria-hidden="true">
+    <div class="modal-dialog window-popup edit-widget  edit-team-member" role="document">
+      <div class="modal-content">
+        <div class="modal-header modalTitle">
+          <label class="titles" for="input-labels-1">Edit Member</label>
+          <span class="icon novi-icon icon-xxs mdi close mdi-close" data-dismiss="modal" aria-label="Close"></span>
+        </div>
+        <div class="modal-body">
+          <label class="titles">Member</label>
+          <span class="color-red">*</span>
+          <br />
+          <!-- 
+          <p-autoComplete class="dataListAuthor" formControlName="member" [disabled]="true">
+          </p-autoComplete> -->
+          <input type="text" id="demo" name="demo" [disabled]="true" class="profile-list-member"
+            formControlName="member" [disabled]="true">
+          <br />
+          <br />
+          <label class="titles">Role</label>
+          <span class="color-red">*</span>
+          <br />
+          <!-- <p-autoComplete class="dataListAuthor" [suggestions]="roles" formControlName="role_name" required
+            (completeMethod)="serachRoles($event)" placeholder="Enter Role" required [forceSelection]="true">
+          </p-autoComplete>  -->
+          <input type="text" id="demo" name="demo" class="startDate1 form-control" formControlName="role_name"
+            autocomplete="off" placeholder="Enter Role" required maxlength="30">
+
+          <div *ngIf=" memberEditForm .controls['role_name'].invalid &&
+            (memberEditForm .controls['role_name'].dirty ||
+            memberEditForm .controls['role_name'].touched)" class=" color-red">
+
+            <div *ngIf="memberEditForm .controls['role_name'].errors.required">
+              Role is required.
+            </div>
+          </div>
+          <br />
+
+          <label class="titles" for="input-labels-1">
+            Start Date
+          </label>
+          <span class="color-red">*</span>
+          <br />
+          <p-calendar class="projectDate" formControlName="start_date" [monthNavigator]="true" [yearNavigator]="true"
+            yearRange="1980:2080" [showIcon]="true" [maxDate]="maxDateValueStartDate" [readonlyInput]="true"
+            dateFormat="dd/mm/yy" (onSelect)="onSelectStartDate($event)" [maxDate]="maxDateValueStartDate">
+          </p-calendar>
+          <div *ngIf="f.start_date.touched && f.start_date.errors" class="color-red">
+            <span *ngIf="f.start_date.errors && f.start_date.invalid">
+              Start date required
+            </span>
+          </div>
+          <br />
+          <br />
+          <label class="titles" for="input-labels-1"> End Date </label>
+          <span class="color-red">*</span>
+          <div class="custom-control custom-checkbox d-inline-block mx-2">
+            <input class="custom-control-input" id="editEndDateOngoing" name="input-group-checkbox" value="checkbox-1"
+              type="checkbox" [checked]="editPresent" (change)="editMemberChange($event)" />
+            <label class="custom-control-label" for="editEndDateOngoing">
+              Ongoing
+            </label>
+          </div>
+          <br />
+          <p-calendar class="projectDate" *ngIf="!editPresent" formControlName="end_date" [monthNavigator]="true"
+            [yearNavigator]="true" yearRange="1980:2080" [showIcon]="true" [disabledDates]="invalidDates"
+            [maxDate]="maxDateValueEndDate" [readonlyInput]="true" dateFormat="dd/mm/yy"
+            (onSelect)="onSelectEndDate($event)" [minDate]="minDateValueEndDate">
+          </p-calendar>
+          <div *ngIf="!editPresent && f.end_date.touched && f.end_date.errors" class="color-red">
+            <span *ngIf="f.end_date.errors && f.end_date.invalid">
+              End date required
+            </span>
+          </div>
+          <br />
+        </div>
+        <br />
+        <div class="modal-footer text-center text-xl-center offset-top-31">
+          <button type="button" class="btn btn-primary" [disabled]="!memberEditForm.valid" data-dismiss="modal"
+            (click)="onSubmit(memberEditForm.value)">
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<p-toast class="toastMsg" position="top-right" id="toastmsgShow" sticky="true">
+</p-toast>

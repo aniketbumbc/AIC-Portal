@@ -1,0 +1,256 @@
+<app-breadcrumbs  page={{profiletitle}} [breadcrums]="breadCrumb"></app-breadcrumbs>
+<!--  Edit Profile-->
+<section class="section novi-background section-50 section-sm-50 fixed-min-height">
+  <div class="container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+      <div *ngIf="userDetails">
+        <div class="row justify-content-sm-left sectionUserImg section-50">
+          <div class="col-md-5 col-lg-4 justify-content-sm-center">
+            <uploadImage [imageUrl]="url"></uploadImage>
+          </div>
+          
+            <div class="col-md-7 col-lg-8">
+            
+            <div class="row">
+              <div class="col-md-8 col-lg-6">
+                <div class="form-group editProfile editProfileTitle">
+                  <label class="form-label-outside rd-input-label focus not-empty titles" for="input-labels-1">Full
+                    Name</label><span class="color-red">*</span>
+                  <input formControlName="name" autocomplete="off" class="form-control" placeholder="Enter full name"
+                     [(ngModel)]="userDetails.name" type="text" name="name"
+                    [ngClass]="{ 'is-invalid': f.name.errors }" minlength="2" />
+                  <div *ngIf="f.name.errors" class="invalid-feedback">
+                    <div *ngIf="f.name.errors.required">
+                      Full Name is required
+                    </div>
+                    <div *ngIf="f.name.errors.minlength">
+                      Name must be at least 2 characters long.
+                    </div>
+                    <div *ngIf="f.name.errors.pattern">
+                      Only Alphabets are allowed.
+                    </div>
+                  </div>
+                  <br />
+                </div>
+              </div>
+
+              <div class="col-md-8 col-lg-6">
+                <div class="form-group editProfile editProfileTitle">
+                  <label class="form-label-outside rd-input-label focus not-empty titles" for="github">
+                    Github ID
+                  </label>
+                  <br />
+                  <input class="form-control" autocomplete="off" placeholder="Enter Github UserId" id="github" name="githubid" type="text" 
+                    formControlName="socialGitId" [(ngModel)]="getGithub" />
+                  <br />
+                </div>
+              </div>
+
+
+            </div>
+
+
+
+            <div class="row">
+
+              <div class="col-md-8 col-lg-6">
+                <div class="form-group editProfile editProfileTitle">
+                  <label class="form-label-outside rd-input-label focus not-empty titles"
+                    for="input-labels-1">Email</label>
+                  <span class="color-red">*</span>
+                  <input class="form-control form-control-has-validation form-control-last-child" maxlength="60"
+                    formControlName="email" placeholder="Enter email-id " id="input-styles-1" type="text" name="email"
+                    [(ngModel)]="userDetails.email" [ngClass]="{
+                    'is-invalid': f.email.errors
+                  }" />
+                  <div *ngIf="f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">
+                      The email address is required.
+                    </div>
+                    <div *ngIf="f.email.errors.email || f.email.errors.emailDomain">
+                      Please enter valid email id.
+                    </div>
+                  </div>
+                </div>
+                <br />
+              </div>
+
+
+              <div class="col-md-8 col-lg-6">
+                <div class="form-group editProfile editProfileTitle">
+                  <label class="form-label-outside rd-input-label focus not-empty titles" for="blink">
+                    Blink ID
+                  </label>
+                  <br />
+                  <input class="form-control" autocomplete="off" placeholder="Enter Blink UserId" id="blink" type="text" name="blinkid"
+                  [(ngModel)]="blinkId" formControlName="socialBlinkId"/>         
+                  <br />
+                </div>
+              </div>
+
+
+
+            </div>
+
+            <div class="row">
+              
+              <div class="col-md-8 col-lg-6">
+                <div class="form-group editProfile editProfileTitle editLoc">
+                  <label class="form-label-outside rd-input-label focus not-empty titles" for="input-labels-1">
+                    Location </label><span class="color-red">*</span>
+                  <br />
+
+                  <ngx-select-dropdown tab-index="0" [config]="locationsConfig" [options]="fetchLocation"
+                    [multiple]="false" [(ngModel)]="userDetails.location" formControlName="location"
+                    class="dropCategory" (change)="onChange($event)">
+                  </ngx-select-dropdown>
+                  <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-menu-down authorMenu"></span>
+
+                  <div *ngIf="f.location.errors" class="invalid-feedback">
+                    <div *ngIf="f.location.errors.required">
+                      Select Location
+                    </div>
+                  </div>
+                  <br />
+                </div>
+              </div>
+
+              <div class="col-md-8 col-lg-6">
+                <div class="form-group editProfile editProfileTitle">
+                  <label class="form-label-outside rd-input-label focus not-empty titles" for="linkedIn">
+                    LinkedIn ID
+                  </label>
+                  <br />
+                  <input class="form-control" autocomplete="off"
+                    placeholder="Enter LinkedIn UserId" id="linkedIn" 
+                    type="text" name="linkedin" formControlName="sociallinkedinId"
+                    [(ngModel)]="linkedinId"
+                    />
+                  <br />
+                </div>
+              </div>
+            
+            
+            
+            </div>
+
+            <div class="row">
+              
+              <div class="col-md-8 col-lg-6">
+                <div class="form-group editProfile editProfileTitle">
+                  <label class="form-label-outside rd-input-label focus not-empty titles" for="education">
+                    Education
+                  </label>
+                  <br />
+                  <input class="form-control" autocomplete="off" formControlName="education"
+                    placeholder="Enter Education" id="education" type="text" name="education" [(ngModel)]="tempEducation"  />
+                  <br />
+                </div>
+              </div>
+
+              <div class="col-md-8 col-lg-6">
+                <div class="form-group editProfile editProfileTitle">
+                  <label class="form-label-outside rd-input-label focus not-empty titles" for="blogUrl">
+                    Blog URL
+                  </label>
+                  <br />
+                  <input class="form-control" type="url"  pattern="http|https://.*"   autocomplete="off" [(ngModel)]="blogUrl" placeholder="Enter Blog URL"
+                    id="blogUrl"  name="blogUrl" formControlName="blogUrl"  />
+                    <div *ngIf="
+                    registerForm.controls['blogUrl'].invalid &&
+              (registerForm.controls['blogUrl'].dirty ||
+              registerForm.controls['blogUrl'].touched)
+            " class="color-red"> 
+                      Please enter valid blog url with https or http.
+                    </div>
+                  <br />
+                </div>
+              </div>
+           
+           
+            </div>
+
+            <div class="row">
+              
+              
+              <div class="col-md-8 col-lg-6">
+                <div class="form-group editProfile editProfileTitle">
+                  <label class="form-label-outside rd-input-label focus not-empty titles" for="aic-membership-level">
+                    AIC Membership Level
+                  </label>
+                  <br />
+                  <div class="form-group group-sm ">
+                    <div class="custom-control custom-radio d-inline-block memLevel"
+                      *ngFor="let aiclevel of getAicLevel">
+                      <input class="custom-control-input" id="{{ aiclevel.id }}" value="{{ aiclevel.level }}"
+                        type="radio" name="levels" [(ngModel)]="userAicLevel" formControlName="aiclevels" (change)="onChange($event)"
+                        name="aiclevels" />
+                      <label class="custom-control-label radioMemLevel"
+                        for="{{ aiclevel.id }}">{{ aiclevel.level }}</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <div class="col-md-8 col-lg-6">
+                  <div class="form-group editProfile editProfileTitle editCOE">
+                    <label class="form-label-outside rd-input-label focus not-empty titles" for="coe">
+                    Center of Excellence
+                   </label>
+                    <br />
+                    <ngx-select-dropdown tab-index="0" [config]="coeConfig" [options]="fetchCoes" [multiple]="false"
+                    [(ngModel)]="userDetails.coes" formControlName="coes" class="dropCategory"
+                    (change)="changeCOE($event)"></ngx-select-dropdown>
+
+                    <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-menu-down authorMenu"></span>
+                     <br />
+                 </div>
+                </div>
+            
+            
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12">
+          <h3>About Me</h3>
+          <hr class="divider bg-mantis" />
+          <div class="form-group editProfile editProfileTitle section-20 aboutMe">
+
+            <ckeditor class="aboutDesc" name="myckeditor" [(ngModel)]="userDetails.description"
+              formControlName="description" [config]="ckeConfig" debounce="500">
+            </ckeditor>
+
+            <br />
+          </div>
+        </div>
+        <!-- Skills -->
+        <div class="col-md-12 col-lg-12">
+          <h3>Skills</h3>
+          <hr class="divider bg-mantis " />
+
+          <br />
+          <!-- If You need editable skill-matrix send value of 'pageEditableInfo' should be true -->
+          <app-skill-matrix [skillData]="techstack" [pageEditableInfo]="true" [userSkills]="skills" class="section-20"
+            formControlname="skills"></app-skill-matrix>
+        </div>
+      </div>
+
+      <!-- Button  -->
+      <div class="group-sm text-center text-xl-center section-50" *ngIf = "userDetails">
+        <button class="btn btn-primary saveProfile" type="submit">
+          <!--  [disabled]="!registerForm.valid" -->
+          Save Profile
+        </button>
+        <button class="btn btn-danger" type="button" (click)="cancelBtnClicked($event)">
+          Cancel
+        </button>
+      </div>
+    </form>
+
+  </div>
+</section>

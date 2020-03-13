@@ -1,0 +1,195 @@
+@import "variables.scss";
+.titles {
+  font-size: 16px;
+  font-weight: 600;
+  font-style: initial;
+  margin-bottom: 5px !important;
+  margin-top: 5px;
+}
+::ng-deep .projectDate1 {
+  .ui-inputtext {
+    width: 568px;
+    height: 34px;
+  }
+  .ui-calendar.ui-calendar-w-btn input {
+    border-radius: 4px;
+  }
+}
+
+::ng-deep .custom-checkbox .custom-control-label::before {
+  border-radius: 0px;
+  top: 0.26rem;
+  left: -1.5rem;
+  display: block;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+::ng-deep .custom-checkbox .custom-control-label::after {
+  left: -1.4rem;
+}
+::ng-deep .btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #ffffff;
+  background-color: lighten(#34905c, 15%) !important;
+  border-color: lighten(#34905c, 15%) !important;
+}
+::ng-deep button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+::ng-deep p-autoComplete {
+  width: 100%;
+  .ui-autocomplete {
+    width: 100%;
+  }
+  .ui-inputtext {
+    width: 100%;
+    height: 36px;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    font-size: 13px;
+    padding: 10px;
+  }
+  .ui-autocomplete-panel {
+    position: initial;
+    margin-right: 0px !important;
+  }
+}
+::ng-deep .projMember{
+  .nav {
+    border: none;
+  }
+  .tab-content{
+    height: 359px;
+    overflow-y: auto;
+  }
+  .nav-tabs {
+    justify-content: flex-start !important;
+    .nav-link {
+      border: none;
+      text-transform: none;
+      border-bottom: 1px solid transparent !important;
+    }
+    .nav-item {
+      margin-right: 20px;
+      margin-bottom: 10px;
+    }
+  }
+  .nav-link {
+    padding: 0.3rem 0;
+    &.active {
+      color: #34905c;
+      border-bottom: 2px solid #34905c !important;
+    }
+  }
+  .invalid-feedback{
+    text-align: left;
+  }
+}
+
+/*custom css*/
+.addmoreControl {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  .color-red {
+    color: #dc3545;
+    font-size: 13px;
+  }
+
+  input {
+    height: 36px;
+  }
+  .endDate {
+    display: flex;
+    align-items: center;
+  }
+  .singleSelectDDl {
+    width: 100%;
+    position: relative;
+    .icon {
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      z-index: 0;
+      cursor: pointer;
+      color: black !important;
+      pointer-events: none;
+    }
+    ::ng-deep .ngx-dropdown-button {
+      height: 36px;
+    }
+    ::ng-deep .ngx-dropdown-container .ngx-dropdown-list-container {
+      ul.selected-items li {
+        position: relative;
+        text-align: left;
+        &:after {
+          position: absolute;
+          right: 8px;
+          top: 2px;
+          content: "X";
+          font-weight: normal;
+          font-style: norma;
+        }
+      }
+    }
+  }
+
+  ::ng-deep .tagSkill {
+    width: 100%;
+    .bootstrap.ng2-tag-input,
+    .bootstrap.ng2-tag-input.ng2-tag-input--focused {
+      border: 0;
+    }
+    .ng2-tag-input__text-input {
+      height: auto !important;
+    }
+    .bootstrap svg {
+      height: 13px;
+      vertical-align: middle;
+    }
+    tag-input-form {
+      display: flex;
+      align-items: center;
+    }
+    .ng2-tags-container {
+      height: 36px;
+      font-size: 13px;
+      border: 1px solid #d9d9d9;
+      border-radius: 0.25rem;
+      padding: 4px 0.75rem;
+      tag {
+        background: $green !important;
+        height: 26px !important;
+        padding: 0px 10px 0px 10px !important;
+        line-height: 26px !important;
+        border-radius: 25px !important;
+        color: $secondary !important;
+        margin: 0 0.3rem;
+      }
+      .bootstrap path {
+        fill: $primary;
+      }
+    }
+  }
+}
+.saveMember {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.invalid-feedbackNGX{
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: #dc3545;
+  text-align: left;
+}
+.addmoreControl {
+  .titles {
+    align-text:left;
+  }
+}

@@ -1,0 +1,55 @@
+<section class="section novi-background">
+  <div class="" data-type="horizontal" style="width: 100%;">
+    <!-- <div class="search-text" *ngIf="pageEditableInfo">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+        placeholder="Start searching by text....">
+    </div> -->
+
+    <div class="right" *ngIf="pageEditableInfo">
+      <form id="search">
+        <div class="filterSkill">
+          <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-close close" *ngIf="filled"
+            (click)="filled=false"></span>
+          <input #search class="inputFilter" type="search" name="search" id="demo"
+            placeholder="Search by skill" [ngClass]="isFocus ? 'filled':''" (focusout)="searchText?isFocus=true:isFocus=false" (focus)="isFocus=true" [(ngModel)]="searchText"
+            autocomplete="off" (input)="onSearchChange($event.target.value)">
+            <div *ngIf="searchText">
+              <span class= "icon1 novi-icon icon-xxs mdi close mdi-close close" (click)="searchText=null;isFocus=false;tabset.tabs[0].active=true">
+              </span>
+            </div>
+
+        </div>
+      </form>
+    </div>
+
+    <div class="skillTab" data-group="tabs-group-default">
+      <tabset #tabset>
+        <tab id="{{ data?.type }}" heading="{{ data?.type }}" *ngFor="let data of skillData">
+          <div class="text-left text-md-center">
+            <!-- <h6>{{ data?.title }}</h6> -->
+            <div class="group offset-top-31 margin-30" *ngIf="!pageEditableInfo">
+              <a class="btn btn-sm bt-rounded btn-default btn-icon btn-icon-left hoverSkill"
+                *ngFor="let option of data.technologies">
+                <span class="novi-icon icon"></span>{{ option }}
+              </a>
+            </div>
+            <div *ngIf="pageEditableInfo">
+              <!-- This div is using for edit profile page  -->
+              <div class="group offset-top-10  marginBottom margin-30">
+                <span *ngFor="let option of data.technologies |searchBy:searchText">
+                <a class="btn btn-sm bt-rounded btn-default btn-icon btn-icon-left"
+                  [ngClass]=" userSkills[data.type]? 
+                    userSkills[data.type].indexOf(option) > -1
+                      ? 'selectedskills':' '  : ''"
+                   (click)="selectedSkill(option, data.type)">
+                  <span>{{ option }}</span>
+                </a>
+              </span>
+              </div>
+            </div>
+          </div>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+</section>

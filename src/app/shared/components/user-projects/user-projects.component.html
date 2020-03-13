@@ -1,0 +1,28 @@
+<div class="simpleShadow  card-body">
+  <h5 class="cardTitle  card-title text-left text-primary">My Projects</h5>
+  <div *ngIf="checkProjectData" class="centerPosition">  Looks like you are not mapped with a project.</div>
+  <div class="myProjects offset-top-10" *ngFor="let projectdata of projectData">
+  
+    <span *ngFor="let newprojectsdata of projectdata.projects">
+    <div class="alignStatus">
+      <a class="docTitle" [routerLink]="['/project/',newprojectsdata?.id]"> {{newprojectsdata.name}}</a>
+    </div>
+    <div class="teamImg">
+      <ul class="list-flex authorList">
+        <li *ngFor="let usersphoto of newprojectsdata.employees">
+          <a [tooltip]="(usersphoto?.name) |titlecase"
+            [routerLink]="['/profile/', usersphoto.id]">
+            <ngx-avatar src="{{imageUrl}}{{usersphoto?.picture?.url}}{{decached}}"
+              name="{{usersphoto?.name |name }} " size="35"></ngx-avatar>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <p class="pDesc" [innerHTML]="newprojectsdata?.description">
+    </p>
+    </span>
+  </div>
+  <div class="showBtn mt-auto offset-top-10" *ngIf="!checkProjectData">
+    <a class="btn btn-primary" [routerLink]="['/project/']">View All</a>
+  </div>
+</div>

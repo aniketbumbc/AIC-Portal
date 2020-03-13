@@ -1,0 +1,24 @@
+.clientLabel{
+font-weight: bold;
+}
+.cli{
+    font-weight: normal!important;
+}
+.more-options .photo {
+    padding-top: 30px;
+  }
+  img {
+    margin-top: 15px;
+    border-radius: 10px;
+  }
+  .small .text-darker .offset-top-4 .userPost {
+    margin-top: 0px;
+  }
+  ::ng-deep .btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #ffffff;
+  background-color: lighten(#34905c, 15%) !important;
+  border-color: lighten(#34905c, 15%) !important;
+}
+

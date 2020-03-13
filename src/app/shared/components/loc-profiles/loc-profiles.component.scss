@@ -1,0 +1,55 @@
+@import '~mixin.scss';
+@import '~variables.scss';
+
+.simpleShadow {
+  box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.15);
+  padding: 15px 15px;
+  display: flex;
+  min-height: 450px;
+  flex-direction: column;
+}
+.locProfile {
+  display: block;
+  margin-top: 5px;
+}
+.cardTitle {
+  font-weight: 600;
+  margin-top: 0 !important;
+}
+
+.pie-legend {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.pie-legend span {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	/* border-radius: 100%; */
+	margin-right: 16px;
+	margin-bottom: -2px;
+}
+.pie-legend li {
+	margin-bottom: 10px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.pDesc {
+  font-size: 13px;
+  max-width: 100%;
+  height: 45px;
+  margin: 10px auto;
+  line-height: 1.2;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 1280px) {
+  // .simpleShadow {
+  //   min-height: 438px !important;
+  // }
+}

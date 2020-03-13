@@ -1,0 +1,26 @@
+<div class="simpleShadow card-body">
+  <h5 class="cardTitle card-title text-left text-primary">Featured Blog</h5>
+  <h5 *ngIf="checkBlogsData" class="centerPosition">No blogs found</h5>
+  <div class="myBlogs offset-top-10" *ngFor="let blogsdata of featureBlogsData">
+    <div class="alignStatus">
+      <a class="docTitle" [routerLink]="['/blog/',blogsdata?.id]">{{blogsdata.name}} </a>
+    </div>
+    <div class="teamImg">
+      <ul class="list-flex authorList">
+        <li *ngFor="let authorsname of blogsdata.authors">
+            <a [tooltip]="(authorsname?.name) |titlecase"
+            [routerLink]="['/profile/',authorsname.id]">
+          <ngx-avatar src="{{imageUrl}}{{authorsname?.picture?.url}}{{decached}}"
+            name="{{authorsname.name|name }} " size="35"></ngx-avatar>
+            </a>
+        </li>
+      </ul>
+    </div>
+    <p class="pDesc offset-top-10">
+      {{blogsdata.description}}
+    </p>
+  </div>
+  <div class="showBtn mt-auto offset-top-10" *ngIf="!checkBlogsData">
+    <a class="btn btn-primary" [routerLink]="['/blog/']">View All</a>
+  </div>
+</div>

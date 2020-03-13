@@ -1,0 +1,24 @@
+<section class="section novi-background breadcrumbs">
+  <!-- Default breadcrumbs-->
+  <div class="container2">
+    <div
+      class="unit flex-column unit-spacing-xxs unit-md flex-lg-row align-items-lg-center justify-content-lg-between align-items-center">
+      <div class="pageTitle">
+        <h3>
+          <span *ngIf="!!searchText" class="big searchTitle">Showing results for
+            {{ title ? title : searchText }}</span>
+          <span *ngIf="!searchText" class="big">{{
+            title ? title : page
+          }}</span>
+        </h3>
+      </div>
+      <ol class="breadcrumb-default">
+        <!-- <li class="homeTitle"><a [routerLink]="['/home']">Home</a></li>
+        <li *ngIf="page" class="active">{{ page }}</li> -->
+        <li class="breadcrumb-item" [ngClass]="bread.isActive ? 'active': 'homeTitle'" *ngFor="let bread of breadcrums">
+          <a [routerLink]="bread.url" [class.disabled]="bread.isActive">{{bread.label}}</a>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>

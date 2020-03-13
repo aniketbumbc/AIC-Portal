@@ -1,0 +1,23 @@
+@import '~variables.scss';
+.card {
+  background-color: #42b574;
+  border: 1px solid rgb(189, 175, 175);
+  color: rgb(226, 226, 226);
+  text-align: center;
+  padding-top: 140px;
+  font-weight: bold;
+}
+.card:hover {
+  background-color: #ddd;
+  color: rgb(131, 124, 124);
+}
+
+ul {
+  display: inline-block;
+  padding: 50px;
+}
+
+.greenbox {
+  background-color: $green;
+  color: $secondary;
+}

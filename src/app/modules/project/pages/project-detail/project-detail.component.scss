@@ -1,0 +1,522 @@
+@import 'variables.scss';
+
+// ::ng-deep .ui-progressbar .ui-progressbar-value {
+//   // background-color: #51c081!important;
+// }
+// ::ng-deep .ui-progressbar .ui-progressbar-value .progressbar-red {
+//   background-color: red!important;
+// }
+.progress-bar-box {
+  display: -webkit-inline-box;
+}
+.progressValue {
+  top: 10px;
+  font-weight: bold;
+}
+.progressbar-red {
+  ::ng-deep .ui-progressbar .ui-progressbar-value {
+  background-color: #E74C3C!important;
+  }
+  ::ng-deep .ui-progressbar-determinate .ui-progressbar-label {
+    color: #e3e3e3;
+  }
+}
+.progressbar-green {
+  ::ng-deep .ui-progressbar .ui-progressbar-value {
+  background-color: #51c081!important;
+  }
+}
+
+::ng-deep .ui-progressbar-determinate .ui-progressbar-label {
+  display: flex!important;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  .projectData{
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  
+  button {
+    .editProject {
+      text-align: left !important;
+      // color: #ffffff;
+      // background-color: lighten(#34905c, 15%);
+      // border-color: lighten(#34905c, 15%);
+    }
+  }
+  .editProjectBtn {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    // padding-left: 15px;
+    // padding-right: 15px;
+  }
+  .titles {
+    font-size: 16px;
+    font-weight: 600;
+    font-style: initial;
+  }
+  .tags {
+    // text-transform: capitalize;
+    border-radius: 50px;
+    margin: 2px;
+  }
+  .project-tags {
+  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+  }
+  .project-data {
+    padding: 10px;
+    text-align: left;
+
+    .start-date {
+      margin: 10px;
+      font-size: 12px;
+    }
+
+    .dm-img,
+    .pm-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50px;
+      padding: 10px;
+    }
+  }
+  // CSS of Tooltip...
+  ::ng-deep .tooltip {
+    opacity: 1;
+  }
+  ::ng-deep .tooltip-inner {
+    background-color: #42b574;
+    color: #fff;
+  }
+
+  ::ng-deep .tooltip.top .tooltip-arrow:before,
+  ::ng-deep .tooltip.top .tooltip-arrow {
+    border-top-color: #42b574;
+  }
+
+  .ui-block {
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    flex-wrap: wrap;
+    position: relative;
+
+    .project-tags {
+      display: inline-flex;
+    }
+
+    .timelineIcon {
+      font-size: 20px;
+    }
+
+    .start-date {
+      margin: 10px;
+      font-size: 12px;
+    }
+
+    tr {
+      padding: 10px;
+      margin: 10px;
+    }
+
+    .project th {
+      padding: 10px;
+    }
+
+    .dm-img,
+    .pm-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50px;
+      padding: 10px;
+    }
+  }
+
+  .card-block {
+    width: 100%;
+    display: flex;
+
+    .profile-img {
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    .simple-box-shadow {
+      box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.15);
+      padding: 20px 20px;
+      display: flex;
+      min-height: 337px;
+      min-width: 330px;
+      flex-direction: column;
+
+      .text-primary {
+        color: $theme2;
+      }
+    }
+
+    @media (max-width: 1280px) {
+      .simpleShadow {
+        min-height: 332px;
+      }
+    }
+  }
+
+  .card-title {
+    text-align: center;
+  }
+
+  .card-block {
+    padding: 15px;
+  }
+
+  .contact-li {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    .mdi-email-open {
+      margin-right: 5px;
+    }
+
+    .mdi-map-marker {
+      color: $theme1 !important;
+    }
+  }
+
+  .gifimage{
+    color:red; background: url(../../../../../assets/images/svg/runner1.gif);
+    background: url(../../../../../assets/images/svg/gif1.gif);
+    height: 50px;
+    width: 60px;
+  }
+
+  .progress {
+    // background-color: #808080 !important;
+    height: 50px;
+  }
+  .gifimage {
+    // color: red;
+    // background-color: #808080 !important;
+    // border: 1px solid #808080 !important;
+    background: url ('../../../../../assets/svg/CropRunner1.gif') !important;
+    // background: url('https://forums-images.oneplus.net/attachments/74/74550-f78c21dd16418cd98dd0b3b52545b7b0.gif');
+    height: 50px;
+    width: 50px;
+    transform: scale(1.2);
+  }
+
+  .mdi-clock-start {
+    text-align: left !important;
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px;
+  }
+
+  .mdi-clock-end {
+    text-align: right !important;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+  }
+
+  .align-start-date {
+    display: flex;
+    justify-content: flex-start;
+    float: left;
+  }
+
+  .align-end-date {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+::ng-deep .btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #ffffff;
+  background-color: lighten(#34905c, 15%) !important;
+  border-color: lighten(#34905c, 15%) !important;
+}
+
+ul#menu0,
+#menu1,
+#menu2,
+#menu3,
+#menu4,
+#menu5,
+#menu6,
+#menu7,
+#menu8,
+#menu9 {
+  list-style-type: none;
+  font-size: 15px;
+  padding-left: 0px;
+  margin-bottom: 0px;
+
+  li .activeLi {
+    display: inline-flex;
+    padding: 5px 15px;
+  }
+}
+// css for the Project Document Table
+.projDocModal {
+  margin-top: -30px;
+}
+.editDoc,
+.removeDoc {
+  cursor: pointer;
+}
+.titleDoc {
+  width: 10%;
+}
+.catList {
+  cursor: pointer;
+  &:hover,
+  &.active {
+    color: $theme1 !important;
+  }
+}
+.addedBy {
+  width: 25%;
+}
+.addedOn {
+  width: 25%;
+}
+.actionDoc {
+  width: 5%;
+}
+.docTitle {
+  cursor: default;
+  color: $theme1 !important;
+}
+.docURL  {
+  cursor: pointer;
+  color: $theme1 !important;
+}
+.table {
+  text-align: center;
+}
+.backColor{
+  background-color: whitesmoke;
+}
+.card {
+  border-radius: 5px;
+  background-color: #fff;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 2px 6px 15px 0 rgba(69, 65, 78, 0.1);
+  -moz-box-shadow: 2px 6px 15px 0 rgba(69, 65, 78, 0.1);
+  box-shadow: 2px 6px 15px 0 rgba(69, 65, 78, 0.1);
+  border: 0;
+}
+//css of card header
+
+.btn {
+  padding: 0.65rem 1.4rem;
+  font-size: 14px;
+  // opacity: 1;
+  border-radius: 3px;
+}
+//css of card body
+.card .card-body,
+.card-light .card-body {
+  padding: 1.25rem;
+}
+.table-responsive {
+  width: 100% !important;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+div.table-responsive > div.dataTables_wrapper > div.row {
+  margin: 0;
+}
+div.table-responsive
+  > div.dataTables_wrapper
+  > div.row
+  > div[class^='col-']:first-child,
+div.table-responsive
+  > div.dataTables_wrapper
+  > div.row
+  > div[class^='col-']:last-child {
+  padding-left: 0;
+  padding-right: 0;
+}
+table.dataTable {
+  clear: both;
+  // max-width: none !important;
+  border-collapse: separate !important;
+}
+.table td,
+.table th {
+  font-size: 14px;
+  border-top-width: 0;
+  border-bottom: 1px solid;
+  border-color: #ebedf2 !important;
+  padding: 5px 10px !important;
+  height: 50px;
+  vertical-align: middle !important;
+}
+.table-striped-project td,
+.table-striped-project th {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+.table thead th {
+  border-bottom-width: 2px;
+  font-weight: 600;
+  text-align: center;
+}
+table.dataTable td,
+table.dataTable th {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+  vertical-align: middle;
+}
+.table > tbody > tr > td,
+.table > tbody > tr > th {
+  padding: 8px;
+}
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+  vertical-align: middle;
+}
+.table-striped-project tbody tr:nth-of-type(even),
+.table-striped-project thead tr:nth-of-type(odd) {
+  background-color: $light-grey;
+}
+.form-button-action {
+  display: inline-flex;
+}
+.icon-lg-project {
+  font-size: 15px;
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-weight: 400;
+}
+.icon-link-project {
+  border: 0 !important;
+  background: 0 0 !important;
+}
+
+::ng-deep .skillTabs {
+  border-radius: 50px;
+  border-bottom: 0;
+
+  .skillDiv {
+    background: #cccccc5c;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+  }
+
+  .box-effect {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+    li {
+      display: inline-flex;
+      padding: 5px 15px;
+      border-style: solid;
+      border-color: $border-color;
+      margin: 10px;
+      border-radius: 5px;
+    }
+
+    .svg-arrow {
+      display: flex;
+      position: absolute;
+      top: -6%;
+      left: 8%;
+      z-index: 2;
+      height: 30px;
+    }
+  }
+
+  .list-unstyled p {
+    padding: 10px;
+  }
+
+  ul.nav-tabs {
+    display: flex;
+    border: none;
+    justify-content: center;
+    align-items: center;
+
+    li.nav-item {
+      position: relative;
+      margin: 2px;
+      border: 1px solid lighten($primary, 65%);
+      border-radius: 30px;
+      background-color: lighten($secondary, 15%);
+      width: 16%;
+      min-height: 85px;
+      max-height: 100px;
+      justify-content: center;
+      display: inline-flex;
+
+      &.active {
+        &::after {
+          content: url('../../../../../assets/svg/arrow-down-thick.png');
+          position: absolute;
+          bottom: 0;
+          margin-bottom: -38px;
+        }
+      }
+
+      &:hover,
+      &.active {
+        background-color: lighten($tabcolor, 10%);
+      }
+
+      a {
+        border: none;
+        background-color: transparent;
+        border-radius: 30px;
+        margin: 0px;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+      }
+
+      span {
+        position: relative;
+        display: inline-block;
+        font-size: 15px;
+        font-weight: 700;
+        // color: #9b9b9b;
+        text-transform: capitalize;
+        list-style-type: none;
+        cursor: pointer;
+        transition: color 0.2s ease-in;
+      }
+
+      &.active {
+        color: $primary;
+        border-radius: 30px;
+      }
+    }
+  }
+}
+.cursor-pointer {
+  cursor: pointer;
+}

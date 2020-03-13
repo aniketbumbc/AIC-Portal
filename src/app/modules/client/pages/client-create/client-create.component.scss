@@ -1,0 +1,231 @@
+@import 'variables.scss';
+.editProjectDetails {
+  text-align: left !important;
+  .titles {
+    font-size: 16px;
+    font-weight: 600;
+    font-style: initial;
+  }
+  .dropCategory {
+    text-align: center !important;
+    color: $primary;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .color-red {
+    color: #dc3545;
+    font-size: 13px;
+  }
+}
+.editClient {
+  text-align: left !important;
+  position: relative;
+  .clientMenu {
+    position: absolute;
+    right: 10px;
+    top: 45px;
+    z-index: 0;
+    cursor: pointer;
+    color: $primary !important;
+    pointer-events: none;
+  }
+}
+.remove{
+  position: absolute;
+  margin-left: 4px !important;
+  margin-top: -15px !important;
+  .removeImage{
+    font-size: xx-large;
+    color: #dc3545
+  }
+}
+.hoverable {
+  min-height: 80px;
+  justify-content: center;
+  opacity: 0.9;
+  cursor: pointer;
+  margin-bottom: 0px !important;
+}
+.hoverable .hover-text {
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 22%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: $primary;
+  font-weight: 600;
+  border: 1px solid $primary;
+  padding: 5px;
+  background-color: $secondary;
+}
+
+.editBlog {
+  text-align: left !important;
+  margin-bottom: 0px !important;
+  .titles {
+    font-size: 16px;
+    font-weight: 600;
+    font-style: initial;
+  }
+  .selectCat {
+    display: flex !important;
+  }
+
+  .closeIcon {
+    position: relative;
+    top: -2px;
+    right: 290px;
+  }
+  .blogDetails {
+    height: 200px;
+  }
+  .dropCategory {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .uploadURL {
+    float: right !important;
+    font-size: 13px;
+    color: $theme1;
+  }
+}
+::ng-deep .cName:visited {
+  background-color: $secondary !important;
+}
+// update client
+::ng-deep .btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #ffffff;
+  background-color: lighten(#34905c, 15%) !important;
+  border-color: lighten(#34905c, 15%) !important;
+}
+
+.clientDesc {
+  font-size: 13px;
+}
+
+//img css for thumnail starts here
+.closeIcon {
+  position: relative;
+  top: -2px;
+  right: 280px;
+  &:hover {
+    content: 'f552';
+    font-family: 'Materail Design Icons';
+    position: relative;
+  }
+}
+img {
+  left: 40px;
+  // border: 1px solid black;
+  max-height: 168px;
+  width: 250px;
+}
+.hoverable .background {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 1;
+}
+.hoverable:hover .hover-text {
+  display: block;
+}
+.hoverable:hover .background {
+  display: block;
+}
+#fileInput {
+  display: none;
+}
+// img css ends here
+
+::ng-deep .ngx-dropdown-container {
+  .ngx-dropdown-button {
+    outline: none;
+    height: 50px;
+    min-height: 0px;
+  }
+}
+
+::ng-deep .ngx-dropdown-list-container {
+  max-height: 250% !important;
+  z-index: 4 !important;
+
+  hr {
+    display: none;
+  }
+  ul.selected-items {
+    display: none;
+  }
+  ul.available-items {
+    text-align: left;
+  }
+}
+
+::ng-deep .ngx-dropdown-list-container {
+  max-height: 450% !important;
+  z-index: 4 !important;
+  width: 80%;
+  hr {
+    display: none;
+  }
+  ul.selected-items {
+    display: none;
+    width: 50%;
+  }
+}
+
+::ng-deep .editProjectDetails ul.selected-items {
+  display: block;
+  width: 100%;
+  li {
+    position: relative;
+    &::before {
+      position: absolute;
+      right: 8px;
+      top: 2px;
+      content: 'X';
+      font-weight: normal;
+      font-style: normal;
+    }
+  }
+  li.nsdicon-close {
+    display: none;
+  }
+}
+
+::ng-deep .editClient .ng-select-container {
+  height: 50px;
+  .ng-placeholder {
+    top: 10px;
+    font-size: 13px;
+    padding-top: 8px;
+  }
+  .ng-clear-wrapper {
+    display: none;
+    -webkit-appearance: none;
+  }
+  .ng-arrow-wrapper {
+    display: none;
+    -webkit-appearance: none;
+  }
+}
+
+.invalid{
+  color:red;
+}
+
+
+::ng-deep .editClient1 {
+  .ng-select-container,.ng-dropdown-panel  {
+    z-index: 1!important;
+  }
+}
+

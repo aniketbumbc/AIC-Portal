@@ -1,0 +1,68 @@
+<div class="section-34-1">
+  <div class="ui-block" *ngFor="let project of projectList">
+    <div class="row listcol">
+      <div class="col-xl-7 leftpadding">
+        <div class="projectStatus " [ngClass]="(project.status)? (project.status | titlecase):'null'">
+          <div class="tr1"></div>
+          <div class="trSmall1"></div>
+          <div class="badge badge-danger statusText">{{ project?.status }}</div>
+          <div class="tr2"></div>
+          <div class="trSmall2"></div>
+        </div>
+        <div class="logo-title">
+          <img class="image" src="assets/images/badge1.png" alt="author" />
+          <!-- </div> -->
+          <div class="projectData projectName project-detail">
+            <a [routerLink]="['/project', project.id]" class="h6 author-name searchText"
+              [innerHTML]="project?.name"></a>
+            <br>
+            <div class="birthday-date searchText" (click)="onClick($event)" [innerHTML]="project?.client?.name">
+            </div>
+          </div>
+        </div>
+        <div class="projectData project-tags" *ngIf="project.tags">{{project?.members?.employeeId?.name}}
+          <div class="tag" *ngFor="let tag of project.tags">
+            <p *ngIf="!!tag" class="label-custom label-lg-custom label-rounded-custom label-primary tags searchText1"
+              href="#" [innerHTML]="tag">
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-xl-5 rightpadding">
+        <div class="projectData projectTeam">
+          <!-- W-Faved-Page -->
+          <ul class="widget w-faved-page js-zoom-gallery project-ul">
+            <div *ngFor="let dm of project.members">
+              <li class="dmImg" *ngIf="dm?.designation ? designationCheck(dm?.designation): null">
+                <ng-template #DMname>
+                  {{ dm?.employeeId?.name }}
+                </ng-template>
+                <div class="teamImg">
+                  <a [tooltip]="DMname" [routerLink]="['/profile/',dm?.employeeId?.id]">
+
+                    <ngx-avatar class="projectMemberImg" src="{{userImage}}{{dm?.employeeId?.picture?.url}}{{decached}}"
+                      name="{{ dm?.employeeId?.name}}" size="36" [routerLink]="['/profile/',dm?.employeeId?.id]">
+                    </ngx-avatar>
+                  </a>
+                </div>
+              </li>
+            </div>
+            <div *ngFor="let user of project.members">
+              <li class="projectMem" *ngIf="!designationCheck(user?.designation) ">
+                <ng-template #username>{{user?.employeeId?.name | titlecase}}</ng-template>
+                <a href="#" [tooltip]="user?.employeeId?.name"
+                  [routerLink]="['/profile/', user?.employeeId?.id | trim]">
+                  <ngx-avatar src="{{userImage}}{{user?.employeeId?.picture?.url}}{{decached}}"
+                    name="{{user?.employeeId?.name |name}}" size="36"
+                    [routerLink]="['/profile/', user?.employeeId?.id | trim]"></ngx-avatar>
+                </a>
+              </li>
+            </div>
+          </ul>
+          <!-- .. end W-Faved-Page -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

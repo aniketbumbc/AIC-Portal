@@ -1,0 +1,10 @@
+<div class="simpleShadow card-body">
+  <h5 class="cardTitle card-title text-left text-primary">Location Wise Profiles</h5>
+  <div class="locProfile" style="max-width: 100%;position: relative;">
+    <canvas baseChart height="350px" width="350px" [data]="locationsCount" [labels]="locationsNames"
+      [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend"
+      [colors]="pieChartColors">
+    </canvas>
+
+  </div>
+</div>

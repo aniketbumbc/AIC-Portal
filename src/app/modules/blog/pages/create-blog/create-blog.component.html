@@ -1,0 +1,242 @@
+<app-breadcrumbs page="Create blog" [title]="" [breadcrums]="breadCrumb"></app-breadcrumbs>
+<!--  Edit Blog-->
+<section class="section novi-background section-50 section-sm-50">
+  <div class="container">
+    <form [formGroup]="createBlogForm" (ngSubmit)="onSubmit()" #form id="hifiform">
+      <!-- blog title-->
+      <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <div class="form-group editBlog">
+            <label class="form-label-outside rd-input-label focus not-empty disabled titles" for="input-labels-1">Blog
+              Title</label><span class="color-red">*</span>
+            <input class="form-control" placeholder="Enter Title" name="title" id="input-labels-1" type="text" formControlName="name"
+              autocomplete="off" required minlength="2" />
+            <div *ngIf="
+              createBlogForm.controls['name'].invalid &&
+                (createBlogForm.controls['name'].dirty ||
+                createBlogForm.controls['name'].touched)
+              " class="color-red">
+              <div *ngIf="createBlogForm.controls['name'].errors.required">
+                Blog title is required.
+              </div>
+              <div *ngIf="createBlogForm.controls['name'].errors.minlength">
+                Name must be at least 2 characters long.
+              </div>
+              <div *ngIf="createBlogForm.controls['name'].errors.pattern">
+                Special characters not allowed except hyphen and underscore.
+              </div>
+              <div *ngIf="createBlogForm.controls['name'].errors?.unique">
+                Name already exists.
+              </div>
+            </div>
+            <br />
+          </div>
+        </div>
+        <br />
+      </div>
+
+      <!-- author selection -->
+      <div class="row">
+        <div class="col-md-12 col-lg-6 pr-3">
+          <div class="form-group editBlog editBlogAuthors">
+            <label class="form-label-outside rd-input-label focus not-empty disabled titles" for="input-labels-1">Select
+              Authors
+            </label><span class="color-red">*</span>
+            <br />
+            <div class="editAuthorMenu1">
+              <ng-select [items]="tempBlogData" bindLabel="name" placeholder="Select author name" multiple="true"
+                formControlName="authors" (search)="onSearch($event)">
+              </ng-select>
+              <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-menu-down authorMenu"></span>
+            </div>
+            <div
+              *ngIf="!createBlogForm.controls['authors'].valid && (createBlogForm.controls['authors'].dirty || createBlogForm.controls['authors'].touched)"
+              class="color-red">
+              <div *ngIf="createBlogForm.controls['authors'].errors.required">
+                Author name is required.
+              </div>
+            </div>
+            <br />
+          </div>
+        </div>
+        <br />
+        
+
+        <!-- COA -->
+        <div class="col-md-12 col-lg-6">
+          <div class="form-group editBlog editBlogAuthors">
+            <label class="form-label-outside rd-input-label focus not-empty disabled titles" for="input-labels-1">Center
+              of Excellence</label><span class="color-red">*</span>
+            <br />
+            <div class="coaMenu">
+              <ngx-select-dropdown tab-index="0" [config]="configCOA" [multiple]="false" [options]="getCoe"
+                formControlName="coes" class="dropCategory" [(ngModel)]="coeName">
+              </ngx-select-dropdown>
+              <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-menu-down authorMenu"></span>
+            </div>
+            <div *ngIf="
+            createBlogForm.controls['coes'].invalid &&
+            (createBlogForm.controls['coes'].dirty ||
+             createBlogForm.controls['coes'].touched)" class="color-red">
+              <div *ngIf="createBlogForm.controls['coes'].errors.required">
+                Center of Excellence is required.
+              </div>
+            </div>
+            <br />
+          </div>
+        </div>
+      </div>
+
+      <!-- thumbnail -->
+      <div class="row">
+        <div class="col-md-12 col-lg-6">
+          <div class="form-group editBlog">
+            <label class="form-label-outside rd-input-label focus not-empty titles" for="input-labels-1">Choose
+              Thumbnail</label>
+            <span class="color-red">*</span>
+            <br />
+            <label class="hoverable editBlogThumbnail" for="fileInput">
+              <input type="file" #fileInputs id="fileInput" name="files" (change)="onSelectFile($event)"
+                accept='image/*'>
+              <input type="hidden" name="fileHidden" id="thumb"/><!-- formControlName="thumbnail"  -->
+              <img [src]="
+                    url ? url : '/assets/images/thumbnails/Accion-DefaultBlog.png' " alt="Breeze"/>
+              <div class="hover-text">Choose File</div>
+            </label>
+            <button *ngIf="url" type="button" class="close remove" (click)="remove()" aria-label="Close">
+              <span class="removeImage" aria-hidden="true">&times;</span>
+            </button>
+            <br />
+            <div *ngIf="!url" class="color-red">{{responseMsg}}</div>
+          </div>
+        </div>
+        <br />
+      </div>
+
+      <!-- blog details -->
+      <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <div class="form-group editBlog">
+            <label class="form-label-outside rd-input-label focus not-empty disabled titles" for="input-labels-1">Blog
+              Details</label><span class="color-red">*</span>
+            <br />
+            <textarea class="form-control form-control-has-validation form-control-last-child blogDetails"
+              id="blogdetails" (focusout)="suggestTags($event)" formControlName="description" data-constraints="@Required" required></textarea>
+            <br />
+            <div
+              *ngIf="createBlogForm.controls['description'].invalid && (!createBlogForm.controls['description'].pristine || createBlogForm.controls['description'].dirty || createBlogForm.controls['description'].touched)"
+              class="color-red">
+              <div *ngIf="createBlogForm.controls['description'].errors.required">
+                Blog details is required.
+              </div>
+              <div *ngIf="createBlogForm.controls['description'].errors.maxlength">
+                Use Details for a longer introduction but typically not more than 200 words
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tagline -->
+      <div class="row">
+        <br />
+        <!-- blog Tags -->
+        <div class="col-md-12 col-lg-12">
+          <div class="form-group editBlog">
+            <label class="form-label-outside rd-input-label focus not-empty disabled titles"
+              for="input-labels-1">Tags</label>
+            <span class="color-red">*</span>
+            <tag-input formControlName="tags" [separatorKeyCodes]="[9]" (onAdd)="onItemAdded($event)" blinkIfDupe='true'
+              theme='bootstrap' (onRemove)="onTagRemoved($event)" [(ngModel)]="tags">
+            </tag-input>
+            <div
+              *ngIf="createBlogForm.controls['tags'].invalid && (createBlogForm.controls['tags'].dirty || createBlogForm.controls['tags'].touched)"
+              class="color-red">
+              <div *ngIf="createBlogForm.controls['tags'].errors.required">
+                Tags are required.
+              </div>
+            </div>
+            <br />
+          </div>
+        </div>
+
+        <!-- Suggested tags -->
+        <div class="col-md-12 col-lg-12 text-left suggested-tags" *ngIf="visibleTags && visibleTags.length">
+          <span class="form-label-outside font-weight-bold">Suggested tags: </span>
+          <ng-container *ngFor="let tag of visibleTags">
+            <a *ngIf="tag" class="label-custom label-lg-custom label-rounded-custom label-primary tags mr-1 mb-1" (click)="addTag(tag)">
+              {{ tag }}
+            </a>
+          </ng-container>
+        </div>
+      </div>
+      <br />
+      <!-- Category  -->
+      <div class="row">
+        <div class="col-md-12 col-lg-6">
+          <div class="form-group editBlog selectCat">
+            <label class="form-label-outside rd-input-label focus not-empty disabled titles"
+              for="input-labels-1">Choose Category</label><span class="color-red">*</span>
+            <br />
+            <div class="row group-sm">
+              <div class="col-md-12 col-lg-12 catSelection">
+                <div class="custom-control custom-checkbox category pl-0" [hidden]="categories.length === 0">
+                  <label class="label-container" formArrayName="categories"
+                    *ngFor="let order of createBlogForm['controls']['categories']['controls']; let i = index">
+                    <div class="catlabeldiv">
+                      <input name="checkInput" id="checkInput" class="checkmark" type="checkbox" [formControlName]="i">
+
+                      <span class="checkmark"></span>
+                    </div>
+                    {{categories[i].category| titlecase}}
+                  </label>
+
+                </div>
+                <div *ngIf="createBlogForm.controls['categories'].dirty && createBlogForm.controls['categories'].invalid" class="color-red">Please choose a category
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <br />
+        <!-- Embed URL -->
+        <div class="col-md-12 col-lg-6">
+          <div class="form-group editBlog">
+            <label class="form-label-outside rd-input-label focus not-empty disabled titles" for="input-labels-1">Embed
+              </label><span class="color-red">*</span>
+            <span class="uploadURL">
+              <a href="https://support.google.com/docs/answer/183965?hl=en&visit_id=636917750282138745-2381022383&rd=1"
+                target="_blank">How to upload?</a>
+            </span>
+            <br />
+            <input autocomplete="off" class="form-control" placeholder="Enter Embed" id="input-labels-1" type="text"
+              formControlName="embeddedUrl" required />
+            <div
+              *ngIf="createBlogForm.controls['embeddedUrl'].invalid && (createBlogForm.controls['embeddedUrl'].dirty || createBlogForm.controls['embeddedUrl'].touched)"
+              class="color-red">
+              <div *ngIf="createBlogForm.controls['embeddedUrl'].errors.required">
+                Embedded url is required.
+              </div>
+              <div
+                *ngIf="createBlogForm.controls['embeddedUrl'].value && createBlogForm.controls['embeddedUrl'].invalid">
+                Enter a valid Embed.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- save cancel button -->
+      <div class=" text-center group-sm text-xl-center section-50">
+        <button class="btn btn-primary mt-0" type="submit"
+          [disabled]="!createBlogForm.valid || files.length == 0">
+          Save Blog
+        </button>
+        <a class="mt-0" [routerLink]="['/blog']">
+          <button class="btn btn-danger" type="button">Cancel</button>
+        </a>
+      </div>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+<app-breadcrumbs
+  page="Skills Matrix"
+  [breadcrums]="breadCrumb"
+></app-breadcrumbs>
+<section
+  class="section novi-background section-50 section-sm-50 fixed-min-height "
+>
+  <div class="container" *ngIf="skillsArray">
+    <app-skill-matrix
+      class="section-20"
+      [skillData]="skillsArray"
+      [userSkills]="skillsArray"
+      [pageEditableInfo]="true"
+    >
+    </app-skill-matrix>
+  </div>
+</section>

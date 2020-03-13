@@ -1,0 +1,13 @@
+<div class="container">
+  <div *ngFor="let item of cardData; let i = index">
+    <div class="round circular-div">
+      <input
+        type="checkbox"
+        id="{{ i }}"
+        value="{{ i }}"
+        (click)="queryOnClick(item.displayValue)"
+      />
+      <label for="{{ i }}"> {{ item.displayValue }} </label>
+    </div>
+  </div>
+</div>

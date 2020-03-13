@@ -1,0 +1,174 @@
+@import '~mixin.scss';
+@import '~variables.scss';
+.simpleShadow {
+  box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.15);
+  padding: 15px 15px;
+  display: flex;
+  min-height: 450px;
+  flex-direction: column;
+}
+.title1 {
+  font-size: 16px;
+  font-weight: 600;
+  font-style: initial;
+  text-align: left;
+  // display: flex;
+  justify-content: flex-start;
+  float: left;
+}
+.cardTitle {
+  font-weight: 600;
+  margin-top: 0px !important;
+}
+.cardTitle,
+.teamImg {
+  text-align: left;
+}
+.teamImg {
+  display: flex;
+  justify-content: flex-start;
+}
+.list-flex {
+  display: flex;
+  align-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+  li {
+    margin-bottom: 5px;
+  }
+}
+.authorList {
+  padding: 0;
+  justify-content: left;
+
+  li {
+    margin-left: -10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    .box-comment-img {
+      width: 45px;
+      height: 45px;
+      border: 1px solid $secondary;
+    }
+  }
+}
+
+.alignProfile {
+  position: relative;
+  display: flex;
+  // padding: 6px;
+  .newjImg {
+    // text-align: center;
+    // float: left;
+    // margin: 20px;
+    // justify-content: flex-start;
+    margin:15px;
+    outline: #ffffff;
+    cursor: pointer;
+      @include transition(all, 0.5s, linear);
+      &:hover {
+        @include scale(1.1);
+      }
+  }
+  .newjInfo {
+    justify-content: flex-end;
+    text-align: left;
+    margin: 10px;
+    float: left;
+    padding-left: 15px;
+    .newpID,
+    .newName,
+    .newDesg,
+    .projAssigned {
+      margin: 4px;
+      display: flex;
+      text-align: left;
+      font-size: 13px;
+      list-style: none;
+      
+    }
+    a {
+      text-decoration: none!important;
+      color:$link !important;
+    }
+    .newName, .newpID {
+      font-weight: 600;
+      font-size: 18px;
+    }
+  }
+}
+
+::ng-deep .newjImg .avatar-container {
+  outline: none;
+}
+ 
+::ng-deep .btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #ffffff;
+  background-color: lighten(#34905c, 15%) !important;
+  border-color: lighten(#34905c, 15%) !important;
+}
+::ng-deep .authorList .tooltip {
+  opacity: 1;
+}
+::ng-deep .tooltip-inner {
+  background-color: #42b574;
+  color: #fff;
+  ::ng-deep .authorList .tooltip {
+    opacity: 1;
+  }
+}
+::ng-deep .tooltip.top .tooltip-arrow:before,
+::ng-deep .tooltip.top .tooltip-arrow {
+  border-top-color: #42b574;
+}
+.showBtn {
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  a {
+    margin-top: 5px !important;
+  }
+}
+.pDesc {
+  font-size: 13px;
+  max-width: 100%;
+  height: 45px;
+  margin: 10px auto;
+  line-height: 1.2;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pDesc:after {
+  content: '...';
+}
+.statusText {
+  display: flex;
+  justify-content: flex-end;
+  float: right;
+  text-transform: capitalize;
+  border-radius: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 77px;
+  height: 18px;
+  margin-top: 14px;
+}
+
+@media (max-width: 1280px) {
+  // .simpleShadow {
+  //   min-height: 438px;
+  // }
+}
+.docTitle {
+  cursor: pointer;
+  color: $theme1 !important;
+  text-decoration: none;
+}

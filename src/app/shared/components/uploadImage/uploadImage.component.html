@@ -1,0 +1,50 @@
+<div class="imgDiv">
+  <div class="userProfilePhoto">
+    <img [src]="imageUrl ? imageUrl : 'assets/images/users/DefaultUser-2.png'" />
+  </div>
+  <div class="camIcon">
+    <span class="icon novi-icon text-middle mdi mdi-camera icon-xxs cameraIcon" data-toggle="modal"
+      data-target="#edit-widget-modal-confirm">
+    </span>
+  </div>
+</div>
+<!-- open modal for upload Image -->
+<div class="landing-item">
+  <div class="modal fade modalProject" id="edit-widget-modal-confirm" tabindex="-1" role="dialog"
+    aria-labelledby="edit-widget-modal-confirm" aria-hidden="true">
+    <div class="modal-dialog window-popup edit-widget edit-widget-modal-confirm " role="document">
+      <div class="modal-content">
+        <div class="modal-header modalTitle">
+          <label class="titles"><b>Edit Profile Photo</b></label>
+          <span class="icon novi-icon icon-xxs mdi close mdi-close closeIcon" data-dismiss="modal"
+            aria-label="Close"></span>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col">
+              <div class="oriImg">
+                <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true"
+                  [aspectRatio]="1 / 1" [resizeToWidth]="200" [cropperMinWidth]="200" [onlyScaleDown]="true"
+                  [roundCropper]="true" format="png" outputType="file" (imageCropped)="imageCropped($event)"
+                  (loadImageFailed)="loadImageFailed()" (imageLoaded)="imageLoaded()">
+                </image-cropper>
+              </div>
+            </div>
+            <div class="col cropImg">
+              <img class="cropedImage"
+                [src]="croppedImageUrl? croppedImageUrl:imageUrl ? imageUrl :'assets/images/users/DefaultUser-2.png'" alt="Breeze"/>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer editProfileBtn">
+          <label class="btn btn-primary selectPhoto">Browse
+            <input type="file" id="demo" name="demo" (change)="fileChangeEvent($event)" accept='image/*' style="display: none;" />
+          </label>
+          <button class="btn btn-primary" [disabled]="!isShowCropper" data-dismiss="modal" (click)="savePhoto()">
+            Upload
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,153 @@
+  @import '~variables.scss';
+  @import '~mixin.scss';
+
+  .offset-top-30:first-child {
+    margin-top: 0;
+  }
+  header.p-4 {
+    padding-bottom: 0 !important;
+  }
+
+  .list-flex {
+    display: flex;
+    align-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+    li {
+      margin-bottom: 5px;
+    }
+  }
+  .spinLoader {
+    display:flex;
+    justify-content:center;
+    img{
+      height: 100px;
+    }
+  }
+
+  .list-icon {
+    display: inline-flex;
+    align-content: center;
+
+    .icon {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .post .post-title:hover {
+    color: $theme1;
+  }
+
+  .searchText em {
+    background-color: yellow;
+  }
+  .authorList {
+    padding: 0;
+    justify-content: left;
+
+    li {
+      margin-left: -10px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      .box-comment-img {
+        width: 45px;
+        height: 45px;
+        border: 1px solid $secondary;
+      }
+    }
+  }
+
+  ::ng-deep .btn-primary:hover,
+  .btn-primary:focus,
+  .btn-primary:active {
+    color: #ffffff;
+    background-color: lighten(#34905c, 15%) !important;
+    border-color: lighten(#34905c, 15%) !important;
+  }
+
+  .routeLink {
+    position: relative;
+    justify-content: flex-end;
+    display: flex;
+    .addBlog {
+      // left: 518px !important;
+      position: absolute;
+    }
+  }
+
+  ::ng-deep .authorList .tooltip {
+    opacity: 1;
+  }
+  ::ng-deep .tooltip-inner {
+    background-color: #42b574;
+    color: #fff;
+    ::ng-deep .authorList .tooltip {
+      opacity: 1;
+    }
+  }
+
+  ::ng-deep .tooltip.top .tooltip-arrow:before,
+  ::ng-deep .tooltip.top .tooltip-arrow {
+    border-top-color: #42b574;
+  }
+  .like-comment {
+    font-size: 14px;
+    a {
+      cursor: pointer;
+
+      &:hover,
+      &.active {
+        color: #55bbeb;
+      }
+    }
+    .box-comment-icon {
+      font-size: 14px;
+    }
+  }
+
+  .masonry-item {
+    margin-bottom: 25px;
+    transition-property: opacity !important;
+  }
+  ::ng-deep div#highlight span.highlightSpan {
+    color: red;
+  }
+  .fs40{
+    color: red;
+  }
+  ::ng-deep .searchText em{
+    background: yellow;
+  }
+  ::ng-deep .authorList {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 0px;
+    margin-top: 10px;
+      img {
+        border-radius: 50%;
+        box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.15);
+         @include transition(all, 0.5s, linear);
+
+          &:hover {
+            @include scale(1.1);
+          }
+      }
+    ngx-avatar {
+      display: inline-block;
+      cursor: pointer;
+
+      .avatar-content {
+        box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.15);
+        @include transition(all, 0.5s, linear);
+        &:hover {
+            @include scale(1.1);
+        }
+      }
+    }
+  }

@@ -1,0 +1,31 @@
+<div class="simpleShadow card-body">
+  <h5 class="cardTitle  card-title text-left text-primary">My Blogs</h5>
+
+  <div  class="centerPosition" *ngIf="checkBlogsData">
+    Looks like you have not yet written any blogs. It's easy. Just think of any technology area that interests you and get started on your first post.
+  </div>
+  
+  <div class="myBlogs offset-top-10" *ngFor="let blogsdata of blogsData">
+    <span *ngFor="let newblogsdata of blogsdata.blogs">
+    <div class="alignStatus">
+      <a class="docTitle" [routerLink]="['/blog/',newblogsdata?.id]">{{newblogsdata.name}}</a>
+    </div>
+    <div class="teamImg">
+      <ul class="list-flex authorList">
+        <li *ngFor="let authorsname of newblogsdata.authors">
+          <a [tooltip]="(authorsname.name) |titlecase" [routerLink]="['/profile/',authorsname.id]">
+            <ngx-avatar src="{{imageUrl}}{{authorsname.picture?.url}}{{decached}}"
+              name="{{authorsname.name | name }} " size="35"></ngx-avatar>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <p class="pDesc" [innerHTML]="newblogsdata?.description">
+
+    </p>
+  </span>
+  </div>
+  <div class="showBtn mt-auto offset-top-10" *ngIf="!checkBlogsData">
+    <a class="btn btn-primary" [routerLink]="['/blog/']">View All</a>
+  </div>
+</div>

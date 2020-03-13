@@ -1,0 +1,17 @@
+.novi-background {
+  border-top: 1px solid #f1f1f1;
+}
+.showBtn {
+  display: flex;
+  justify-content: center;
+}
+.card-title {
+  margin-bottom: 27px;
+}
+::ng-deep .btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #ffffff;
+  background-color: lighten(#34905c, 15%) !important;
+  border-color: lighten(#34905c, 15%) !important;
+}

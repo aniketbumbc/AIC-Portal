@@ -1,0 +1,44 @@
+.page{
+    position: relative;
+    ::ng-deep .black-overlay{
+        position: fixed;
+    }
+}
+
+.fr-wrapper.show-placeholder {
+    height: 300px !important;
+}
+::ng-deep p-toast {
+    .ui-toast .ui-toast-message {
+      color: #ffffff !important;
+    }
+  
+    .ui-toast .ui-toast-message.ui-toast-message-error {
+      border-radius: 10px;
+      background: #ff0000 !important;
+      
+    }
+  
+    .ui-toast .ui-toast-message.ui-toast-message-success {
+      border-radius: 10px;
+      background: #42b574 !important;
+    }
+  
+    .ui-toast .ui-toast-message-content {
+      font-size: 15px;
+      padding: 1.5em 1em 1em 1em;
+    }
+  
+    .ui-toast .ui-toast-icon {
+      top: 0.7em;
+    }
+  
+    .ui-toast .ui-toast-close-icon {
+      color: #ffffff !important;
+      font-size: 1em !important;
+    }
+  
+    .ui-toast .ui-toast-summary {
+      word-wrap: break-word;
+    }
+  }

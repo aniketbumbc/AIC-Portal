@@ -1,0 +1,61 @@
+.breadcrumbs {
+    padding: 5px 0;
+    background: #f7f7f7;
+  }
+  .spinLoaderBlog {
+    display:flex;
+    justify-content:center;
+    img{
+      height: 100px;
+    }
+  }
+  ::ng-deep .btn-primary:hover,
+  .btn-primary:focus,
+  .btn-primary:active {
+    color: #ffffff;
+    background-color: lighten(#34905c, 15%) !important;
+    border-color: lighten(#34905c, 15%) !important;
+  }
+  
+  .routeLink {
+    position: relative;
+    justify-content: flex-end;
+    display: flex;
+    // padding-right: 15px;
+    .addBlog {
+      // left: 518px !important;
+      position: absolute;
+    }
+  }
+  .filter {
+    text-align: left;
+  }
+
+.mt30 {
+  margin-top: 38px;
+  font-weight: bold;
+}
+
+::ng-deep .filter .ng-select.ng-select-single .ng-select-container {
+  height: 41px;
+}
+
+.fa-search {
+  color: #42b574;
+}
+
+.searchButton-disable {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.fontClass{
+  font-size: 16px;
+}
+::ng-deep .filterZ {
+  .ng-select-container,.ng-dropdown-panel {
+    z-index: 1!important;
+  }
+}

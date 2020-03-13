@@ -1,0 +1,60 @@
+::ng-deep .btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #ffffff;
+  background-color: lighten(#34905c, 15%) !important;
+  border-color: lighten(#34905c, 15%) !important;
+}
+.routeLink {
+  position: relative;
+  justify-content: flex-end;
+  display: flex;
+  // padding-left: 15px;
+  // padding-right:15px;
+  .addClient {
+    // left: 518px !important;
+    position: absolute;
+  }
+}
+
+.clientname {
+  color: lighten(#79ccf2, 5%) !important;
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+.recordFilter {
+  display: flex;
+  width: 100%;
+}
+.exportCSV {
+  justify-content: flex-start;
+}
+.showRecords {
+  margin-left: 10px;
+  padding: 5px;
+  width: 15%;
+  .records {
+    justify-content: center;
+    align-items: center;
+  }
+}
+.showMsg {
+  display: flex;
+  justify-content: space-evenly;
+}
+.filterRecords {
+  margin-left: auto;
+  justify-content: flex-end;
+  .search-text {
+    height: 30px;
+    position: absolute;
+    width: 21%;
+    right: 14px;
+  }
+  .form-control {
+    height: 42px !important;
+    font-weight: 500;
+    font-size: 14px;
+  }
+}

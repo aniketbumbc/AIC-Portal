@@ -1,0 +1,58 @@
+<app-breadcrumbs page="Clients" [breadcrums]="breadCrumb"></app-breadcrumbs>
+<section class="section novi-background section-50 section-sm-50 fixed-min-height">
+  <div class="container">
+    <div class="row" *ngIf="showStaticData">
+      <div class="col">
+        <a [routerLink]="['/client/create/']" class="routeLink" *ngIf="isAdmin">
+          <button class="btn btn-sm btn-primary btn-icon btn-icon-left addClient">
+            <span class="icon novi-icon icon-xxs mdi mdi-plus">
+            </span> Add Client
+          </button>
+        </a>
+        <br />
+        <div class="sectionClient">
+          <h3 class="card-title">Client Information</h3>
+          <hr class="divider bg-mantis" />
+          <div class="offset-md-top-20 showMsg">
+            <div class="recordFilter">
+              <!-- <div class="export">
+                <a [routerLink]="['/client/detail/']" class="exportCSV">
+                  <button class="btn btn-sm btn-primary btn-icon btn-icon-left">
+                    <span class="icon novi-icon icon-xxs mdi mdi-export">
+                    </span> Export to CSV
+                  </button>
+                </a>
+              </div> -->
+              <!-- <div class="filterRecords">
+                <div class="search-text ng-star-inserted"><input autocomplete="off"
+                    class="form-control ng-pristine ng-valid ng-touched" id="input-labels-1" name="search"
+                    placeholder="Filter by text...." type="text" ng-reflect-name="search">
+                </div>
+              </div> -->
+            </div>
+          </div>
+          <!-- <div class="offset-xl-2 col-xl-8"> -->
+          <!-- <table class="table table-custom stacktable large-only offset-top-20" data-responsive="true">
+              <tbody>
+                  <tr>
+                  <th>Client Name</th>
+                  <th>Executive Account Manager</th>
+                  <th>Location</th>
+                  </tr>
+                  <tr *ngFor="let client of clientData |paginate: {itemsPerPage:10,currentPage:p}">
+                  <td> <a class="clientname" [routerLink]="['/client/detail/',client.id]" target="_self">{{client.name}}</a>
+                  </td>
+                  <td>{{accountManagerName(client?.accountManagers)}}</td>
+                  <td> {{client.location}} </td>
+                  </tr>
+                  </tbody>
+          </table> -->
+          <!-- <pagination-controls (pageChange)="p=$event"></pagination-controls> -->
+          <!-- </div> -->
+          <ngx-web-grid [schema]='clData' (customEvent)="getClientDetails($event)"></ngx-web-grid>
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

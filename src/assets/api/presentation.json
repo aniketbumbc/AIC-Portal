@@ -1,0 +1,1885 @@
+{
+  "layout": null,
+  "user": {
+    "id": "chandesh-manjarekar",
+    "email": "chandesh.manjarekar@accionlabs.com",
+    "name": "Chandesh Manjarekar",
+    "role": "employee",
+    "authorized_role": "employee",
+    "iat": 1549458885,
+    "exp": 1549545285
+  },
+  "heading": "Resources",
+  "tagline": " in all categories by all authors",
+  "demos": [
+    {
+      "_id": "2F8ikC30Z8BI8Ust",
+      "title": "AngularJS",
+      "tagline": "Advanced Design Patterns and Best Practices",
+      "access": "employee",
+      "categories": "research",
+      "description": "AngularJS has become widely popular as a client-side MVC framework for building complex web applications. Accion Labs has used AngularJS in several different projects and products, and the findings in this document are based on this experience.",
+      "thumbnail": "/images/Logos/AngularJS.png",
+      "authors": "ashutosh-bijoor,jinto-jose,shailya-khwaja,rahil-shaikh",
+      "embedUrl": "https://docs.google.com/a/accionlabs.com/document/d/1q6MsNV3wY5VbQRGcpVC2u4frzmFzTMgG9MHqcbuiO5Y/pub?embedded=true",
+      "id": "angularjs-best-practices",
+      "project_tags": []
+    },
+    {
+      "_id": "BqvuAqsnLve502x8",
+      "title": "Emerging Technologies Landscape",
+      "tagline": "A Reference Chart",
+      "access": "guest",
+      "categories": "research",
+      "description": "The entire emerging technology landscape that Accion Labs has capabilities in, and specifically the Accion Innovation Center",
+      "thumbnail": "/images/Accion Labs Emerging Tech Landscape.png",
+      "authors": "ashutosh-bijoor,pramod-patil",
+      "slides": [
+        [
+          "home",
+          {
+            "title": "Emerging Technology Capabilties",
+            "subtitle": "Technology Landscape, Case Stories",
+            "version": "1.2",
+            "date": "10 Jan 2015"
+          }
+        ],
+        [
+          "@accion-intro",
+          {
+            "section": true
+          }
+        ],
+        [
+          "startsection"
+        ],
+        [
+          "etech",
+          {
+            "tech": "all",
+            "layer": "overview"
+          }
+        ],
+        [
+          "etech",
+          {
+            "tech": "all",
+            "layer": "ui"
+          }
+        ],
+        [
+          "etech",
+          {
+            "tech": "all",
+            "layer": "app"
+          }
+        ],
+        [
+          "etech",
+          {
+            "tech": "all",
+            "layer": "db"
+          }
+        ],
+        [
+          "etech",
+          {
+            "tech": "all",
+            "layer": "cloud"
+          }
+        ],
+        [
+          "etech",
+          {
+            "tech": "all",
+            "layer": "devops"
+          }
+        ],
+        [
+          "endsection"
+        ],
+        [
+          "title-content",
+          {
+            "sectionid": "java-tech-stack",
+            "title": "Java Technology Stack"
+          }
+        ],
+        [
+          "startsection"
+        ],
+        [
+          "etech",
+          {
+            "tech": "java",
+            "layer": "overview"
+          }
+        ],
+        [
+          "etech",
+          {
+            "tech": "java",
+            "layer": "ui"
+          }
+        ],
+        [
+          "etech",
+          {
+            "tech": "java",
+            "layer": "app"
+          }
+        ],
+        [
+          "etech",
+          {
+            "tech": "java",
+            "layer": "db"
+          }
+        ],
+        [
+          "etech",
+          {
+            "tech": "java",
+            "layer": "cloud"
+          }
+        ],
+        [
+          "etech",
+          {
+            "tech": "java",
+            "layer": "devops"
+          }
+        ],
+        [
+          "endsection"
+        ],
+        [
+          "end"
+        ]
+      ],
+      "id": "emerging-tech-landscape"
+    },
+    {
+      "_id": "NGm7uGNHt8fuXUSJ",
+      "title": "Protractor",
+      "tagline": "An End-to-end testing framework",
+      "access": "employee",
+      "categories": "research",
+      "description": "Through a simple story, this presentation emphasizes the benefits of using Protractor in an end-to-end testing scenario.",
+      "thumbnail": "/images/Logos/Protractor.png",
+      "authors": "jinto-jose",
+      "embedUrl": "/images/E2E/index.html#/",
+      "id": "end-to-end-testing"
+    },
+    {
+      "_id": "n8EQjb4fQpNGbSqZ",
+      "id": "accion-meetup-june-2015-part-1",
+      "title": "Accion Meetup - June 2015 - part 1",
+      "tagline": "The first Accion Meetup in Bangalore between Ramesh and Ashutosh",
+      "authors": "ashutosh-bijoor, ramesh-narasimhan",
+      "categories": "research",
+      "tags": "meetup, emerging technologies",
+      "thumbnail": "/uploads/accion-meetup-june-2015-part-1/accion-meetup-screenshot.png",
+      "access": "guest",
+      "description": "Accion Labs held its first meetup in the Bangalore campus. Ramesh Narasimhan, MD of Accion India and Ashutosh Bijoor, CTO had an informal chat and covered various topics including an overview of emerging technology landscape, encouraging innovation in Accion and the exciting plans of the new MD. ",
+      "embedUrl": "https://www.youtube.com/embed/WQl8PQIQAHo"
+    },
+    {
+      "_id": "wophUtMGE5uu39lf",
+      "id": "accion-meetup-june-2015-part-2",
+      "title": "Accion Meetup - June 2015 - Part 2",
+      "authors": "ashutosh-bijoor, ramesh-narasimhan",
+      "categories": "research",
+      "thumbnail": "/uploads/accion-meetup-june-2015-part-2/accion-meetup-screenshot.png",
+      "access": "guest",
+      "description": "Accion Labs held its first meetup in the Bangalore campus. Ramesh Narasimhan, MD of Accion India and Ashutosh Bijoor, CTO had an informal chat and covered various topics including an overview of emerging technology landscape, encouraging innovation in Accion and the exciting plans of the new MD",
+      "embedUrl": "https://www.youtube.com/embed/w4D33BPUtNc"
+    },
+    {
+      "_id": "7xpn5ZyeToLfweTd",
+      "title": "Data Lineage and Data Central",
+      "tagline": "A Proposed ETL Management Platform",
+      "access": "employee",
+      "categories": "platforms",
+      "description": "Data Lineage is a platform for managing, tracking and monitoring Data Transformations. Data Central is a Data Governance / Data Management Platform.",
+      "thumbnail": "/images/BIDW/DataLineage DataCentral.png",
+      "authors": "aswani-karthik,sreeni-ra",
+      "embedUrl": "https://docs.google.com/a/accionlabs.com/presentation/d/197fAKUCtmcQX6XuQ_CvNvxqxilanz6ePiR0cTpgpFYw/embed?start=false&loop=false&delayms=3000",
+      "id": "data-lineage-data-central-concept-note"
+    },
+    {
+      "_id": "N4pMRORO8GQ5x9j9",
+      "title": "Semantic Content Management Systems",
+      "tagline": "A Concept Note",
+      "access": "employee",
+      "categories": "research",
+      "description": "How semantic engines can enhance the capabilities of a content management system by providing more intelligent metadata",
+      "thumbnail": "/images/Semantic CMS/Ontology.png",
+      "authors": "ashutosh-bijoor",
+      "embedUrl": "https://docs.google.com/a/accionlabs.com/document/d/15PIOHJM8zBl58xPzbcQWOpmRDLsyYem4VFButtb12So/pub?embedded=true",
+      "id": "semantic-content-management-concept-note"
+    },
+    {
+      "_id": "WzHdK6FVnz6VMi47",
+      "title": "Big Data Analytics",
+      "tagline": "A Concept Note",
+      "access": "employee",
+      "categories": "research",
+      "description": "A platform",
+      "thumbnail": "/images/Polyglot Persistence/Typical Polyglot Persistence Application.png",
+      "authors": "ashutosh-bijoor,arun-vasudevan,jane-poojari",
+      "embedUrl": "https://docs.google.com/a/accionlabs.com/presentation/d/1UyNOlsIOdXHQFQuBOFwZ88Gv0jKDUn0mWXoYVQkQ3Y0/embed?start=false&loop=false&delayms=3000",
+      "id": "big-data-analytics-concept-note"
+    },
+    {
+      "_id": "aHDzTL8zSOeOOoeS",
+      "title": "Cloud Application Architecture",
+      "tagline": "An Evolutionary Study",
+      "access": "guest",
+      "categories": "research",
+      "description": "Software applications are being designed to run on the cloud - private, hybrid or public. This demo provides broad guidelines for architecting applications for the cloud",
+      "thumbnail": "/images/Cloud Computing Acronyms.png",
+      "authors": "ashutosh-bijoor,raghuraman-ramaswamy,pramod-patil",
+      "slides": [
+        [
+          "home",
+          {
+            "title": "Architecture for Cloud Applications",
+            "subtitle": "Evolution, Technology Selection, Development Approach",
+            "version": "1.0",
+            "date": "18 Jan 2015"
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Overview",
+            "bullets": [
+              "-Cloud Applications",
+              "--Benefits, Layers, Components",
+              "-Evolution of web architecture",
+              "--From monolithic applications to event-driven services",
+              "-Technology Landscape",
+              "--Technology options and basis for selection"
+            ]
+          }
+        ],
+        [
+          "startsection"
+        ],
+        [
+          "title-content",
+          {
+            "sectionid": "cloud-computing-acronyms",
+            "title": "Cloud Applications",
+            "image": "Cloud Computing Acronyms.svg"
+          }
+        ],
+        [
+          "title-content",
+          {
+            "sectionid": "cloud-computing-benefits",
+            "title": "Cloud Computing Benefits",
+            "image": "Cloud Computing Benefits.svg"
+          }
+        ],
+        [
+          "title-content",
+          {
+            "sectionid": "cloud-computing-delivery",
+            "title": "Accelerate Delivery Time",
+            "image": "Cloud Software Delivery.svg"
+          }
+        ],
+        [
+          "title-content",
+          {
+            "sectionid": "cloud-computing-elasticity",
+            "title": "Reduce IT Infrastructure Costs",
+            "image": "Cloud Computing Elasticity.svg"
+          }
+        ],
+        [
+          "title-content",
+          {
+            "sectionid": "cloud-computing-innovation",
+            "title": "Increasing Innovation Capacity",
+            "image": "IT Capacity Enhancement.svg"
+          }
+        ],
+        [
+          "endsection"
+        ],
+        [
+          "architecture"
+        ],
+        [
+          "end"
+        ]
+      ],
+      "id": "cloud-apps-architecture"
+    },
+    {
+      "_id": "z2YKH8iODXWz3bRc",
+      "title": "Introduction to Accion Labs",
+      "access": "guest",
+      "categories": "corporate",
+      "description": "Introduction to Accion Labs as a company, including technology focus, head count, engagement models and investor support",
+      "thumbnail": "/images/Accion Labs Logo.png",
+      "authors": "kinesh-doshi,pramod-patil,ashutosh-bijoor",
+      "slides": [
+        [
+          "title-content",
+          {
+            "title": "Accion Labs Introduction",
+            "bullets": [
+              "-Focussed on Emerging Technologies",
+              "--Service oriented, component based architecture, cloud hosted",
+              "--Over 650 employees worldwide, with expertise in emerging technologies",
+              "-Range of collaborative and flexible engagement models",
+              "--New development, maintenece, support, QE/Testing, Reverse/Re-engineering",
+              "--Projects, Co-development, Turn-key Development, Partnerships, Extended teams",
+              "-Well Established",
+              "--Offices in Pittsburgh, Santa Clara, Scottsdale, Atlanta, London, Bangalore, Mumbai, Singapore, Malaysia",
+              "--Financially stable, strong PE backing - Basil Partners, Anchor Group",
+              "-IP in key technology areas",
+              "--Frameworks, tools, technology evaluation matrices, process guidelines",
+              "-Strong experience with Agile delivery and its real life applications"
+            ]
+          }
+        ]
+      ],
+      "id": "accion-intro"
+    },
+    {
+      "_id": "d4qoHo2VgSOinNFj",
+      "_firstCreatedBy": "anand-menon",
+      "_firstCreatedTimestamp": "2015-12-14T06:39:50+00:00",
+      "_lastUpdatedBy": "anand-menon",
+      "_lastUpdatedTimestamp": "2015-12-14T06:39:50.000Z",
+      "abstract": "With the emergence of Open Source relational databases as well as a plethora of NoSQL database options,, enterprises are actively seeking to leverage the lower costs and higher flexibility and scalability of these new options and moving away from proprietary technologies that locked them into endless upgrade cycles and high licensing costs.\r\nAccion Labs has successfully helped clients to migrate their data out of such proprietary databases into open source database platforms including relational databases as well as NoSQL databases. Further, Accion Labs has provided ongoing technical support for maintenance and administration of such databases, with the required service level guarantees that enterprises need for mission critical applications.\r\nHowever, the decision to migrate away from a proven database is not easy, and enterprises often stick to an existing  compromise to avoid the complex task of migration to a new alternative. This white paper attempts to address some of the concerns that enterprises have in adopting such open source alternatives, and also provides some case studies to demonstrate successful migration by various enterprises.",
+      "access": "employee",
+      "authors": [
+        "aswani-karteek",
+        " ashutosh-bijoor",
+        " anand-menon"
+      ],
+      "categories": "case-stories",
+      "description": "A technical white paper that illustrates with case studies, how enterprises can migrate away from proprietary databases with huge licensing costs and endless upgrade cycles to a mix of open source databases - both relational as well as NoSQL",
+      "embedUrl": "https://docs.google.com/a/accionlabs.com/document/d/1TzW3LT2vrplGaRkmXhUXiZwRNHGhNcNmku8R_J03sIo/pub?embedded=true",
+      "id": "embracing-open-source-databases",
+      "slides": [],
+      "tagline": "A technical white paper",
+      "thumbnail": "/uploads/embracing-open-source-databases/open-source.png",
+      "title": "Embracing Open Source Databases",
+      "type": "embedded"
+    },
+    {
+      "_id": "ZW9Gw4lPhXM9iOAW",
+      "_firstCreatedBy": "ashutosh-bijoor",
+      "_firstCreatedTimestamp": "2016-02-16T17:02:25+00:00",
+      "_lastUpdatedBy": "ashutosh-bijoor",
+      "_lastUpdatedTimestamp": "2016-02-16T17:02:25.000Z",
+      "access": "guest",
+      "authors": [
+        "anubha-dadhich"
+      ],
+      "categories": "case-stories,platforms",
+      "embedUrl": "https://docs.google.com/presentation/d/1JvpN1rjn8qQnYfEQ8Jf-OKrFC4rK_sxxR6lLRquW3HE/embed?start=false&loop=false&delayms=3000",
+      "id": "accion-qe-automation-capabilities",
+      "slides": [],
+      "thumbnail": "/uploads/accion-qe-automation-capabilities/Accion-Symbol.png",
+      "title": "Accion QE Automation Capabilities",
+      "type": "embedded"
+    },
+    {
+      "_id": "n7C41gHGo3yLtLeM",
+      "_firstCreatedBy": "anand-menon",
+      "_firstCreatedTimestamp": "2016-04-19T11:24:44+00:00",
+      "_lastUpdatedBy": "anand-menon",
+      "_lastUpdatedTimestamp": "2016-04-19T11:24:44.000Z",
+      "abstract": "",
+      "access": "guest",
+      "authors": [
+        "hemesh-thakkar"
+      ],
+      "categories": "research",
+      "description": "This presentation provides insights and benefits associated with Scrum and why it is turning to be a popular iterative and incremental agile software development framework for managing product development nowadays.",
+      "embedUrl": "https://docs.google.com/a/accionlabs.com/presentation/d/1ZyrcEnBr7PV8QzehwXFQeiMxWbCqqdg7T1XCtPuxnag/preview",
+      "id": "agile_scrum",
+      "slides": [],
+      "tagline": "Software Development Framework",
+      "tags": "",
+      "thumbnail": "/uploads/agile_scrum/Agile-Scrum.png",
+      "title": "Agile & Scrum",
+      "type": "embedded"
+    },
+    {
+      "_id": "sVWF2g5fpbHZ906k",
+      "thumbnail": "/uploads/ReS/reengineer.png",
+      "id": "ReS",
+      "title": "Accion's Re-engineering Services",
+      "tagline": "Capability Presentation",
+      "authors": [
+        "ashutosh-bijoor"
+      ],
+      "categories": "research",
+      "tags": "",
+      "access": "guest",
+      "description": "This presentation provides an overview on Accion's strengths and capabilities in the Re-engineering services space.",
+      "abstract": "",
+      "type": "slides",
+      "embedUrl": "",
+      "slides": [
+        [
+          "home",
+          {
+            "title": "An Introdution to Accion's Re-Engineering Services",
+            "version": "1.0",
+            "date": "12 Oct 2015"
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Accion Labs Overview",
+            "bullets": [
+              "-A technology services firm focused on working with Technology Firms in the emerging technology space such as – Web 2.0, Mobile, Cloud/SaaS, open-source and BI/DW",
+              "-Full product lifecycle services – new development, maintenance, QA, re-engineering",
+              "-Global presence – Pittsburgh, Atlanta, Santa Clara, Bangalore, Mumbai, Malaysia,London & Singapore",
+              "-Management with strong Execution-background and Outcome-focus",
+              "-Profitable, 25+ steady clients, Strong PE backing - Basil Partners"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Accion Labs Overview (contd..)",
+            "bullets": [
+              "-Deep understanding of the priorities of technology-based firms",
+              "-A range of collaborative and flexible engagement models",
+              "--Near-shore/Offshore EDC, Project/Co-Development, Staff Augmentation",
+              "-IP in key technology areas – frameworks, tools, evaluation matrix, process guidelines,checklists, etc",
+              "Strong experience with Agile delivery and its real-life applications"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Our Services",
+            "image": "Res-Services.png"
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Our productization experience & its benefits",
+            "bullets": [
+              "-Experience of building commercial software (SaaS, e-Business, platform software and business apps) in several domains/verticals: BFSI, SCM, EAM, etc.",
+              "-Worked with 40+ product firms such as platform vendors (Progress, Microsoft, etc), ISVs (Jenzabar, Blackboard), SaaS firms (Comscore, Coates Analytics), heath care companies (Alere, Healthedge, Vetstreet, Doctor’s first), e-business firms (Google, Amazon, Zappos, Churchill Downs, Lifelock, etc), social media (Facebook, NY Times, etc)",
+              "-Experience of building solutions that are: Configurable, customizable, Data-driven",
+              "-Comprehensive tools, frameworks, components for solution delivery and management"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Our productization experience & its benefits (contd..)",
+            "bullets": [
+              "Strong knowledge of leading tech-trends such as:",
+              "--Social Media, SaaS enablement, Cloud computing, SOA enablement",
+              "Benefits of productization philosophy to our clients:",
+              "-Innovation”-centric requirements process as against “user”-driven",
+              "-Feature prioritization based on real ROI",
+              "-Architectures that are configurable, data-driven and rule-driven",
+              "-Consumer-facing application development – rich UI, cross-platform support",
+              "-Formal testing processes with heavy reliance on automation",
+              "-Agile and Test Driven Development"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Re-engineering Experience and Methodology"
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Re-engineering Experience",
+            "bullets": [
+              "Experience with Re-engineering / Re-platforming small and large applications and software products",
+              "Successfully re-engineered over 15+ products/apps",
+              "Significant experience with Platform Modernization",
+              "-Legacy (VMS, DB2, mod_perl, etc.) -> Java/.Net/PHP",
+              "-VB/C++/COM -> .Net",
+              "-PHP -> Java",
+              "-Client Server Applications -> Web / Cloud & SaaS",
+              "-Legacy Java -> Modern Java",
+              "-Progress 4GL, Delphi -> .Net etc."
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Re-engineering Experience (contd..)",
+            "bullets": [
+              "Experience with Database Migration from one DB platform to another (Oracle, SQL, MySQL, DB2, PostgreSQL, Progress, etc.)",
+              "Experience migrating from one BI/Reporting platform to another (Jasper, JReports, BIRT, SSRS, Cognos, BO, Crystal, etc.)"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Determinants of the Re-engineering Approach",
+            "bullets": [
+              "-Size of the system/product",
+              "--Screens, Data model, Reports, Interfaces, Data",
+              "-Source and target platform",
+              "-Goals of the re-engineering",
+              "--Performance, scalability, configurability, etc",
+              "-Extent of UI changes",
+              "--Same UI, same with architectural enhancements (JSF, Ajax), or completely different",
+              "-Approach of application development",
+              "--OOAD, MVC, SOA, MDA, MDD, etc."
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Determinants of the Re-engineering Approach (contd..)",
+            "bullets": [
+              "-Type of framework deployedt",
+              "--Spring, Hibernate, Struts, Velocity, etc",
+              "-Use of other components",
+              "--BPM, BRMS,BAM, EAI, BI, etc",
+              "-Delivery methodology adopted",
+              "--Agile, RUP, Watergile, etc",
+              "-Extent of Functional Changes to the system/product"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Determinants of the Re-engineering Approach (contd..)",
+            "bullets": [
+              "-Extent of configurability and customizability expected",
+              "-Extent of changes to the Data Model",
+              "-Extent of Reuse from old to new",
+              "-Third-party components in old and new platform",
+              "Extent of QA activities",
+              "-Can old test plans be reused? Can old test data, test scripts be reused?"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Key Design/Approach Considerations",
+            "bullets": [
+              "-Phasing strategy",
+              "--By module, by layer, by user-type, by market, etc",
+              "-Reuse strategy",
+              "--Extent of desired/required reuse",
+              "-Presentation prototype",
+              "--Do we need a presentation prototype to guide UI design or the old is a good representation?",
+              "-Change management",
+              "--How do we sync the ongoing changes to the legacy system to the in-progress new system?"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Key Design/Approach Considerations (contd..)",
+            "bullets": [
+              "-Architecture validation",
+              "--Does the architecture need validation in the new environment?",
+              "-Reference Architecture",
+              "--Develop a reference architecture before any “real” development occurs",
+              "-Interim integration strategy",
+              "--Bridge between “old” and “new” "
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Key Design/Approach Considerations (contd..)",
+            "bullets": [
+              "-Core object management strategy (in the interim)",
+              "--e.g. Requisition, Order, Invoice, etc",
+              "-Master data management strategy",
+              "--e.g. Customer, Supplier, Product Type, etc",
+              "-Data migration strategy",
+              "--Automated vs manual vs mixed, one-time and ongoing",
+              "-Best Practices",
+              "--Extensible Architecture, Prevent Silos, Avoid vendor lock-in, etc"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Accion's Re-engineering Approach",
+            "image": "reeng_approach.png"
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Initial Planning",
+            "bullets": [
+              "-Objective",
+              "--Size the effort and develop a high-level plan",
+              "-Activities",
+              "--Participate in product demos, architecture overview sessions",
+              "--Develop sizing worksheet and perform complexity analysis",
+              "--Conduct “envisioning” sessions to understand functional/technical changes",
+              "--Discuss phasing strategy and list/detail each iteration/wave and determine if it will be development or production milestone",
+              "-Milestones",
+              "--Environment setup complete, Effort Estimate complete, Plan complete"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Initial Planning (contd..)",
+            "bullets": [
+              "-Deliverables",
+              "--Current Product Overview – functionality, architecture, source code structure",
+              "--Re-engineering Vision Document – goal, scope, considerations, source/target",
+              "--Sizing worksheet – modules/interfaces/tables/data, size and complexity",
+              "--Effort Estimate (VER 1.0)",
+              "--Re-engineering Plan – participants, activities, waves/iterations, scope of each iteration, milestones"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Main Reverse Engineering",
+            "bullets": [
+              "-Objective",
+              "--Reverse engineer the main flow, navigation flow, key business rules, etc",
+              "-Activities",
+              "--Review the source code, data model to discover:",
+              "---Code structure",
+              "---Main flow",
+              "---Any functional or architectural pattern",
+              "----e.g. LOV management, Master Data Management",
+              "---Best practices being used",
+              "---Reusable components identified",
+              "-Milestone",
+              "--Reverse Engineering complete"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Main Reverse Engineering (contd..",
+            "bullets": [
+              "-Deliverables",
+              "--Feature/Use Case to Source Code Map",
+              "--Reverse Engineering document – findings, best-practices, reuse, etc"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Architecture Definition",
+            "bullets": [
+              "-Objective",
+              "--Develop/Document an Architecture Document for the system",
+              "-Activities",
+              "--Review/discuss architectural requirements of the system",
+              "--List all the core components of the architecture",
+              "---Programming platform, reporting platform, integration platform, BPM, etc",
+              "--Short-list alternative implementation approaches",
+              "--Evaluate alternative options and recommend final selection or the top two contenders",
+              "--Document the architecture"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Architecture Definition (contd..)",
+            "bullets": [
+              "-Milestone",
+              "--Architecture Definition complete",
+              "-Deliverables",
+              "--SAD – software architecture document (Version 1.0)",
+              "--Scripts for POC"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "POC Execution",
+            "bullets": [
+              "-Objective",
+              "--Develop, test and analyze the results of POC",
+              "-Activities",
+              "--Review the POC scripts and define Acceptance Criteria",
+              "--Setup POC environment (may require working with various vendors)",
+              "--Develop/setup/script POC logic, test results",
+              "--Review test results vis-à-vis Acceptance Criteria",
+              "-Milestone",
+              "--POC Results",
+              "-Deliverables",
+              "--POC Report"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Reference Architecture Development",
+            "bullets": [
+              "-Objective",
+              "--Develop a “standard” and “repeatable” development environment/guidelines for developers",
+              "-Activities",
+              "--Setup a standard Dev environment",
+              "--Design, Develop and Integrate all reusable components (either legacy,commercial or open-source)",
+              "--Develop a Reference Unit of Work",
+              "---Reference Page, Reference Service, Reference Report, Reference Interface",
+              "-Milestone",
+              "--Reference Architecture ready!"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Reference Architecture Development (contd..)",
+            "bullets": [
+              "-Deliverables",
+              "--Reference Architecture Document",
+              "---Development environment setup process",
+              "---Process of setting up “reusable” components (location, registration, etc.)",
+              "---Process of developing, maintaining, checking-in, deploying a standard unit of work"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Test Planning",
+            "bullets": [
+              "-Objective",
+              "--Develop a Test Strategy and Test Plan for the entire product release",
+              "-Activities",
+              "--Review existing test plans, test cases, test scripts",
+              "--Determine the extent of reuse in the above units",
+              "--Determine the extent of automated vs manual testing",
+              "--Define test data generation strategy",
+              "--Defect tracking and resolution process",
+              "-Milestone",
+              "--Test Plan ready!",
+              "-Deliverables",
+              "--Test Plan",
+              "---Desired types of testing, testing approach, test data creation approach, etc."
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Iteration/Wave – Requirements/Design/Development/Test",
+            "bullets": [
+              "-Objective",
+              "--Cycle each wave/iteration through the entire SDLC/PDLC",
+              "-Activities",
+              "--Detail Requirements for each of the UOW (unit-of-work) in this iteration",
+              "--Enhance Data Model to meet the needs of this iteration",
+              "--Design, Develop, Unit Test, Integration Test UOW",
+              "--In-Parallel Develop the Test Cases, Test Scripts, etc for this iteration",
+              "-Milestone",
+              "--Req ready, Design ready, Testing complete, Iteration complete"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Iteration/Wave – Requirements/Design/Development/Test (contd..)",
+            "bullets": [
+              "-Deliverables",
+              "--Requirements Document (use cases, story boards, SRS, etc",
+              "--Design Model (enhanced Object Model, Data Model)",
+              "--Code",
+              "--Test results"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Data Management Track",
+            "bullets": [
+              "-Objective",
+              "--To support development of data model and data migration strategy/scripts",
+              "-Activities",
+              "--Understand the existing data model",
+              "--Build core data model",
+              "--Support evolution of the data model for each waves of development",
+              "--Version control each DDL scripts",
+              "--Support the setup and configuration of test data",
+              "--Develop a data migration strategy",
+              "--Develop and test data migration scripts"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Data Management Track (contd..)",
+            "bullets": [
+              "-Milestone",
+              "--Core Data model ready!",
+              "--Data migration scripts complete",
+              "-Deliverables",
+              "--Core Data Model",
+              "--Ongoing Data Model revisions",
+              "--Data Migration Strategy document",
+              "--Data Migration Scripts",
+              "--Test and Migrated Data"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Environment Management Track",
+            "bullets": [
+              "-Objective",
+              "--To support development and management of the dev, test and production environment",
+              "-Activities",
+              "--Setup DEV, TEST, QA, STAGING and PROD environments",
+              "---Developer desktops, app servers, database servers",
+              "--Setup/manage version control, test management, issue tracking, developer Wiki, document management, etc",
+              "--Assist in the automation common activities",
+              "---Check-in/Check-out scripts, Build scripts, Deploy scripts, etc"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Environment Management Track (contd..)",
+            "bullets": [
+              "-Milestone",
+              "--DEV environment ready, TEST ready, PROD ready",
+              "-Deliverable",
+              "--Environment Setup Document – one single integrated document",
+              "--Setup Checklist"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Documentation Track",
+            "bullets": [
+              "-Objective",
+              "--To support documentation needs of the re-engineering initiative",
+              "-Activities",
+              "--Review existing documentation and determine extent of reuse",
+              "--Understand desired types and scope of documents",
+              "---User guides",
+              "---CBTs",
+              "---Installation/Maintenance manuals",
+              "---User cheat sheets",
+              "--Setup development environment",
+              "---Illustrator, Photoshop, etc"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Documentation Track (contd..)",
+            "bullets": [
+              "-Milestone",
+              "--Concept ready, Document ready",
+              "-Deliverable",
+              "--Templates, Samples and Copies of each document"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Accion Re-engineering: Best Practices",
+            "bullets": [
+              "-Have a detailed plan for knowledge Acquisition of existing systems",
+              "-Have a clear re-engineering approach at the architecture level",
+              "-In case of Cloud/SaaS products/Applications create cost models based on traffic, interfaces, usage, storage, instances etc.",
+              "-Have a plan for database and data",
+              "-Choose a development methodology that is suitable for all the teams involved"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Accion Re-engineering Best Practices (contd..)",
+            "bullets": [
+              "-Accion Lead to act as the glue between the various teams involved",
+              "-Capture all the not functional criteria clearly and test cases to be built for each ofthem",
+              "-Reusability of existing assets and third party tools should be considered where possible",
+              "-Have a plan to extract test data from the old systems and transform to the new format as necessary",
+              "-The customers/users should be deeply involved in creating the UAT test cases"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Cloud/SaaS Migration Considerations",
+            "bullets": [
+              "-Some vendors use proprietary technologies that may require tightly coupled integrations",
+              "-Keep SLAs in consideration while deciding on the Architecture",
+              "-Regulatory Compliance (HIPAA, PCI, SEC) may need special considerations during SaaS migration/architecture",
+              "-The complexity of the environment may greatly be impacted by the number of application tiers and components being used",
+              "-Security Policies and ACL migration needs to be considered at the design time",
+              "Integration to back-office systems and external API will need special consideration"
+            ]
+          }
+        ],
+        [
+          "title-content",
+          {
+            "title": "Cloud/SaaS Migration Considerations (contd..)",
+            "bullets": [
+              "-Selection of private/public/hybrid cloud",
+              "-Configurations to manage flexible routing approaches and minimize transaction delays",
+              "-Architecture decides the operational costs – a thorough mathematical model needs to be developed for the given architecture, usage, traffic etc",
+              "-Utilizing the right storage model for the various needs to prevent loss of data and minimize cost"
+            ]
+          }
+        ],
+        [
+          "end"
+        ]
+      ],
+      "_firstCreatedBy": "anand-menon",
+      "_firstCreatedTimestamp": "2016-04-19T11:28:15+00:00",
+      "_lastUpdatedBy": "anand-menon",
+      "_lastUpdatedTimestamp": "2016-04-19T11:28:15.000Z"
+    },
+    {
+      "_id": "GxVIZe3uc3yr1u4K",
+      "_firstCreatedBy": "ashutosh-bijoor",
+      "_firstCreatedTimestamp": "2016-06-09T12:52:14+00:00",
+      "_lastUpdatedBy": "ashutosh-bijoor",
+      "_lastUpdatedTimestamp": "2016-06-09T12:52:14.000Z",
+      "abstract": "Accion Labs credentials",
+      "access": "guest",
+      "authors": [
+        "ashutosh-bijoor"
+      ],
+      "categories": "case-stories,research,platforms",
+      "description": "Accion Labs credentials",
+      "embedUrl": "https://docs.google.com/presentation/d/1Z0EvWdhOXBTHlZKBQS_UZ8xJgUZyZ0LTM4yP3zKtStg/embed?start=false&loop=false&delayms=3000",
+      "id": "accion-credentials-presentation",
+      "slides": [],
+      "tagline": "Accion Labs Technology Capabilities",
+      "tags": "",
+      "thumbnail": "/uploads/accion-credentials-presentation/Accion-Symbol-Large.png",
+      "title": "Accion Labs Credentials",
+      "type": "embedded"
+    },
+    {
+      "_id": "16y6kiSSfDUyRjgu",
+      "thumbnail": "/uploads/BigData_workshop/IMG_2228.jpg",
+      "id": "BigData_workshop",
+      "title": "Workshop on Big Data & Hadoop",
+      "tagline": "Workshop & Training",
+      "authors": [
+        "dinesh-edala",
+        "lavanya-umapathi"
+      ],
+      "categories": "research",
+      "tags": "",
+      "access": "guest",
+      "description": "Workshop on Big Data & Hadoop held at Accionlabs whitefield office",
+      "abstract": "",
+      "type": "slides",
+      "embedUrl": "",
+      "slides": [
+        [
+          "title-content",
+          {
+            "title": "Workshop on Big Data & Hadoop",
+            "embed": "https://www.youtube.com/embed/a_jO6EnHnIE"
+          }
+        ]
+      ],
+      "_firstCreatedBy": "anand-menon",
+      "_firstCreatedTimestamp": "2016-08-04T06:35:14+00:00",
+      "_lastUpdatedBy": "anand-menon",
+      "_lastUpdatedTimestamp": "2016-08-04T06:35:14.000Z"
+    },
+    {
+      "_id": "MCyeAZc0WK9HwXR4",
+      "_firstCreatedBy": "maansingh-rathore",
+      "_firstCreatedTimestamp": "2016-09-01T05:11:51+00:00",
+      "_lastUpdatedBy": "maansingh-rathore",
+      "_lastUpdatedTimestamp": "2016-09-01T05:11:51.000Z",
+      "access": "employee",
+      "authors": [
+        "jinto-jose"
+      ],
+      "categories": "research,platforms",
+      "description": "An npm module which generates Protractor test reports in HTML with screenshots.",
+      "embedUrl": "https://drive.google.com/a/accionlabs.com/file/d/0B8BCpfX9F3FRX19WRVFkQ3ZCVmM/preview",
+      "id": "protractor-html-reporter",
+      "slides": [],
+      "tagline": "A plugin for generating test reports in HTML",
+      "thumbnail": "/images/Logos/Protractor.png",
+      "title": "Protractor HTML Reporter",
+      "type": "embedded",
+      "project_tags": [
+        {
+          "_id": "5858f76abbcb52615d54fa36",
+          "project_name": "AI"
+        }
+      ]
+    },
+    {
+      "_id": "583eb10a6a924e1fea2ed9c2",
+      "thumbnail": "/images/../uploads/meetup_1/Untitled.png",
+      "id": "meetup_1",
+      "title": "Meetup on DevOps & Docker (AWS): Nov 26  - Part1",
+      "tagline": "",
+      "authors": [
+        "anand-menon"
+      ],
+      "categories": "research",
+      "techstack": {
+        "ui": [],
+        "app": [],
+        "db": [],
+        "cloud": [],
+        "devops": []
+      },
+      "tags": "",
+      "editMode": true,
+      "reason": [],
+      "subcategories": [],
+      "description": "Meetup on DevOps & Docker (AWS): Nov 26  - Part1",
+      "abstract": "",
+      "type": "embedded",
+      "embedUrl": "https://www.youtube.com/embed/YjLfOPLSmsA",
+      "_firstCreatedBy": "anand-menon",
+      "_firstCreatedTimestamp": "2016-11-30T11:05:30+00:00",
+      "_lastUpdatedBy": "anand-menon",
+      "_lastUpdatedTimestamp": "2016-11-30T11:05:30.000Z",
+      "isAdmin": true,
+      "userRole": ""
+    },
+    {
+      "_id": "583eb2866a924e1fea2ed9c9",
+      "id": "meetup_2",
+      "title": "Meetup on DevOps & Docker (AWS): Nov 26  - Part2",
+      "tagline": "",
+      "authors": [
+        "anand-menon"
+      ],
+      "categories": "research",
+      "tags": "",
+      "techstack": {
+        "ui": [],
+        "app": [],
+        "db": [],
+        "cloud": [],
+        "devops": []
+      },
+      "subcategories": [],
+      "description": "Meetup on DevOps & Docker (AWS): Nov 26  - Part2",
+      "abstract": "",
+      "type": "embedded",
+      "reason": [],
+      "embedUrl": "https://www.youtube.com/embed/ie6df5tNhqo",
+      "thumbnail": "/images/../uploads/meetup_2/Untitled.png",
+      "slides": [
+        [
+          "slide-content",
+          {}
+        ]
+      ],
+      "_firstCreatedBy": "anand-menon",
+      "_firstCreatedTimestamp": "2016-11-30T11:06:30+00:00",
+      "_lastUpdatedBy": "anand-menon",
+      "_lastUpdatedTimestamp": "2016-11-30T11:06:30.000Z",
+      "isAdmin": true,
+      "userRole": ""
+    },
+    {
+      "_id": "tt3Y5x6DrCRGQPw8",
+      "thumbnail": "/images/Accion Labs Logo.png",
+      "id": "selected-case-stories",
+      "title": "Selected Case Stories",
+      "tagline": "Selected Case Stories",
+      "authors": [
+        "ashutosh-bijoor",
+        "pramod-patil"
+      ],
+      "categories": "case-stories,research",
+      "techstack": {
+        "ui": [],
+        "app": [],
+        "db": [],
+        "cloud": [],
+        "devops": []
+      },
+      "editMode": true,
+      "reason": [],
+      "description": "A compilation of selected case studies",
+      "type": "slides",
+      "embedUrl": "",
+      "slides": [
+        [
+          "home",
+          {
+            "title": "Case Stories",
+            "subtitle": "A representative selection",
+            "version": "1.0",
+            "date": "18 Jan 2015",
+            "titleField": true,
+            "subTitleField": true
+          }
+        ],
+        [
+          "@accion-intro",
+          {
+            "section": true
+          }
+        ],
+        [
+          "slide-content",
+          {
+            "title": "Case Stories",
+            "titleField": true,
+            "blockcontent": [
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "-<a href=\"#/case-story-cloud-broker\">Cloud Brokering Platform</a>",
+                      "--IaaS provider with a platform for configuring, comparing, provisioning and managing cloud infrastructure",
+                      "-<a href=\"#/case-story-acg\">Analytical Compute Grid</a>",
+                      "--A leading managed cloud services provider builds a big data analytics platform using Polyglot Persistence",
+                      "-<a href=\"#/case-story-retail-marketing-platform\">Experience as a Service</a>",
+                      "--A platform for large retail locations to monitor visitors and create marketing experiences in real-time"
+                    ]
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              },
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "-<a href=\"#/case-story-healthcare-portal\">Healthcare Management Portal</a>",
+                      "--A healthcare platform that delivers reliable and actionable information through diagnostic tests",
+                      "-<a href=\"#/case-story-claims-analytics\">Insurance Claims Analytics</a>",
+                      "--A leading CPA-directed program of professional and employment practices liability insurance",
+                      "-<a href=\"#/case-story-pharma-research\">Pharma Big Data Case Study</a>",
+                      "--The research division of a leading international pharmaceutical company that is responsible for conducting detailed search and analysis of worldwide patents"
+                    ]
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              }
+            ]
+          }
+        ],
+        [
+          "@case-story-cloud-broker",
+          {
+            "section": true
+          }
+        ],
+        [
+          "@case-story-acg",
+          {
+            "section": true
+          }
+        ],
+        [
+          "@case-story-healthcare-portal",
+          {
+            "section": true
+          }
+        ],
+        [
+          "@case-story-claims-analytics",
+          {
+            "section": true
+          }
+        ],
+        [
+          "@case-story-pharma-research",
+          {
+            "section": true
+          }
+        ],
+        [
+          "@case-story-retail-marketing-platform",
+          {
+            "section": true
+          }
+        ]
+      ],
+      "_firstCreatedBy": null,
+      "_firstCreatedTimestamp": null,
+      "_lastUpdatedBy": "vaibhav-satam",
+      "_lastUpdatedTimestamp": "2016-12-26T09:15:56.000Z",
+      "isAdmin": true,
+      "userRole": "contentauditor",
+      "featured": 2
+    },
+    {
+      "_id": "uYNhZYZRNwCXLYbJ",
+      "thumbnail": "/images/Polyglot Persistence/OODEBE.png",
+      "id": "oodebe-intro",
+      "title": "Oodebe",
+      "tagline": "Polyglot Persistence Platform",
+      "authors": [
+        "ashutosh-bijoor",
+        "pawan-puthran"
+      ],
+      "categories": "platforms",
+      "techstack": {
+        "ui": [],
+        "app": [],
+        "db": [],
+        "cloud": [],
+        "devops": []
+      },
+      "tags": "polyglot-persistence,MongoDB,Cassandra,Redis,MySQL,Oracle,PostgreSQL",
+      "editMode": true,
+      "reason": [],
+      "description": "A platform that provides a ready-to-use middleware layer to abstract away the complexity of implementing a Polyglot Persistence application",
+      "abstract": "Applications today need to handle a multitude of data types ranging from structured to unstructured data. Polyglot Persistence is quickly emerging as the preferred architecture for such applications. Oodebe provides a simple, flexible, scalable and extensible solution for Polyglot Persistence",
+      "type": "slides",
+      "embedUrl": "",
+      "slides": [
+        [
+          "home",
+          {
+            "title": "Polyglot Persistence - An Introduction",
+            "subtitle": "How to choose a database when building an application from the multitude of SQL and NoSQL options available",
+            "version": "1.0",
+            "date": "12 March 2014",
+            "titleField": true,
+            "subTitleField": true
+          }
+        ],
+        [
+          "slide-content",
+          {
+            "title": "Which database do we choose?",
+            "titleField": true,
+            "blockcontent": [
+              {
+                "blocksize": 1,
+                "image": "../images/Polyglot Persistence/Database Options.png",
+                "imageField": true
+              }
+            ]
+          }
+        ],
+        [
+          "slide-content",
+          {
+            "title": "Factors affecting the choice of the database",
+            "titleField": true,
+            "blockcontent": [
+              {
+                "blocksize": 1,
+                "listField": true,
+                "blocks": [
+                  {
+                    "title": "Data Models",
+                    "showListTitle": true,
+                    "bullets": [
+                      "What type of data sources do we want to integrate?",
+                      "How do we want to manipulate / analyze the data?",
+                      "What is the volume, variety and velocity of data?"
+                    ]
+                  },
+                  {
+                    "title": "Consistency, Availability, Partitioning (CAP)",
+                    "showListTitle": true,
+                    "bullets": [
+                      "Consistency: Only one value of an object to each client (Atomicity)",
+                      "Availability: Each client can always read and write (Low Latency)",
+                      "Partition Tolerance: The system works well despite physical network partitions (Horizontal Scalability)",
+                      "What are the CAP use cases that the application needs to handle?"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          "slide-content",
+          {
+            "title": "Data Models Comparison",
+            "subtitle": "Examples, Capabilities, Applications and Limitations of various data models",
+            "titleField": true,
+            "subTitleField": true
+          }
+        ],
+        [
+          "slide-content",
+          {
+            "title": "Key Value Databases",
+            "titleField": true,
+            "blockcontent": [
+              {
+                "blocksize": 2,
+                "image": "../images/Polyglot Persistence/Key Value Database.svg",
+                "imageField": true
+              },
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "The simplest model where each object is retrieved with a unique key, with values having no inherent model",
+                      "Utilize in-memory storage to provide fast access with optional persistence",
+                      "Other data models built on top of this model to provide more complex objects"
+                    ],
+                    "title": "Capabilities",
+                    "showListTitle": true
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              },
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "Applications requiring fast access to a large number of objects, such as caches or queues",
+                      "Applications that require fast-changing data environments like mobile, gaming, online ads"
+                    ],
+                    "title": "Applications",
+                    "showListTitle": true
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              },
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "Cannot update subset of a value",
+                      "Does not provide querying",
+                      "As number of objects becomes large, generating unique keys could become complex"
+                    ],
+                    "title": "Limitations",
+                    "showListTitle": true
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              }
+            ]
+          }
+        ],
+        [
+          "slide-content",
+          {
+            "title": "Document Databases",
+            "titleField": true,
+            "blockcontent": [
+              {
+                "blocksize": 2,
+                "image": "../images/Polyglot Persistence/Document Database.svg",
+                "imageField": true
+              },
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "Extension of key-value model, where value is a structured document",
+                      "Documents can be highly complex, hierarchical data structures without requiring pre-defined 'schema'",
+                      "Supports queries on structured documents",
+                      "Search platforms are also document-oriented"
+                    ],
+                    "title": "Capabilities",
+                    "showListTitle": true
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              },
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "Applications that need to manage a large variety of objects that differ in structure",
+                      "Large product catalogs in e-commerce, customer profiles, content management applications"
+                    ],
+                    "title": "Applications",
+                    "showListTitle": true
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              },
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "No standard query syntax",
+                      "Query performance not linearly scalable",
+                      "Join queries across collections not efficient"
+                    ],
+                    "title": "Limitations",
+                    "showListTitle": true
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              }
+            ]
+          }
+        ],
+        [
+          "slide-content",
+          {
+            "title": "Column Family Databases",
+            "titleField": true,
+            "blockcontent": [
+              {
+                "blocksize": 2,
+                "image": "../images/Polyglot Persistence/Column Family Database.svg",
+                "imageField": true
+              },
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "Extension of key-value model, where the value is a set of columns (column-family)",
+                      "A column can have multiple time-stamped versions",
+                      "Columns can be generated at run-time and not all rows need to have all columns"
+                    ],
+                    "title": "Capabilities",
+                    "showListTitle": true
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              },
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "Storing a large number of time-stamped data like event logs, sensor data",
+                      "Analytics that involve querying entire columns of data such as trends or time series analytics"
+                    ],
+                    "title": "Applications",
+                    "showListTitle": true
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              },
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "No join queries or sub-queries",
+                      "Limited support for aggregation",
+                      "Ordering is done per partition, specified at table creation time"
+                    ],
+                    "title": "Limitations",
+                    "showListTitle": true
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              }
+            ]
+          }
+        ],
+        [
+          "slide-content",
+          {
+            "title": "Graph Databases",
+            "titleField": true,
+            "blockcontent": [
+              {
+                "blocksize": 2,
+                "image": "../images/Polyglot Persistence/Graph Database.svg",
+                "imageField": true
+              },
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "Models graphs consisting of nodes and edges with properties (meta-data) describing them",
+                      "Implement very fast graph traversal operations",
+                      "Also support indexing of meta data to enable graph traversal combined with search queries"
+                    ],
+                    "title": "Capabilities",
+                    "showListTitle": true
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              },
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "Applications that deal with objects with a large number of inter-relations",
+                      "Applications like social networking friends-networks, hierarchical role based permissions, complex decision trees, maps, network topologies"
+                    ],
+                    "title": "Applications",
+                    "showListTitle": true
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              },
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "Difficult to scale for large data sets for generic graphs",
+                      "Giraph uses the Bulk Synchronous Parallel model to overcome some of the scalability limitations"
+                    ],
+                    "title": "Limitations",
+                    "showListTitle": true
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              }
+            ]
+          }
+        ],
+        [
+          "slide-content",
+          {
+            "title": "Relational Databases",
+            "titleField": true,
+            "blockcontent": [
+              {
+                "blocksize": 2,
+                "image": "../images/Polyglot Persistence/Relational Database.svg",
+                "imageField": true
+              },
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "Conventional RDBMS structure consisting of fixed schema with ACID properties",
+                      "Provides well documented and widely supported SQL syntax",
+                      "Capable of complex queries including subqueries and joins"
+                    ],
+                    "title": "Capabilities",
+                    "showListTitle": true
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              },
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "Transactional data applications like ERP, CRM, Banking etc.",
+                      "Applications where data volume is limited and schema are by and large fixed"
+                    ],
+                    "title": "Applications",
+                    "showListTitle": true
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              },
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "Lacks horizontal scalability and hence limited in handling 'big data'",
+                      "Not efficient at handling complex multi-level nested data",
+                      "Cannot handle “unstructured” data where structure is not known at design time"
+                    ],
+                    "title": "Limitations",
+                    "showListTitle": true
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              }
+            ]
+          }
+        ],
+        [
+          "slide-content",
+          {
+            "title": "Conclusion 1:",
+            "subtitle": "No single database can address all data types",
+            "titleField": true,
+            "subTitleField": true,
+            "blockcontent": [
+              {
+                "blocksize": 1,
+                "paraField": true,
+                "paragraph": "Compromise: Application unable to integrate multiple data types"
+              }
+            ]
+          }
+        ],
+        [
+          "slide-content",
+          {
+            "title": "CAP Theorem",
+            "titleField": true,
+            "blockcontent": [
+              {
+                "blocksize": 1,
+                "image": "../images/Polyglot Persistence/CAP Theorem.png",
+                "imageField": true
+              }
+            ]
+          }
+        ],
+        [
+          "slide-content",
+          {
+            "title": "Conclusion 2:",
+            "subtitle": "No single database can address all CAP use cases",
+            "titleField": true,
+            "subTitleField": true,
+            "blockcontent": [
+              {
+                "blocksize": 1,
+                "paraField": true,
+                "paragraph": "Compromise: To get horizontal scalability application must give up Consistency (Atomicity) or Availability (Low Latency)"
+              }
+            ]
+          }
+        ],
+        [
+          "slide-content",
+          {
+            "title": "Solution: Polyglot Persistence",
+            "titleField": true,
+            "blockcontent": [
+              {
+                "blocksize": 1,
+                "listField": true,
+                "blocks": [
+                  {
+                    "title": "Use multiple databases",
+                    "showListTitle": true,
+                    "bullets": [
+                      "No single database can address all data types and CAP use cases",
+                      "Different <b>data types</b> need not be forced into a single <b>data model</b>",
+                      "Different <b>use cases</b> need not be forced into a single <b>CAP model</b>"
+                    ]
+                  },
+                  {
+                    "title": "Dealing with multiple databases need not complicate the application",
+                    "showListTitle": true,
+                    "bullets": [
+                      "Abstract away the CRUD APIs into a separate layer",
+                      "Provide a <b>single API</b> for persisting to multiple databases <b>synchronously</b>",
+                      "Provide <b>different APIs</b> for querying data for different <b>use cases</b>",
+                      "Effectively create a <b>Unified Data Repository</b>"
+                    ]
+                  },
+                  {
+                    "title": "How to manage Synchronization?",
+                    "showListTitle": true,
+                    "bullets": [
+                      "OODEBE: Accion Labs's platform for Polyglot Persistence Synchronization"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          "slide-content",
+          {
+            "title": "<img class=\"diagram\" src=\"/images/Polyglot Persistence/OODEBE.png\" alt=\"OODEBE - Polyglot Persistence Synchronization Engine\">",
+            "subtitle": "Polyglot Persistence Platform",
+            "table": {
+              "content": [
+                [
+                  {
+                    "subtitle": "Simplicity",
+                    "align": "right"
+                  },
+                  {
+                    "text": "Provides APIs that abstract away the complexity of multiple databases",
+                    "align": "left"
+                  }
+                ],
+                [
+                  {
+                    "subtitle": "Flexibility",
+                    "align": "right"
+                  },
+                  {
+                    "text": "Handles synchronization with a flexible consistency model for each use case",
+                    "align": "left"
+                  }
+                ],
+                [
+                  {
+                    "subtitle": "Scalability",
+                    "align": "right"
+                  },
+                  {
+                    "text": "Provides horizontal scalability without compromising performance",
+                    "align": "left"
+                  }
+                ],
+                [
+                  {
+                    "subtitle": "Extensibility",
+                    "align": "right"
+                  },
+                  {
+                    "text": "Allows easy addition of new database engines to handle new data types or use cases",
+                    "align": "left"
+                  }
+                ]
+              ]
+            },
+            "titleField": true,
+            "subTitleField": true
+          }
+        ],
+        [
+          "slide-content",
+          {
+            "blockcontent": [
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "Provides a <b>single API</b> for persisting to multiple databases <b>synchronously</b>",
+                      "Provides <b>customizable APIs</b> for querying data for different <b>use cases</b>",
+                      "Ready-to-use processor plugins for most popular database engines",
+                      "Ready-to-use API controllers for typical use cases such as batch and online operations"
+                    ],
+                    "title": "Simplicity",
+                    "showListTitle": true
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              },
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "Application-specific APIs can be created with simple configuration files",
+                      "Logical Locking to handle error recovery from any individual database operation failure",
+                      "Batch as well as online synchronization with automatic prioritization of online operations",
+                      "Coordination between processors using tightly coupled websockets or loosely coupled message queue"
+                    ],
+                    "title": "Flexibility",
+                    "showListTitle": true
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              },
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "High speed synchronization using asynchronous I/O calls to each database API",
+                      "Horizontally scalable - can distribute processors over a cluster of nodes",
+                      "Kanban Queues to balance processing rates of different processor modules",
+                      "Prioritization of online operations so that batch operations do not affect performance"
+                    ],
+                    "title": "Scalability",
+                    "showListTitle": true
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              },
+              {
+                "blocksize": 2,
+                "blocks": [
+                  {
+                    "bullets": [
+                      "Integration of new database engines via custom-built processor plugins",
+                      "Micro-services architecture with each processor acting as a service",
+                      "Customizable controllers to orchestrate application specific APIs",
+                      "Liberal open source license allows ownership of custom processors and controllers",
+                      "Accion provides customization and support for OODEBE"
+                    ],
+                    "title": "Extensibility",
+                    "showListTitle": true
+                  }
+                ],
+                "lastquadrant": true,
+                "listField": true
+              }
+            ]
+          }
+        ]
+      ],
+      "_firstCreatedBy": "ashutosh-bijoor",
+      "_firstCreatedTimestamp": "2016-02-09T14:52:09+00:00",
+      "_lastUpdatedBy": "vaibhav-satam",
+      "_lastUpdatedTimestamp": "2016-12-26T10:00:53.000Z",
+      "isAdmin": true,
+      "userRole": "contentauditor"
+    }
+  ]
+}

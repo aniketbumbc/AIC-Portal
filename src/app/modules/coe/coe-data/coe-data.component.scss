@@ -1,0 +1,154 @@
+@import '~variables.scss';
+::ng-deep .myTabs {
+  ul.nav-tabs {
+    display: flex;
+    justify-content: center;
+    border: none;
+    margin-bottom: 34px;
+
+    li.nav-item {
+      position: relative;
+
+      a {
+        border: none;
+      }
+
+      span {
+        position: relative;
+        display: inline-block;
+        padding: 0 0 13px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #9b9b9b;
+        text-transform: uppercase;
+        list-style-type: none;
+        cursor: pointer;
+        transition: color 0.2s ease-in;
+      }
+
+      &.active {
+        &:before {
+          position: absolute;
+          // left: 50%;
+          bottom: 0;
+          // width: 0;
+          width: 100%;
+          left: 0;
+          height: 1px;
+          background-color: #434345;
+          content: '';
+        }
+
+        span {
+          color: #434345;
+        }
+      }
+    }
+  }
+
+  &.tabSearchHide {
+    ul.nav-tabs {
+      display: none;
+    }
+
+    .row.section-34 {
+      padding-top: 0;
+    }
+  }
+}
+
+.greenbox{
+  background-color:$green;
+  color:$secondary;
+}
+
+::ng-deep .editCoe {
+  .catOuter {
+    padding: 5px;
+    display: block;
+    width: 1170px;
+    .catInner {
+      transform: translate3d(0px, 0px, 0px);
+      transition: all 0s ease 0s;
+      display: block;
+      .catActive {
+        display: block;
+        // max-width: 100%;
+
+        // flex-direction: row;
+        width: 100%;
+        .actCat {
+          display: block;
+          float: left;
+
+          padding: 10px;
+          ul {
+            width: 211.667px;
+            .coeCat {
+              padding: 10px;
+              cursor: pointer;
+              .coeTitle {
+                margin-top: 0px;
+              }
+            }
+            .coeCat:active{
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  
+  ::ng-deep.editCoe .catOuter .catInner .catActive .actCat ul{
+    // display: block;
+    width: 130px;
+      }
+      .coeTitle{
+        font-size: 18px;
+        }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  
+  ::ng-deep.editCoe .catOuter .catInner .catActive .actCat ul{
+    // display: block;
+    width: 80px;
+      }
+      .list-vertical-right-line li {
+        padding: 0;
+    }
+    .icon{
+      font-size: 54px;
+    }
+    .coeTitle{
+    font-size: 12px;
+    }
+  
+}
+@media (min-width: 480px) and (max-width:767px) {
+  
+  ::ng-deep.editCoe .catOuter .catInner .catActive .actCat ul{
+    // display: block;
+    width: 60px;
+      }
+      .list-vertical-right-line li {
+        padding: 0;
+    }
+    .icon{
+      font-size: 50px;
+    }
+    .coeTitle{
+      margin-left: -9px;
+    padding: 0px 2px;
+    font-size: 12px;
+    width: 49px;
+    }
+}
+
+
+
+
+

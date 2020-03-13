@@ -1,0 +1,63 @@
+<div class="email_list">
+  <div *ngFor="let item of cardData; let i = index">
+    <div class="email_item" *ngIf="i < minimumDisplayCount">
+      <p
+        class="email_subject"
+        *ngIf="item.title?.length !== 0"
+        [style.fontWeight]="item.isRead ? 'normal' : 'bold'"
+        (click)="loadSelectedMail(item)"
+        [innerHTML]="item.title"
+      ></p>
+
+      <p
+        class="email_sender"
+        matTooltip="{{ item.subtitle }}"
+        [matTooltipPosition]="position"
+        [matTooltipShowDelay]="toolTipDelay"
+        [innerHTML]="item.subtitle"
+      ></p>
+
+      <p
+        class="email_body"
+        *ngIf="item.snippet?.length !== 0"
+        [innerHTML]="item.snippet"
+      ></p>
+
+      <!-- <p class="email_received_time">{{ item.receivedDateTime | fromNow }}</p> -->
+    </div>
+    <div class="separator"></div>
+  </div>
+
+  <!-- <button
+    class="load_more_emails"
+    *ngIf="displayShowMoreButton()"
+    (click)="loadMoreEmails()"
+  >
+    Show more
+  </button> -->
+  <div
+    style="color: #FEC900; text-align: center;"
+    [ngClass]="{
+      hide_info_message: !displayInfoMessage(),
+      display_info_message: displayInfoMessage()
+    }"
+  >
+    Nothing more found
+  </div>
+
+  <div *ngIf="isLoadingMoreEmails" class="lds-ellipsis">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div
+    class="show_more_button"
+    (click)="showAllEmail()"
+    *ngIf="emailData?.list?.length > 2"
+  >
+    <mat-icon class="arrow_button">{{
+      showAllEmails ? "expand_less" : "expand_more"
+    }}</mat-icon>
+  </div>
+</div>

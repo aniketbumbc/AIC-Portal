@@ -1,0 +1,61 @@
+<!-- <app-breadcrumbs></app-breadcrumbs> -->
+<app-breadcrumbs page="Search" [searchText]="searchtext"></app-breadcrumbs>
+<!--Section Real Estate Agents-->
+<section class="section novi-background section-50 section-sm-50 fixed-min-height">
+  <div class="container">
+    <!-- <h2 class="font-weight-bold">Company</h2>
+    <hr class="divider bg-mantis">
+    <div class="offset-md-top-66"> -->
+    <div class="responsive-tabs responsive-tabs-classic myTabs" data-type="horizontal">
+      <tabset>
+        <tab heading="People ({{count.profile}})" id="tab1" (select)="onSelect($event)" [active]="activeTab == 'profile'">
+          <div class="text-center text-lg-left">
+            <div class="row justify-content-sm-center section-34">
+              <div class="col-md-12 col-lg-12">
+                <ng-container *ngIf="count.profile; else noPeopleFound" >
+                  <app-profile-list [profileList]="employeeSearchData"></app-profile-list>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </tab>
+        <tab heading="Project ({{count.project}})" (select)="onSelect($event)" [active]="activeTab == 'project'">
+          <div class="text-center text-lg-left">
+            <div class="row justify-content-sm-center section-34">
+              <div class="col-md-12 col-lg-12">
+                <ng-container *ngIf="count.project; else noProjectFound">
+                  <app-project-list [projectList]="projectSearcData" [fetchData]="fetchDetails"></app-project-list>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </tab>
+        <tab heading="Blog ({{count.blog}})" (select)="onSelect($event)" [active]="activeTab == 'blog'">
+          <div class="text-center text-lg-left">
+            <div class="row justify-content-sm-center section-34">
+              <div class="col-md-12 col-lg-12">
+                <ng-container *ngIf="count.blog;else noBlogFound">
+                  <app-blog-list-masonry [blogList]="blogSearchData" [updateMasonryLayout]="masonryLayout">
+                  </app-blog-list-masonry>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+  <!-- <div *ngIf="showloader" class="spinLoader">
+    <img class= "loader-img" src="../../../../../assets/images/Loader.gif" />
+  </div> -->
+  <ng-template #noPeopleFound>
+    <div *ngIf="showNoResults.profile">No Results Found</div>
+  </ng-template>
+  <ng-template #noProjectFound>
+    <div *ngIf="showNoResults.project">No Results Found</div>
+  </ng-template>
+  <ng-template #noBlogFound>
+    <div *ngIf="showNoResults.blog">No Results Found</div>
+  </ng-template>
+    
+</section>

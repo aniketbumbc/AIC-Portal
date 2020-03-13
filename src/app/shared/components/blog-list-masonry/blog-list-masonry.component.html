@@ -1,0 +1,101 @@
+<!-- <div class="addBlogBtn">
+  <a [routerLink]="['/blog/new/blog']" class="routeLink">
+    <button class="btn btn-sm btn-primary btn-icon btn-icon-left addBlog">
+      <span class="icon novi-icon icon-xxs mdi mdi-pencil-box-outline">
+      </span> Add Blog
+    </button>
+  </a>
+</div>
+<br />
+<br /> -->
+<div class="masonaryCOE section-34">
+  <div class="grid-sizer">
+    <div class="grid-item">
+      <div class="grid-item grid-item--width2">
+        <ngx-masonry
+          [options]="{ transitionDuration: '0s' }"
+          [useImagesLoaded]="false"
+          [updateLayout]="updateMasonryLayout"
+        >
+          <ngxMasonryItem
+            class="masonry-item col-lg-4 col-xl-4"
+            *ngFor="let blog of blogList; index as i"
+          >
+            <!-- Post Modern-->
+            <article class="post post-modern">
+              <!-- Post media-->
+              <header class="post-media p-4">
+                <a [routerLink]="['/blog/', blog.id]">
+                  <img
+                    class="img-fluid img-cover"
+                    src="{{ baseUrl }}{{
+                      blog.thumbnail
+                        ? blog.thumbnail?.url
+                        : 'src/assets/images/thumbnails/Accion-DefaultBlog.png'
+                    }}"
+                    [alt]="blog.name"
+                    onError="this.closest('header').style.display = 'none';"
+                  />
+                </a>
+              </header>
+              <!-- Post content-->
+              <section class="post-content text-left">
+                <!-- Post Title-->
+                <a [routerLink]="['/blog/', blog.id]">
+                  <div class="post-title searchText">
+                    <h6 class="offset-top-24" [innerHTML]="blog.name"></h6>
+                  </div>
+                  <!-- Post Body-->
+                  <div class="post-body offset-top-20 searchText">
+                    <p class="text-justify" [innerHTML]="blog.description"></p>
+                  </div>
+                </a>
+                <!-- authors -->
+                <div class="box-comment text-left offset-top-20">
+                  <ul class="list-flex authorList">
+                    <li *ngFor="let auth of blog.authors">
+                      <a
+                        [tooltip]="auth.name | titlecase"
+                        [routerLink]="['/profile/', auth.id | trim]"
+                      >
+                        <ngx-avatar
+                          src="{{ authorImage }}{{ auth.picture?.url }}{{
+                            decached
+                          }}"
+                          name="{{ auth.name }}"
+                          size="36"
+                          [routerLink]="['/profile/', auth.id]"
+                        ></ngx-avatar>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <ul
+                  class="list-inline offset-top-20 list-flex"
+                  *ngIf="blog.categories"
+                >
+                  <li *ngFor="let cat of blog.categories; let i = index">
+                    <div class="post-tags group-xs">
+                      <a
+                        [routerLink]="['/blog/category/', cat.id]"
+                        target="_parent"
+                      >
+                        <p
+                          class="label-custom label-lg-custom label-rounded-custom label-primary"
+                          [innerHTML]="cat.category"
+                        ></p>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </section>
+            </article>
+          </ngxMasonryItem>
+        </ngx-masonry>
+        <div *ngIf="loader" class="spinLoader">
+          <img src="/assets/images/Loader.gif" alt="Breeze" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

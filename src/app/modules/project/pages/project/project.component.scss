@@ -1,0 +1,123 @@
+/*add project css*/
+.breadcrumbs {
+  padding: 5px 0;
+  background: #f7f7f7;
+}
+.routeLink {
+  position: relative;
+  justify-content: flex-end;
+  display: flex;
+  // padding-right: 15px;
+  .addproj {
+    position: absolute; 
+  }
+}
+.autoseach-project{
+ height: 41px;
+}
+::ng-deep .btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #ffffff;
+  background-color: lighten(#34905c, 15%) !important;
+  border-color: lighten(#34905c, 15%) !important;
+}
+.spinLoaderProject {
+	display:flex;
+  justify-content:center;
+  img{
+    height: 100px;
+  }
+}
+.btnFlex{
+  display: flex;
+  justify-content: flex-end;
+}
+.mt30 {
+  margin-top: 38px;
+  font-weight: bold;
+}
+// ::ng-deep .ng-select.ng-select-single .ng-select-container {
+//   height: 41px;
+// }
+.fa-search {
+  color: #42b574;
+}
+.searchButton-disable {
+  // height: 42px;
+  background-color: whitesmoke;
+  cursor: not-allowed;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.filter {
+  text-align: left;
+}
+// inputgroup search
+::ng-deep.autoSearch {
+  .ui-autocomplete .ui-autocomplete-input {
+    height: 42px;
+    width: 268px;
+    border: 1px solid lightgrey;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-size: 16px;
+    cursor: not-allowed;
+    &:disabled {
+      background: #f5f5f5;
+    }
+  }
+  .ui-inputtext:enabled {
+    &:hover:not(.ui-state-error) {
+      border: 1px solid lightgrey;
+      cursor: text;
+    }
+    &:focus:not(.ui-state-error) {
+      border: 1px solid lightgrey;
+    }
+  }
+}
+::ng-deep .filter {
+  .ng-select.ng-select-single .ng-select-container {
+    height: 41px;
+  }
+}
+
+::ng-deep .tooltip {
+  opacity: 1;
+}
+::ng-deep .tooltip-inner {
+  background-color: #42b574;
+  color: #fff;
+}
+::ng-deep .errorTooltip {  
+  .tooltip.top .tooltip-arrow:before, .tooltip.top .tooltip-arrow {
+        top: 0;
+        border-width: 0.4rem 2.5px 0;
+        background-color: #34905c !important;
+      }
+}
+::ng-deep .autoSearch{
+    z-index: 1;
+    width: 268px;
+    .ui-autocomplete .ui-widget{
+      &:last-child {
+        z-index: 1!important;
+        top:45px!important;
+      }
+  }
+}
+
+::ng-deep .ng-dropdown-panel.ng-select-top {
+  top: 100%;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-color: #e6e6e6;
+  margin-top: -1px;
+}
+::ng-deep .filterZ {
+  .ng-select-container,.ng-dropdown-panel {
+    z-index: 1!important;
+    // background-color:red
+}
+}

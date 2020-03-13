@@ -1,0 +1,358 @@
+@import '~mixin.scss';
+@import '~variables.scss';
+
+.project-tags {
+  padding: 10px;
+  text-transform: capitalize;
+  // text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+}
+.tags {
+  border-radius: 50px;
+  margin: 2px;
+}
+.tag {
+  margin: 2px;
+  border-radius: 50px;
+  flex-direction: wrap;
+  // padding-right: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ui-block {
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 15px 15px;
+  display: flex;
+  // justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  flex-wrap: wrap;
+  position: relative;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .listcol{
+    width: 100%;
+    align-items: center;
+  }
+  .leftpadding{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  .rightpadding{
+    padding-right: 25px !important;
+    padding-left: 0px !important
+  }
+  .logo-title{
+    display: flex; 
+    align-items: center;
+  }
+  .image{
+    padding: 15px !important
+  }
+  .projectStatus {
+    position: absolute;
+    // top: 15px;
+    left: -27px;
+    @include rotate(-45);
+
+    .tr1 {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      top: 4px;
+      left: 76px;
+      position: absolute;
+      border-width: 18px 0 0 18px;
+    }
+
+    .trSmall1 {
+      width: 0;
+      height: 0;
+      top: 20px;
+      left: 86px;
+      border-style: solid;
+      transform: rotate(45deg);
+      border-width: 0 5px 5px 5px;
+      position: absolute;
+    }
+
+    .statusText {
+      position: relative;
+      border-radius: 0;
+      padding-left: 15px;
+      padding-right: 15px;
+      width: 77px;
+      height: 18px;
+      margin-top: 4px;
+      text-transform: capitalize;
+      /* padding: 2px 15px; */
+      justify-content: center;
+      display: flex;
+      align-items: center;
+    }
+    .badge:empty {
+      display: flex;
+    }
+    .tr2 {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      top: 4px;
+      left: -17px;
+      position: absolute;
+      border-width: 18px 0 0 18px;
+      transform: rotate(-90deg);
+    }
+
+    .trSmall2 {
+      width: 0;
+      height: 0;
+      top: 21px;
+      left: -20px;
+      border-style: solid;
+      transform: rotate(-45deg);
+      border-width: 0 5px 5px 5px;
+      position: absolute;
+    }
+
+    &.Ongoing {
+      .tr1 {
+        border-color: transparent transparent transparent #42b574;
+      }
+
+      .trSmall1 {
+        border-color: transparent transparent #2e7d50 transparent;
+      }
+
+      .statusText {
+        background-color: #42b574;
+      }
+
+      .tr2 {
+        border-color: transparent transparent transparent #42b574;
+      }
+
+      .trSmall2 {
+        border-color: transparent transparent #2e7d50 transparent;
+      }
+    }
+
+    &.Deleted {
+      .tr1 {
+        border-color: transparent transparent transparent #f44b0e;
+      }
+
+      .trSmall1 {
+        border-color: transparent transparent #f44b0e transparent;
+      }
+
+      .statusText {
+        background-color: #f44b0e;
+      }
+
+      .tr2 {
+        border-color: transparent transparent transparent #f44b0e;
+      }
+
+      .trSmall2 {
+        border-color: transparent transparent #f44b0e transparent;
+      }
+    }
+
+    &.Closed {
+      .tr1 {
+        border-color: transparent transparent transparent rgb(245, 191, 47); ;
+      }
+
+      .trSmall1 {
+        border-color: transparent transparent rgb(245, 191, 47) transparent;
+      }
+
+      .statusText {
+        background-color: rgb(245, 191, 47);
+      }
+
+      .tr2 {
+        border-color: transparent transparent transparent rgb(245, 191, 47);
+      }
+
+      .trSmall2 {
+        border-color: transparent transparent rgb(245, 191, 47) transparent;
+      }
+    }
+  }
+
+  .project-thumb {
+    width: 14%;
+    // padding-left: 15px;
+  }
+
+  .project-detail {
+    // width: 14%;
+    text-align: left;
+    padding: 15px;
+  }
+
+  .project-tags {
+    // width: 44%;
+    // padding: 0 10px;
+    text-transform: capitalize;
+  }
+
+  ::ng-deep .projectTeam .tooltip {
+    opacity: 1;
+  }
+
+  ::ng-deep .tooltip-inner {
+    background-color: #42b574;
+    color: #fff;
+  }
+
+  ::ng-deep .tooltip.top .tooltip-arrow:before,
+  ::ng-deep .tooltip.top .tooltip-arrow {
+    border-top-color: #42b574;
+  }
+}
+
+.label-avatar {
+  position: absolute;
+  top: -1px;
+  right: -4px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+/*------------- #W-FAVED-PAGE --------------*/
+// .projectTeam {
+//   // width: 24%;
+// }
+
+.w-faved-page {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.w-faved-page li {
+  margin: 0 0 8px 8px;
+  overflow: hidden;
+  list-style: none;
+
+  a {
+    cursor: pointer;
+  }
+  &.dmImg {
+    text-align: none !important;
+
+    ::ng-deep img {
+      height: 36px;
+      border: 3px solid $theme2;
+      width: 36px;
+    }
+  }
+  
+}
+.avatar-container {
+  width: unset !important;
+  height: unset !important;
+}
+
+// media query
+@media (max-width: 1200px) {
+  .projectTeam {
+    flex: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .w-faved-page {
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ui-block {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .ui-block {
+    justify-content: center;
+  }
+
+  .projectLogo {
+    padding-left: 15px;
+  }
+
+  .projectName {
+    flex: 100%;
+    margin-top: 20px;
+  }
+
+  .ui-block {
+    .project-thumb,
+    .project-detail {
+      width: auto;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .projectLogo {
+    text-align: center !important;
+  }
+}
+::ng-deep .searchText1 em{
+  background: yellow;
+  color:#42B474;
+}
+::ng-deep .projectTeam {
+  // width: 100%;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // padding-top: 0px;
+  // margin-top: 10px;
+  // flex: 100%;
+  img {
+    height: 36px;
+      // border: 1px solid $primary;
+      width: 36px;
+      border-radius: 50%;
+      @include transition(all, 0.5s, linear);
+
+      &:hover {
+        @include scale(1.1);
+      }
+  }
+  ngx-avatar {
+    display: inline-block;
+    cursor: pointer;
+    .avatar-content {
+        @include transition(all, 0.5s, linear);
+        &:hover {
+           @include scale(1.1);
+         }
+     }
+  }
+}
+::ng-deep .projectMemberImg .avatar-container {
+  outline: none;
+}

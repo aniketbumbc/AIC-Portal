@@ -1,0 +1,13 @@
+<app-breadcrumbs page="Centre of Excellence"></app-breadcrumbs>
+<section class="section novi-background section-50 section-sm-50 fixed-min-height">
+  <div class="container">
+    <ul class="list-inline" *ngFor="let coedata of coeData">
+      <li><a [routerLink]="['/coe',coedata]" target="_self">
+          <div class="card" style="width:15rem; height:23rem;">
+            <h4>{{coedata}}</h4>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

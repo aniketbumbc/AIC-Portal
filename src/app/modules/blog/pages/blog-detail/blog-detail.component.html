@@ -1,0 +1,192 @@
+<app-breadcrumbs [title]="blogDetail?.name" [breadcrums]="breadCrumb"></app-breadcrumbs>
+<section class="section novi-background section-50 section-sm-50 fixed-min-height1">
+  <div class="container" >
+    <div class="row justify-content-sm-center">
+
+      <div class="col-lg-8">
+        <div class="inset-lg-right-20">
+          <!-- Blog Default Single-->
+          <section>
+            <!-- Post Wide-->
+            <article class="post post-default text-left">
+              <!-- Post Header-->
+              <div class="header post-header">
+                <!-- Post Meta-->
+                <ul class="post-controls list-inline list-inline-sm p text-dark">
+
+                  <!-- If created by available in data then show it else remove it from here  -->
+                  <!-- <li class="list-inline-item" ><span
+                      class="text-middle icon-xxs novi-icon text-picton-blue mdi mdi-clock spanspace-after"></span>
+                    <time class="text-middle small"
+                      datetime="_lastUpdatedTimestamp">{{blogDetail?.firstAddedOn}}</time>
+                  </li>
+                  <ng-template #blogCrTime>
+                    <li class="list-inline-item" ><span
+                        class="text-middle icon-xxs novi-icon text-picton-blue mdi mdi-clock spanspace-after"></span>
+                      <time class="text-middle small"
+                        datetime="_firstCreatedTimestamp"></time>
+                    </li>
+                  </ng-template> -->
+                  <span class="text-middle icon-xxs novi-icon text-picton-blue mdi mdi-account-outline" *ngIf="blogDetail?.authors && blogDetail?.authors.length"></span>
+                  <li class="list-inline-item catList" *ngFor="let auth of author">
+                    <a class="text-middle small" [routerLink]="['/profile/', auth.id]" target="_blank">{{ auth.name }}</a>
+                  </li>
+                  <!-- <li class="list-inline-item">
+                    <span class="text-middle icon-xxs novi-icon text-picton-blue mdi mdi-folder-outline">&nbsp;</span>
+                    <span class="text-middle" href="#">{{ (blogCategory) }}</span>
+                  </li> -->
+
+                </ul>
+
+                <!-- Post Media-->
+                <div class="post-media offset-top-34">
+                  <header class="post-media">
+                    <div data-lightgallery="group" *ngIf="blogDetail?.embeddedUrl">
+                      <figure>
+                        <div class="embed" [innerHTML]="embeddedUrl | safe: 'html'"> </div>
+                      </figure>
+                    </div>
+                  </header>
+                </div>
+              </div>
+              <section class="post-content offset-top-41" [innerHTML]="blogDetail?.description">
+              </section>
+            </article>
+
+            <!--  <div id="comments"></div>
+            <hr class="offset-top-34" />
+            <h4 class="offset-top-34 text-uppercase text-spacing-120 text-left font-weight-bold">
+              Leave a comment
+            </h4>
+            <form class="rd-mailform offset-top-10 text-left" data-form-output="form-contact-me" data-form-type="contact" method="post"
+              action="bat/rd-mailform.php">
+              <div class="form-group">
+                <label class="form-label form-label-outside" for="comment-message">Message:</label>
+                <textarea class="form-control" id="comment-message" data-constraints="@Required" style="height: 170px"></textarea>
+              </div>
+              <div class="group-sm text-center text-xl-left offset-top-30">
+                <a title="Coming Soon">
+                  <button title="Coming Soon" class="btn btn-md btn-primary disabled comingsoonBtn" type="submit">
+                    comment
+                  </button>
+                </a>
+              </div>
+            </form> -->
+          </section> 
+        </div>
+      </div>
+
+      <div class="col-lg-4 offset-top-66 offset-lg-top-0">
+        <!-- Categories  -->
+        <div class="row offset-top-0">
+          <div class="col-sm-6 col-lg-12">
+        
+            <div class="editBlogBtn">
+              <a  *ngIf="blogDetail && isBlogEditable" [routerLink]="['/blog/', blogDetail?.id, 'update']" class="routeLink" target="_self">
+                <button class="btn btn-sm btn-primary btn-icon btn-icon-left BlogDetail">
+                  <span class="icon novi-icon icon-xxs mdi mdi-pencil"></span>Edit Blog
+                </button>
+              </a>
+            </div>
+            <br/>
+            <br/>
+          <br/>    
+            <!-- Category-->
+            <h6 class="text-uppercase text-left text-spacing-60 category-space">
+              Categories
+            </h6>
+            <div class="text-subline"></div>
+            <ul class="list list-marked offset-top-30">
+              <li class="catList" *ngFor="let category of categories">
+                <span [routerLink]="['/blog/category/', category.id]" [ngClass]="{'cat1' : category['isHighlight']  }">
+                  {{ category?.category | titlecase }} ({{category?.blogs.length}})</span>
+              </li>
+
+            </ul>
+            <br />
+            <div *ngIf="blogDetail?.tags?.length > 0">
+            <h6 class="text-uppercase text-left text-spacing-60 category-space" >
+              Tags
+            </h6>
+            <div class="text-subline"></div>
+            <br>
+              <div>
+                <div *ngIf="blogDetail?.tags" class="editblogtags">
+                  <div *ngFor="let tag of blogDetail?.tags" >
+                    <a *ngIf="tag" class="label-custom label-lg-custom label-rounded-custom label-primary tags"  [routerLink]="['/search']" [queryParams]="{q: tag}">
+                      {{ tag }}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+        <!-- Section Blog Modern-->
+        <!-- <aside class="text-left offset-top-41">
+          <h6 class="text-uppercase text-spacing-60 relatedText">
+            Related Blogs
+          </h6>
+          <div class="text-subline"></div>
+          <div class="offset-top-24" > -->
+        <!-- Post Widget-->
+        <!-- <article class="post post-modern" > -->
+        <!-- Post media-->
+        <!-- <header class="post-media p-4">
+                <a [routerLink]="['/blog/']">
+                  <img class="img-fluid img-cover"  alt="" />
+                </a>
+              </header> -->
+        <!-- Post content-->
+        <!-- <section class="post-content text-left"> -->
+        <!-- Post Title-->
+        <!-- <a [routerLink]="['/blog/']">
+                  <div class="post-title">
+                    <h6 class="offset-top-24"></h6>
+                  </div> -->
+        <!-- Post Body-->
+        <!-- <div class="post-body offset-top-20">
+                    <p></p>
+                  </div>
+                </a> -->
+        <!-- author -->
+        <!-- <div class="box-comment text-left offset-top-20">
+                  <ul class="list-flex authorList">
+                    <li>
+                      <a  -->
+        <!--  [routerLink]="['/profile/', auth.authorName|trim]" -->
+        <!-- / <ngx-avatar >< src="{{imageUrl}}{{rlNameAndPhoto[auth.authorName |trim]?.profile_pic}}" -->
+        <!-- name="{{imageUrl}}{{auth.authorName.replace('-',' ').replace('_',' ')}}" size="36" -->
+        <!-- [routerLink]="['/profile/', auth.authorName|trim]"</ngx-avatar> -->
+        <!-- </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <ul class="list-inline offset-top-20 list-flex"> -->
+        <!-- <li >*ngFor="let cat of blog.categories" -->
+        <!-- <div class="post-tags group-xs"> -->
+        <!-- <a >[routerLink]="['/blog/category/', cat]" -->
+        <!-- <p class="label-custom label-lg-custom label-rounded-custom label-primary" href="#"> -->
+        <!-- {{ cat }} -->
+        <!-- </p>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+
+              </section>
+            </article>
+          </div>
+        </aside> -->
+      </div>
+    </div>
+    <br>
+    <h3 style="align-content: center;" *ngIf="blogData && blogData.length">Recommended Blogs  </h3>
+    <app-blog-list-masonry [blogList]="blogData">
+    </app-blog-list-masonry>
+  </div>
+</section>

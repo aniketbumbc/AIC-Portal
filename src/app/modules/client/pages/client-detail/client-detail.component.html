@@ -1,0 +1,62 @@
+<app-breadcrumbs  [title]="ClientDetail?.name" [breadcrums]="breadCrumb"></app-breadcrumbs>
+
+<section class="section novi-background section-50 section-sm-50 fixed-min-height1">
+  <div class="container">
+    <div class="row justify-content-sm-center">
+      <div class="col-md-4 col-lg-4 col-sm-auto justify-content-sm-center offset-top-20">
+        <div class="clientImg">
+          <div *ngIf="clientId" class="member-block-type-5 inset-lg-right-20 more-options">
+            <ngx-avatar src="{{ imageURL }}{{ ClientDetail?.logo?.url }}{{ decached }}"
+              name="{{ ClientDetail?. name }}" size="200">
+            </ngx-avatar>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-md-8 col-lg-8">
+        <div class="row ">
+          <div
+            class="col-md-8 col-lg-8 col-sm-8 col-8 d-flex flex-column justify-content-start align-items-start bd-highlight mt-3">
+            <div class="clientLabel p-2 bd-highlight" *ngIf="ClientDetail?.accountManagers.length">
+              <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-account"
+                title="Account Manager"></span>
+              <span *ngFor="let accountMgr of ClientDetail.accountManagers" class="cli"> {{accountMgr.name}}</span>
+            </div>
+            <div class="clientLabel p-2 bd-highlight" *ngIf="ClientDetail?.location">
+              <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-map-marker" title="location"></span>
+              <span class="cli"> {{ClientDetail?.location}}</span>
+            </div>
+            <div class="clientLabel p-2 bd-highlight" *ngIf="ClientDetail?.active">
+              <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-radiobox-marked" title="status"></span>
+              <span *ngIf="ClientDetail?.active" class="cli"> {{ClientDetail?.active}}</span>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-4 col-sm-4 col-2 d-flex flex-column bd-highlight" *ngIf="isAdmin">
+            <div class="editbutton">
+              <a class="clientedit" [routerLink]="['/client/','edit',clientId]" target="_self">
+                <button _ngcontent-c11="" class="btn btn-sm btn-primary btn-icon btn-icon-left editProfile">
+                  <span _ngcontent-c11="" class="icon novi-icon icon-xxs mdi mdi-pencil"></span>
+                  <span _ngcontent-c11="" class="text"> Edit Client</span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div *ngIf="!!ClientDetail?.description" class="col-sm-10 col-md-12-1">
+        <div class="offset-top-50">
+          <h3>Description </h3>
+          <hr class="divider bg-mantis" />
+        </div>
+        <div class="row justify-content-sm-center offset-top-30">
+          <div class="col-md-12-1">
+            <div class="text-left" [innerHtml]="ClientDetail?.description">
+            </div>
+          </div>
+        </div>
+      </div>

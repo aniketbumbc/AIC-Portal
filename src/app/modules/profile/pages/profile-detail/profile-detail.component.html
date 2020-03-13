@@ -1,0 +1,183 @@
+<app-breadcrumbs [title]="profileDetail?.name" [breadcrums]="breadCrumb"></app-breadcrumbs>
+<!-- My Works-->
+<section class="section novi-background section-50 section-sm-50 fixed-min-height1">
+  <div class="container" target="_self">
+    <!-- added row -->
+    <div class="row editButtonRow mt-0">
+
+      <ul class="list-unstyled p editButtons">
+        <li class="contact-li edit">
+          <a *ngIf="profileDetail && isProfileEditable()" [routerLink]="['/profile/', profileDetail?.id, 'edit']" target="_self"
+            class="editProfileBtn">
+            <button class="btn btn-sm btn-primary btn-icon btn-icon-left editProfile">
+              <span class="icon novi-icon icon-xxs mdi mdi-pencil"></span>
+              <span class="text"> Edit Profile</span>
+              <span class="tooltiptext"> Edit Profile</span>
+
+            </button>
+          </a>
+        </li>
+        <li class="contact-li export" >
+             <a *ngIf="profileDetail && isProfileEditable()" href = "{{profilePdf}}"  target="_blank" class="btn btn-sm btn-primary btn-icon btn-icon-left editProfileBtn">
+                <span class="icon novi-icon icon-xxs mdi mdi-download"></span>
+                <span class="text">Export Profile</span>
+             </a> 
+            </li>
+      </ul>
+      
+    </div>
+    <div class="row justify-content-sm-center">
+      <div class="col-md-4 col-lg-4 col-sm-auto justify-content-sm-center offset-top-20">
+        <!-- Member block type 5-->
+        <div *ngIf="profileDetail?.id" class="member-block-type-5 inset-lg-right-20 more-options">
+          <ngx-avatar src="{{ imageURL }}{{ profileDetail?.picture?.url }}{{ decached }}"
+            name="{{ profileDetail?. name }}" size="200">
+          </ngx-avatar>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-lg-8">
+        <div class="row">
+          <div class="col-md-6 col-lg-6 col-sm-6 col-6">
+            <div class="member-block-body memberBlock">
+              <address class="contact-info offset-top-20 offset-md-top-34 contactInfo">
+                <ul class="list-unstyled p">
+                  <li class="contact-li info">
+                    <!-- <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-clipboard-account">
+                        </span> -->
+                    <span class="text-middle d-inline-block titles">
+
+                    </span>
+                  </li>
+                  <li class="contact-li info" *ngIf="profileDetail?.email">
+                    <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-email-open"></span>
+                    <a class="text-middle d-inline-block text-picton-blue"></a>
+                    <!-- removed  href="mailto:{{ profileDetail?.email }}" -->
+                    {{ profileDetail?.email }}
+                    <!-- </a> -->
+                  </li>
+                  <li class="contact-li info" *ngIf="profileDetail?.location">
+                    <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-map-marker"></span>
+                    <a class="text-middle d-inline-block">{{
+                      profileDetail?.location.location
+                    }}</a>
+                  </li>
+                  <span>
+                    <li class="contact-li info" *ngIf="profileDetail?.education">
+                      <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-school"
+                        *ngIf="profileDetail?.education.length > 0"></span>
+                      <a class="text-middle d-inline-block text-left">{{
+                        profileDetail?.education[0]?.degree
+                    }}</a>
+                    </li>
+                  </span>
+                  <span>
+                  <li class="contact-li info" *ngIf="profileDetail?.blogUrl">
+                    <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-blogger"></span>
+                    <a class="text-middle d-inline-block" [href]="profileDetail?.blogUrl"
+                      target="_blank">{{ profileDetail?.blogUrl }}</a>
+                  </li>
+                </span>
+                  <!-- <li class="contact-li info" *ngIf= "social?.userId">
+                    <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-github-circle"></span>
+                    <a class="text-middle d-inline-block">{{
+                      social?.userId
+                    }}</a>
+                  </li>
+                  <li class="contact-li info" *ngIf="profileDetail?.blogUrl">
+                    <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-blogger"></span>
+                    <a class="text-middle d-inline-block" [href]="profileDetail?.blogUrl"
+                      target="_blank">{{ profileDetail?.blogUrl }}</a>
+                  </li> -->
+                </ul>
+              </address>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-sm-6 col-6">
+            <div class="member-block-body memberBlock">
+              <address class="contact-info offset-top-20 offset-md-top-34 contactInfo">
+                <ul class="list-unstyled p">
+                  <li class="contact-li info">
+                    <!-- <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-clipboard-account">
+                          </span> -->
+                    <span class="text-middle d-inline-block titles">
+
+                    </span>
+                  </li>
+                  <li class="contact-li info" *ngIf="getGithub">
+                    <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-github-circle"></span>
+                    <a class="text-middle d-inline-block">{{
+                      getGithub
+                  }}</a>
+                  </li>
+                  <li class="contact-li info" *ngIf="blinkId">
+                    <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-beta"></span>
+                    <a class="text-middle d-inline-block">{{
+                      blinkId
+                  }}</a>
+                  </li>
+                  <li class="contact-li info" *ngIf="linkedinId">
+                    <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-linkedin-box"></span>
+                    <a class="text-middle d-inline-block">{{
+                      linkedinId
+                  }}</a>
+                  </li>
+
+                 
+                </ul>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-10 col-md-12" *ngIf="!!profileDetail?.description">
+        <div class="offset-top-50">
+          <h3>
+            About Me
+          </h3>
+          <hr class="divider bg-mantis" />
+        </div>
+        <div class="row justify-content-sm-center offset-top-30">
+          <div class="col-md-12">
+            <div class="text-left" [innerHtml]="profileDetail?.description"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-10 col-md-12" *ngIf="profileDetail?.skills?.length" id="mySkill">
+        <div class="offset-top-50">
+          <h3>Skills</h3>
+          <hr class="divider bg-mantis" />
+          <app-skill-matrix [skillData]="profileDetail?.skills"></app-skill-matrix>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- section my projects-->
+<!--  *ngIf="projectDetail?.tags.length"  -->
+
+
+<section class="section novi-background section-top-50 section-md-top-0 section-bottom-50"
+  *ngIf="profileDetail?.projects.length">
+  <div class="container" id="myProject">
+    <h3>Projects</h3>
+    <hr class="divider bg-mantis" />
+    <div class="row justify-content-sm-center offset-top-50">
+      <div class="col-md-12">
+        <app-project-list [projectList]="profileDetail.projects"></app-project-list>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section novi-background section-top-50 section-md-top-0 section-bottom-50"
+  *ngIf="profileDetail?.blogs.length">
+  <div class="container" id="myBlog">
+    <h3>Blogs</h3>
+    <hr class="divider bg-mantis" />
+    <app-blog-list-masonry [blogList]="profileDetail.blogs"></app-blog-list-masonry>
+  </div>
+</section>
+<a id="dwnldLnk" style="display:none;"></a>

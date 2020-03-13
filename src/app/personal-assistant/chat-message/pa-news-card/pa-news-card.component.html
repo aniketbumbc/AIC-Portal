@@ -1,0 +1,36 @@
+<div class="swiper-container" [swiper]="config">
+  <div class="swiper-wrapper">
+    <!-- <mat-card
+      class="news_card swiper-slide"
+      *ngFor="let item of newsData?.list"
+    > -->
+    <mat-card class="news_card swiper-slide" *ngFor="let item of cardData">
+      <div class="card_header">
+        <!-- <img
+          src="{{ item._source.photograph }}"
+          class="news_image"
+          alt="{{ item._source.name }}"
+        /> -->
+
+        <img
+          src="{{ item.thumbnailImg }}"
+          class="news_image"
+          alt="{{ item.title }}"
+        />
+      </div>
+      <div class="news_card_content">
+        <div class="title">
+          <!-- <span>{{ item._source.name }}</span> -->
+          <span>{{ item.title }}</span>
+        </div>
+        <div class="summary">
+          <!-- <span>{{ item._source.introduction }}</span> -->
+          <span>{{ item.description }}</span>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
+
+<!-- <div class="chat-swiper-button-next"><mat-icon svgIcon="arrow"></mat-icon></div>
+<div class="chat-swiper-button-prev"><mat-icon svgIcon="arrow"></mat-icon></div> -->

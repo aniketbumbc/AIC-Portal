@@ -1,0 +1,325 @@
+<app-breadcrumbs page="New Project" [breadcrums]="breadCrumb"></app-breadcrumbs>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" [acceptButtonStyleClass]="'btn btn-success'" [rejectButtonStyleClass]="'btn btn-danger'" ></p-confirmDialog>
+<!--  Edit Profile-->
+<section class="section novi-background section-50 section-sm-50">
+  <div class="container">
+    <form [formGroup]="newProject" (ngSubmit)="onSubmit(submitBtn)">
+      <div>
+        <div class="row justify-content-sm-left sectionUserImg">
+          <!-- Section 1 edit info -->
+          <div class="col-md-12 col-lg-12">
+            <div class="addProjectDetails">
+              <!-- Project Details  -->
+              <div class="form-group editInfo section-20">
+                <div class="row">
+                  <!-- Pname -->
+                  <div class="col-md-6 col-lg-6">
+                    <label class="form-label-outside rd-input-label focus not-empty titles" for="input-labels-1">Project
+                      Name</label>
+                    <span class="color-red">*</span>
+                    <input name="Pname" id="name" class="form-control" formControlName="name" [(ngModel)]="projectName" placeholder="Enter Project Name" type="text" autocomplete="off" />
+                    <div *ngIf="
+                        newProject.controls['name'].invalid &&
+                        (newProject.controls['name'].dirty ||
+                          newProject.controls['name'].touched)
+                      " class="color-red">
+                      <div *ngIf="newProject.controls['name'].errors.required">
+                        Project name is required.
+                      </div>
+                    </div>
+
+                    <br />
+                  </div>
+                  <!-- Cname -->
+                  <div class="col-md-6 col-lg-6 ">
+                    <label  class="form-label-outside rd-input-label focus not-empty titles" for="input-labels-1">Client
+                      Name</label>
+                    <span class="color-red">*</span>
+                    <!-- <input class="form-control" formControlName="name" placeholder="Enter Project Name" type="text" /> -->
+                    <div class = "inputWrapper">
+                      <ng-select dropdownPosition="bottom" [items]="tempClientData" bindLabel="name" placeholder="Select client" 
+                        class="dropClient" formControlName="client" (search)="onSearch($event)" [multiple]="false">
+                      </ng-select>
+                      <!-- <ngx-select-dropdown
+                        tab-index="0"
+                        class="dropClient"
+                        [options]="clientData"
+                        [config]="configClient"
+                        formControlName="client"
+                      ></ngx-select-dropdown> -->
+                    </div>
+                    <div *ngIf="
+                        newProject.controls['client'].invalid &&
+                        (newProject.controls['client'].dirty ||
+                          newProject.controls['client'].touched)
+                      " class="color-red">
+                      <div *ngIf="newProject.controls['client'].errors.required">
+                        Client name is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <!-- Start Date -->
+                  <div class="col-md-6 col-lg-6">
+                    <label class="form-label-outside rd-input-label focus not-empty titles" for="input-labels-1">
+                      Start Date
+                    </label>
+                    <span class="color-red">*</span>
+                    <br />
+                    <p-calendar class="projectDate projectDateZ" [monthNavigator]="true" [yearNavigator]="true" yearRange="1980:2080"
+                      [showIcon]="true" [readonlyInput]="true" dateFormat="dd/mm/yy" formControlName="startDate"
+                       (onSelect)="onSelectStartDate($event)" [maxDate]="proNewMaxStartDate">
+                    </p-calendar>
+                    <div *ngIf="
+                        newProject.controls['startDate'].invalid &&
+                        (newProject.controls['startDate'].dirty ||
+                          newProject.controls['startDate'].touched)
+                      " class="color-red">
+                      <div *ngIf="newProject.controls['startDate'].errors.required">
+                        Start date is required.
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Date -->
+                  <div class="col-md-6 col-lg-6">
+                    <label class="form-label-outside rd-input-label focus not-empty titles" for="input-labels-1">
+                      End Date
+                    </label>
+                    <span class="color-red">*</span>
+                    <div class="custom-control custom-checkbox d-inline-block mx-2">
+                      <input class="custom-control-input" id="endDateOngoing" name="input-group-checkbox"
+                        formControlName="status" value="ongoing" type="checkbox"(change) = "chkToggle($event)"/>
+                      <label class="custom-control-label" for="endDateOngoing">
+                        Ongoing
+                      </label>
+                    </div>
+                    <br />
+                    <p-calendar *ngIf="showEndDate" class="projectDate projectDateZ" [monthNavigator]="true" [yearNavigator]="true" yearRange="1980:2080"
+                      [showIcon]="true" [readonlyInput]="true" dateFormat="dd/mm/yy" [showIcon]="true" 
+                      formControlName="endDate"  (onSelect)="onSelectEndDate($event)" [minDate]="proNewMinEndDate">
+                    </p-calendar>
+                    <div *ngIf="
+                    newProject.controls['endDate'].invalid &&
+                    (newProject.controls['endDate'].dirty ||
+                      newProject.controls['endDate'].touched)
+                  " class="color-red">
+                  <div *ngIf="newProject.controls['endDate'].errors.required">
+                    End date is required.
+                  </div>
+                </div>
+              
+                  </div>
+                </div>
+                <br />
+                <div class="row">
+                  <br />
+                  <!-- blog Tags -->
+                  <div class="col-md-12 col-lg-12">
+                    <div class="form-group editBlog">
+                      <label class="form-label-outside rd-input-label focus not-empty disabled titles"
+                        for="input-labels-1">Tags</label>
+                      <span class="color-red">*</span>
+                      <tag-input formControlName="tags" [separatorKeyCodes]="[9]" (onAdd)="onItemAdded($event)" blinkIfDupe='true' theme='bootstrap'>
+                      </tag-input>
+                      <div
+                      *ngIf="newProject.controls['tags'].invalid && (newProject.controls['tags'].dirty || newProject.controls['tags'].touched)"
+                      class="color-red">
+                      <div *ngIf="newProject.controls['tags'].errors.required">
+                        Tags are required.
+                      </div>
+                    </div>
+                      <br />
+                    </div>
+                  </div>
+                </div>
+                <br />
+                <!-- P Desc -->
+                <label class="form-label-outside rd-input-label focus not-empty titles" for="input-labels-1">Project
+                  Description
+                </label>
+                <span class="color-red">*</span>
+                <ckeditor class="projectDesc" name="myckeditor" required debounce="500" formControlName="description">
+                </ckeditor>
+                <div *ngIf="
+                        newProject.controls['description'].invalid &&
+                        (newProject.controls['description'].dirty ||
+                          newProject.controls['description'].touched)
+                      " class="color-red">
+                  <div *ngIf="newProject.controls['description'].errors.required">
+                    Project description is required.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- project techstack -->
+            <div>
+              <h3>Skills</h3>
+              <hr class="divider bg-mantis " />
+              <!-- If You need editable skill-matrix send value of 'pageEditableInfo' should be true -->
+              <app-skill-matrix class="section-20" [skillData]="techStackList" [pageEditableInfo]="true"
+                [userSkills]="projectTechstack" formControlname="skills"></app-skill-matrix>
+            </div>
+            <!-- Project Member -->
+            <div class="row offset-top-30">
+              <div class="col-md-12 col-lg-12">
+                <h3>Project Members</h3>
+                <hr class="divider bg-mantis" />
+                <div class="teamMembers section-20">
+                  <div class="offset-top-30">
+                    <app-profile-list [showAddMember] ="true" [projectDetails]="newProject.controls['name'].value" [profileList]="[]"> </app-profile-list>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Project Docs -->
+            <div class="row">
+              <div class="col-md-12 col-lg-12">
+                <h3>Project Documents</h3>
+                <hr class="divider bg-mantis" />
+                <div class="card" *ngIf="proDocs.length">
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <div id="add-row_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <table id="add-row" class="display table table-striped-project table-hover dataTable"
+                              role="grid" aria-describedby="add-row_info">
+                              <thead >
+                                <tr role="row">
+                                  <th class="titleDoc" tabindex="0" aria-controls="add-row" aria-sort="ascending"
+                                    aria-label="Name: activate to sort column descending">
+                                    Title
+                                  </th>
+                                  
+                                   <th class="actionDoc" tabindex="0" aria-controls="add-row"
+                                    aria-label="Action: activate to sort column ascending">
+                                    Action
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr role="row" *ngFor="let docs of proDocs; let i = index">
+                                  <td class= "backColor">
+                                   
+                                    <a href="{{docs.url}}" target="_blank" class="catList"> {{docs.name}}
+                                    </a>
+                                  </td>
+                                  
+                                  <td class= "backColor">
+                                    <a class="docTitle docDelete" data-toggle="modal" (click)="confirm(i)">
+                                    <span class="icon novi-icon icon-xxs text-middle mdi mdi-delete"></span>
+                                    </a>                                 
+                                  </td>
+                                </tr>
+                              </tbody>
+                             </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="addProject">
+                  <br />
+                  <div class="landing-item">
+                    <div class="landing-item-thumb">
+                      <div class="overlay overlay-dark"></div>
+                      <a (click)="resetModel()" data-toggle="modal" data-target="#uploadDocWidget" href="#"
+                        class="btn btn-primary addDoc">Upload Document</a>
+                    </div>
+                  </div>
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hr bg-gray"></div>
+        <div class="group-sm text-center text-xl-center offset-top-30 section-50">
+          <button type="submit"  #submitBtn class="btn btn-primary mt-0" [disabled]="newProject.invalid">
+            Save Project
+          </button>
+          <a class="mt-0" [routerLink]="['/project']">
+            <button class="btn btn-danger" type="button">
+              Cancel
+            </button>
+          </a>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+<!-- open modal for Upload document -->
+<div class="modal fade modalProject" id="uploadDocWidget" tabindex="-1" role="dialog" aria-labelledby="uploadDocWidget"
+  aria-hidden="true">
+  <div class="modal-dialog window-popup edit-widget" role="document">
+    <div class="modal-content">
+      <div class="modal-header modalTitle">
+        <label class="titles">Link Document From Google Drive</label>
+        <!-- <label class="titles">Edit Project Document</label> -->
+        <span class="icon novi-icon icon-xxs mdi close mdi-close" data-dismiss="modal" aria-label="Close"></span>
+      </div>
+      <div class="modal-body uploaddoc">
+        <form [formGroup]="uploadDoc">
+          <fieldset class="form-group label-floating is-select">
+            <label class="titles">Title</label>
+            <span class="color-red">*</span>
+            <input id ="Name" name="title" class="form-control" placeholder="Enter Title" type="text" autocomplete="off" formControlName="name"
+              required />
+            <br />
+          </fieldset>
+          <fieldset class="form-group label-floating is-select">
+            <label class="titles">Document URL </label>
+            <span class="color-red">*</span>
+            <input  id= "Text" name="documentUpload"  pattern="https://.*" class="form-control" placeholder="Enter Link" type="url" autocomplete="off" required
+              formControlName="url" />
+              <div *ngIf="
+              uploadDoc.controls['url'].invalid &&
+              (uploadDoc.controls['url'].dirty ||
+              uploadDoc.controls['url'].touched)
+            " class="color-red">
+            <!-- <div *ngIf="uploadDoc.controls['url'].errors.required"> -->
+              Please enter valid url with https or http.
+            
+            <!-- </div> -->
+          </div>
+            <br />
+          </fieldset>
+        </form>
+        <div class="modal-footer text-center text-xl-center offset-top-30">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">
+            cancel
+          </button>
+          <button type="button" (click)="saveProjDoc(uploadDoc.value)" [disabled]="uploadDoc.invalid"
+            class="btn btn-primary" data-dismiss="modal">
+            save
+            
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- open iframe document -->
+<div class="modal fade modalProject openiFrame" id="openIframDoc" tabindex="-1" role="dialog"
+  aria-labelledby="uploadDocWidget" aria-hidden="true">
+  <div class="modal-dialog window-popup edit-widget uploadDocWidget" role="document">
+    <div class="modal-content">
+      <div class="modal-header modalTitle">
+        <label class="titles"></label>
+        <span class="icon novi-icon icon-xxs mdi close mdi-close" data-dismiss="modal" aria-label="Close"></span>
+      </div>
+      <div class="modal-body">
+        <iframe #googlriframdoc width="100%" class="iframeDoc"></iframe>
+      </div>
+      <div class="modal-footer text-center text-xl-center ">
+        <div><a class="btn btn-primary" target="_blank" href="">View </a></div>
+
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,160 @@
+<app-breadcrumbs page="Client Create" [breadcrums]="breadCrumb"></app-breadcrumbs>
+<section class="section novi-background section-50 section-sm-50">
+  <div class="container">
+    <div>
+      <div class="row justify-content-sm-left sectionUserImg">
+        <!-- Section 1 edit info -->
+        <div class="col-md-12 col-lg-12">
+          <h3> Add Client </h3>
+          <form [formGroup]="clientCreateForm" (ngSubmit)="onSubmit()">
+            <hr class="divider bg-mantis" />
+            <div class="editProjectDetails">
+              <div class="form-group editInfo section-20">
+                <div class="row">
+                  <div class="col-md-6 col-lg-6">
+                    <label class="form-label form-label-outside rd-input-label focus not-empty titles"
+                      for="input-labels-1">Client Name</label>
+                    <span class="color-red">*</span>
+                    <input autocomplete="off" placeholder="Enter Client Name" class="form-control cName" formControlName="name"
+                      id="input-styles-1" type="text" name="clientName" minlength="2" />
+                    <div *ngIf="f.name.touched && f.name.invalid" class="color-red">
+                      <span *ngIf="f.name.errors.required">
+                        Client name is required
+                      </span>
+                      <span *ngIf="f.name.errors.minlength">
+                        Client name must be at least 2 characters long.
+                      </span>
+                      <span *ngIf="f.name.errors.pattern">
+                        Special characters not allowed except hyphen and
+                        underscore.
+                      </span>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6">
+                    <div class="editClient">
+                      <label class="editClient1" class="form-label form-label-outside rd-input-label focus not-empty titles"
+                        for="input-labels-1">Account Manager</label>
+                      <span class="color-red">*</span>
+                      <ng-select  class="editClient1" [items]="tempClientData" bindLabel="name" placeholder="Select Account Managers"
+                        multiple="true" formControlName="accountManagers" (search)="onSearch($event)" dropdownPosition="bottom">
+                      </ng-select>
+                      <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-menu-down clientMenu"></span>
+                      <div *ngIf="f.accountManagers.touched" class="color-red">
+                        <span *ngIf="f.accountManagers.errors && f.accountManagers.invalid">
+                          Please Select Account Manager.
+                        </span>
+                      </div>
+                      <br />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 col-lg-6">
+                    <div class="editClient">
+                      <label class="form-label form-label-outside rd-input-label focus not-empty titles"
+                        for="input-labels-1">Location</label>
+                      <span class="color-red">*</span>
+                      <br />
+                      <input placeholder="Enter client location" class="form-control cName" formControlName="location"
+                        id="input-styles-1" type="text" name="clientLocation" minlength="2" autocomplete="off"/>
+                      <div *ngIf="f.location.touched && f.location.invalid" class="color-red">
+                        <span *ngIf="f.location.errors.required">
+                          Client location is required
+                        </span>
+                        <span *ngIf="f.location.errors.minlength">
+                          Client location must be at least 2 characters long.
+                        </span>
+                        <span *ngIf="f.location.errors.pattern">
+                          Special characters and numbers not allowed.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <br />
+                  <div class="col-md-6 col-lg-6">
+                    <div class="editClient">
+                      <label class="form-label form-label-outside rd-input-label focus not-empty titles"
+                        for="input-labels-1">Status</label>
+                      <span class="color-red">*</span>
+                      <ngx-select-dropdown tab-index="0" [config]="status" [options]="clientStatus" [multiple]="false"
+                        class="dropCategory" formControlName="active">
+                      </ngx-select-dropdown>
+                      <div *ngIf="f.active.touched && f.active.errors" class="color-red">
+                        <span *ngIf="f.active.errors && f.active.invalid">
+                          Please Select Status.
+                        </span>
+                      </div>
+                      <span class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-menu-down clientMenu"></span>
+                      <br />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-lg-6">
+                    <div class="form-group createBlog">
+                      <label class="form-label form-label-outside rd-input-label focus not-empty disabled titles"
+                        for="input-labels-1">Client Description
+                      </label> <span class="color-red">*</span>
+                      <textarea class="form-control" formControlName="description" required></textarea>
+                      <div
+                        *ngIf="f.description.invalid && (!f.description.pristine || f.description.touched || f.description.dirty)">
+                        <span *ngIf="f.description.errors.required" class="color-red">
+                          Client description is required
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-6">
+                    <!-- <label class="form-label form-label-outside rd-input-label focus not-empty titles"
+                      for="input-labels-1">Choose Client Logo
+                    </label>
+                    <span class="color-red">*</span> <br />
+                    <label class="hoverable editBlogThumbnail" for="fileInput">
+                      <input type="file" id="fileInput" (change)="onSelectFile($event)">
+                      <img [src]="
+                    url ? url : '/assets/images/thumbnails/defaultThumbnail1.png' " />
+                      <div class="hover-text">Choose File</div>
+                    </label>
+
+                    <input id="fileInput" type="file" (change)="onSelectFile($event)" />
+                    <br />
+                    <button class="btn btn-sm btn-ellipse btn-danger" type="reset" (click)="remove()"> Remove Logo
+                    </button> -->
+                    <div class="form-group editBlog">
+                      <label class="form-label-outside rd-input-label focus not-empty titles"
+                        for="input-labels-1">Choose Logo</label>
+                      <span class="color-red">*</span>
+                      <br />
+                      <label class="hoverable editBlogThumbnail" for="fileInput">
+                        <input type="file" #fileInputs id="fileInput" name="files" (change)="onSelectFile($event)" accept='image/*'>
+                        <input type="hidden" name="fileHidden" id="filehidden"  /><!-- formControlName="thumbnail"  -->
+                        <img [src]="
+                            url ? url : '/assets/images/thumbnails/Accion-DefaultBlog.png' " alt="Breeze"/>
+                        <div class="hover-text">Choose File</div>
+                      </label>
+                      <button *ngIf="url" type="button" class="close remove" (click)="remove()" aria-label="Close">
+                        <span class="removeImage" aria-hidden="true">&times;</span>
+                      </button>
+                      <br />
+                      <div *ngIf="!url" class="color-red">{{responseMsg}}</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="group-sm text-center text-xl-center section-50">
+                  <button class="btn btn-primary saveProfile" [disabled]="!clientCreateForm.valid || files.length == 0" type="submit">
+                    Add Client
+                  </button>
+                  <button type="button" class="btn btn-danger" (click)="cancelBtnClicked($event)"
+                    data-dismiss="modal">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

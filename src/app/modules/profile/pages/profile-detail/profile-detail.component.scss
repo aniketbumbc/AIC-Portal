@@ -1,0 +1,193 @@
+.container {
+  .userPost {
+    margin-top: 12px;
+  }
+  .editProfileBtn {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    text-decoration: none;
+    .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: #434345;
+      color: #fff;
+      text-align: center;
+      padding: 5px 0;
+    
+      /* Position the tooltip */
+      position: absolute;
+      top:30px;
+      left: 35px;
+      z-index: 1;
+    }
+  }
+
+  .member-block-body .contactInfo {
+    margin-top: 10px;
+    .titles {
+      font-size: 16px;
+      font-weight: 600;
+      font-style: initial;
+    }
+  }
+  ul.list-unstyled p {
+    margin-top: 5px;
+  }
+  li.contact-li {
+    display: flex;
+    margin-top: 20px;
+    .editProfile {
+      width: 168px;
+      .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #434345;
+        color: #fff;
+        text-align: center;
+        padding: 5px 0;
+       
+        /* Position the tooltip */
+        position: absolute;
+        left: 42px;
+        top:30px;
+        z-index: 1;
+      }
+    }
+  }
+
+  .editButtons {
+    margin-left: 20%;
+    
+  }
+
+  .contact-li .btn .icon .edit-profile:before {
+    display: inline-block;
+    position: relative;
+  }
+  .contact-li .btn .icon .edit-profile:before {
+    display: inline-block;
+    position: relative;
+  }
+  .contact-li .icon {
+    padding-right: 5px;
+  }
+
+  .edit-user h3 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // .member-block-type-5 .inset-lg-right-20 .more-options {
+  //   background-color: gray;
+  // }
+
+  .more-options .photo {
+    padding-top: 30px;
+  }
+
+  // ::ng-deep .avatar-container {
+  //   img {
+  //     width: 200px;
+  //     height: 200px;
+  //   }
+  // }
+
+  img {
+    margin-top: 15px;
+    border-radius: 10px;
+  }
+  // .member-block-body.memberBlock {
+  //   padding: 15px 0 0 0;
+  // }
+
+  .small .text-darker .offset-top-4 .userPost {
+    margin-top: 0px;
+  }
+}
+.editButtonRow {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1px;
+  padding-left: 0px;
+  ul {
+    margin-right: 28px;
+  }
+  
+}
+
+::ng-deep .btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #ffffff;
+  background-color: lighten(#34905c, 15%) !important;
+  border-color: lighten(#34905c, 15%) !important;
+}
+@media (min-width: 430px) and (max-width: 991px) {
+  .text {
+    display: none;
+  }
+  .container li.contact-li .editProfile {
+    width: 45px;
+    padding-left: 8px;
+  }
+  .container li.contact-li .editProfile:hover .tooltiptext {
+    visibility: visible;
+  }
+  .editProfileBtn {
+    width: 45px;
+    padding-right: 3px;
+  }
+  .container .editProfileBtn:hover .tooltiptext {
+    visibility: visible;
+  }
+  .container .info .icon {
+    padding-right: 10px;
+  }
+  .memberBlock {
+    margin-left: 50px;
+  }
+  .container li.info {
+    padding-right: 8px;
+  }
+  .container .editButtons li.edit {
+    margin-left: 68px;
+  }
+  .container .editButtons li.export {
+    margin-left: 65px;
+  }
+}
+@media (min-width: 312px) and (max-width: 429px){
+  .text {
+    display: none;
+  }
+  .container li.contact-li .editProfile {
+    width: 45px;
+    padding-left: 8px;
+  }
+  .container li.contact-li .editProfile:hover .tooltiptext {
+    visibility: visible;
+  }
+  .editProfileBtn {
+    width: 45px;
+    padding-right: 3px;
+  }
+  .container .editProfileBtn:hover .tooltiptext {
+    visibility: visible;
+  }
+  .container .info .icon {
+    padding-right: 10px;
+  }
+  .memberBlock {
+    margin-left: -10px;
+  }
+  .container li.info {
+    padding-right: 8px;
+  }
+  .container .editButtons li.edit {
+    margin-left:40px;
+  }
+  .container .editButtons li.export {
+    margin-left: 40px;
+  }
+}

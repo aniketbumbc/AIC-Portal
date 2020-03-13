@@ -1,0 +1,129 @@
+<app-breadcrumbs page="Projects" title="{{ projectDetailNew?.name }} - {{ projectDetailNew?.client?.name }}"
+  [breadcrums]="breadCrumb">
+</app-breadcrumbs>
+<section class="section novi-background section-50 section-sm-50 fixed-min-height">
+  <div class="container" *ngIf="projectDetailNew">
+    <div class="projectData">
+      <a *ngIf="projectDetailNew" [routerLink]="['/project/', projectDetailNew?.id, 'edit']" target="_self"
+        class="editProjectBtn">
+        <button class="btn btn-sm btn-primary btn-icon btn-icon-left"><span
+            class="icon novi-icon icon-xxs mdi mdi-pencil"></span> Edit Project </button>
+      </a>
+      <h3 class="card-title">Project Information</h3>
+      <hr class="divider bg-mantis" />
+      <div [innerHTML]="projectDetailNew?.description" class="offset-top-20 text-left"></div>
+      <br />
+      <br />
+
+      <!-- Status -->
+      <h3>Status</h3>
+      <hr class="divider bg-mantis" />
+        
+      <!-- <div class="col-md-12 progress-bar-box">
+        <div class="col-md-1 progressValue">
+          {{projectDetailNew?.status === 'closed' ? '100%' : '50%'}}
+        </div>  
+         <div class="col-md-11">
+          <p-progressBar [ngClass]=" statusValue > 60 ? 'progressbar-green' : 'progressbar-green'"
+            [style]="{'height':'40px'}" [showValue]="false" [value]="statusValue"></p-progressBar>
+          <span class="icon novi-icon icon-xxs mdi mdi-clock-start"></span>
+          <span class="icon novi-icon icon-xxs mdi mdi-clock-end"></span>
+      </div>
+    </div>     -->
+  
+      <p-progressBar [ngClass]=" statusValue > 60 ? 'progressbar-green' : 'progressbar-green'" [style]="{'height':'40px'}"
+      [showValue]="true" [value]="statusValue"></p-progressBar>
+    <span class="icon novi-icon icon-xxs mdi mdi-clock-start"></span>
+    <span class="icon novi-icon icon-xxs mdi mdi-clock-end"></span>  
+
+    <!-- <div class="align-start-date" style>
+        {{ projectDetailNew?.start_date | date: 'dd/MM/yyyy' }}</div>
+      <div class="align-end-date">
+        {{ projectDetailNew?.end_date === "present" ?  -->
+
+    <div *ngIf="projectDetailNew?.status === 'closed'">
+      <div class="align-start-date" style>
+        {{ projectDetailNew?.startDate | date: 'dd/MM/yyyy' }}</div>
+      <div class="align-end-date">
+        {{ projectDetailNew?.endDate === "present" ? 
+          (projectDetailNew?.status | uppercase) : (projectDetailNew?.endDate | date: 'dd/MM/yyyy') }}
+      </div>
+    </div>
+
+    <!-- Tags -->
+    <div class="row" *ngIf="projectDetailNew?.tags?.length > 0">
+      <div class="col-md-8 offset-md-2 col-lg-12 offset-lg-0 section-20 section-sm-20">
+        <h3>Tags</h3>
+        <hr class="divider bg-mantis" />
+        <div class="project-tags" *ngIf="projectDetailNew?.tags">
+          <div class="cursor-pointer" *ngFor="let tag of projectDetailNew?.tags">
+            <p *ngIf="tag" class="label-custom label-lg-custom label-rounded-custom label-primary tags"
+              [routerLink]="['/search']" [queryParams]="{q: tag}">
+              {{ tag }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="skillValuesCount">
+      <div class="col-md-8 offset-md-2 col-lg-12 offset-lg-0 section-20 section-sm-20">
+        <h3>Skills</h3>
+        <hr class="divider bg-mantis" />
+        <app-skill-matrix [skillData]="projectDetailNew?.techstack"></app-skill-matrix>
+      </div>
+    </div>
+    <div class="row" *ngIf="membersCount && projectMembers.length">
+      <div *ngIf="!!projectDetailNew" class="col-md-8 offset-md-2 col-lg-12 offset-lg-0">
+        <h3 class="card-title">Project Members</h3>
+        <hr class="divider bg-mantis" />
+        <app-profile-list [profileList]="projectMembers" [fetchData]="projectDetailNew" [pageEdit]="false">
+        </app-profile-list>
+      </div>
+    </div>
+    <!-- Project Docs -->
+
+    <div class="row" *ngIf="projectDetailNew?.documents.length">
+      <div class="col-md-12-1 col-lg-12">
+        <h3>Project Documents</h3>
+        <hr class="divider bg-mantis" />
+        <div class="card">
+          <div class="card-body">
+            <div class="table-responsive">
+              <div id="add-row_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <table id="add-row" class="display table table-striped-project table-hover dataTable" role="grid"
+                      aria-describedby="add-row_info">
+                      <thead>
+                        <tr role="row">
+                          <th class="titleDoc" tabindex="0" aria-controls="add-row" aria-sort="ascending"
+                            aria-label="Name: activate to sort column descending">
+                            Title
+                          </th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr role="row" *ngFor="let docs of projectDetailNew?.documents">
+                          <td class="backColor">
+
+                            <a href="{{docs.url}}" target="_blank" class="catList"> {{docs.name}}
+                            </a>
+
+                          </td>
+
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>

@@ -1,0 +1,82 @@
+@import "~mixin.scss";
+@import "~variables.scss";
+
+::ng-deep .myTabs {
+  ul.nav-tabs {
+    display: flex;
+    justify-content: center;
+    border: none;
+    margin-bottom: 34px;
+
+    li.nav-item {
+      position: relative;
+
+      a {
+        border: none;
+      }
+
+      span {
+        position: relative;
+        display: inline-block;
+        padding: 0 0 13px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #9b9b9b;
+        text-transform: uppercase;
+        list-style-type: none;
+        cursor: pointer;
+        transition: color .2s ease-in;
+      }
+
+      &.active {
+        &:before {
+          position: absolute;
+          // left: 50%;
+          bottom: 0;
+          // width: 0;
+          width: 100%;
+          left: 0;
+          height: 1px;
+          background-color: #434345;
+          content: '';
+        }
+
+        span {
+          color: #434345;
+        }
+      }
+    }
+  }
+
+  &.tabSearchHide {
+    ul.nav-tabs {
+      display: none;
+    }
+
+    .row.section-34 {
+      padding-top: 0;
+    }
+  }
+}
+::ng-deep #insertVideo-1,
+::ng-deep #insertFile-1,
+::ng-deep #insertImage-1,
+::ng-deep #insertTable-1,
+::ng-deep #emoticons-1,
+::ng-deep #specialCharacters-1,
+::ng-deep #insertHR-1,
+::ng-deep #print-1,
+::ng-deep #getPDF-1,
+::ng-deep #help-1,
+::ng-deep #quote-1,
+::ng-deep #color-1{
+ display: none;
+}
+
+.spinLoader {
+	display:flex;
+  justify-content:center;
+  img{
+    height: 100px;
+  }
+}

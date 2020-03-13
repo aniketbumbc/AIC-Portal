@@ -1,0 +1,327 @@
+@import 'variables.scss';
+
+::ng-deep .ngx-dropdown-container {
+  min-height: 0px;
+  .ngx-dropdown-button {
+    outline: none;
+    height: 50px;
+  }
+}
+
+.color-red {
+  color: red;
+  font-size: 12px;
+  padding: 5px !important;
+}
+
+::ng-deep .ngx-dropdown-list-container {
+  max-height: 450% !important;
+  z-index: 4 !important;
+  width: 80%;
+  hr {
+    display: none;
+  }
+  ul.selected-items {
+    display: none;
+    width: 50%;
+  }
+}
+
+::ng-deep .editAuthorMenu1 .ng-select-container {
+  height: 50px;
+  .ng-placeholder {
+    top: 10px;
+    padding-top: 8px;
+  }
+  .ng-clear-wrapper {
+    display: none;
+    -webkit-appearance: none;
+  }
+  .ng-arrow-wrapper {
+    display: none;
+    -webkit-appearance: none;
+  }
+}
+
+::ng-deep .btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #ffffff;
+  background-color: lighten(#34905c, 15%) !important;
+  border-color: lighten(#34905c, 15%) !important;
+}
+::ng-deep button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+::ng-deep .ng2-tags-container {
+  tag {
+    background: $theme2 !important;
+    height: 36px !important;
+    padding: 0px 10px 0px 10px !important;
+    line-height: 36px !important;
+    border-radius: 25px !important;
+    color: $secondary !important;
+  }
+  .bootstrap path {
+    fill: $primary;
+  }
+}
+::ng-deep .ngx-dropdown-list-container {
+  max-height: 450% !important;
+  z-index: 4 !important;
+  width: 80%;
+  hr {
+    display: none;
+  }
+  ul.selected-items {
+    display: none;
+    width: 50%;
+  }
+}
+
+::ng-deep .ngx-dropdown-button {
+  outline: none;
+  .nsdicon-angle-down {
+    display: none;
+    content: 'icon novi-icon icon-xxs text-middle text-dark mdi mdi-menu-down';
+  }
+}
+
+::ng-deep .catSelection .custom-checkbox .custom-control-label::before {
+  border-radius: 0px;
+  top: 0.26rem;
+  left: -1.5rem;
+  display: block;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+::ng-deep .catSelection .custom-checkbox .custom-control-label::after {
+  left: -1.4rem;
+}
+
+.color-red {
+  color: #dc3545;
+  font-size: 13px;
+}
+
+//img css for thumnail starts here
+.closeIcon {
+  position: relative;
+  top: -2px;
+  right: 280px;
+  &:hover {
+    content: 'f552';
+    font-family: 'Materail Design Icons';
+    position: relative;
+  }
+}
+img {
+  display: block;
+
+  left: 40px;
+  // border: 1px solid black;
+  max-height: 168px;
+  width: 250px;
+}
+
+.hoverable {
+  min-height: 80px;
+  justify-content: center;
+  opacity: 0.9;
+  cursor: pointer;
+  margin-bottom: 0px !important;
+}
+.hoverable .hover-text {
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 22%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: $primary;
+  font-weight: 600;
+  border: 1px solid $primary;
+  padding: 5px;
+  background-color: $secondary;
+}
+.hoverable .background {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 1;
+}
+.hoverable:hover .hover-text {
+  display: block;
+}
+.hoverable:hover .background {
+  display: block;
+}
+#fileInput {
+  display: none;
+}
+// img css ends here
+
+.editAuthorMenu1,
+.coaMenu {
+  position: relative;
+  .authorMenu {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    z-index: 0;
+    cursor: pointer;
+    color: $primary !important;
+    pointer-events: none;
+  }
+}
+
+::ng-deep .editBlogAuthors ul.selected-items {
+  display: block;
+  width: 100%;
+  li {
+    position: relative;
+    &::before {
+      position: absolute;
+      right: 8px;
+      top: 2px;
+      content: 'X';
+      font-weight: normal;
+      font-style: normal;
+    }
+  }
+  li.nsdicon-close {
+    display: none;
+  }
+}
+::ng-deep .catSelection {
+  margin-left: 0px !important;
+}
+
+.editBlog {
+  text-align: left !important;
+  margin-bottom: 0px !important;
+  .titles {
+    font-size: 16px;
+    font-weight: 600;
+    font-style: initial;
+  }
+  .selectCat {
+    display: flex !important;
+  }
+  .catlabeldiv {
+    margin-right: 21px;
+  }
+  .category {
+    display: flex;
+  }
+  .closeIcon {
+    position: relative;
+    top: -2px;
+    right: 290px;
+  }
+  .blogDetails {
+    height: 200px;
+  }
+  .dropCategory {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .uploadURL {
+    float: right !important;
+    font-size: 13px;
+    color: $theme1;
+  }
+}
+.remove{
+  position: absolute;
+  margin-left: 4px !important;
+  margin-top: -15px !important;
+  .removeImage{
+    font-size: xx-large;
+    color: #dc3545
+  }
+}
+.absdes{
+  height: 175px !important;
+  // padding: 0px !important
+}
+
+.label-container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  padding-right: 80px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.label-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #eee;
+}
+
+.label-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.label-container input:checked ~ .checkmark {
+  background-color:#00a400;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.label-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.label-container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+::ng-deep .ng2-tag-input__text-input {
+  font-size: 13.5px!important;
+}
+
+.suggested-tags {
+  color: #ffffff;
+
+  .label-custom {
+    cursor: pointer;
+  }
+}

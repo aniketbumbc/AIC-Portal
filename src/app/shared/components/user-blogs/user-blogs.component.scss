@@ -1,0 +1,147 @@
+@import '~mixin.scss';
+@import '~variables.scss';
+.simpleShadow {
+  box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.15);
+  padding: 15px 15px;
+  display: flex;
+  min-height: 450px;
+  flex-direction: column;
+}
+.docTitle {
+  cursor: pointer;
+  color: $theme1 !important;
+  display: flex;
+  font-size: 18px;
+  justify-content: flex-start;
+  font-weight: 600;
+}
+.cardTitle {
+  font-weight: 600;
+  margin-top: 0px !important;
+}
+.cardTitle,
+.teamImg {
+  text-align: left;
+}
+.teamImg {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+.list-flex {
+  display: flex;
+  align-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+  li {
+    margin-bottom: 5px;
+  }
+}
+.authorList {
+  padding: 0;
+  justify-content: left;
+
+  li {
+    margin-left: -10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    .box-comment-img {
+      width: 45px;
+      height: 45px;
+      border: 1px solid $secondary;
+    }
+  }
+}
+
+.showBtn {
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  a {
+    margin-top: 5px !important;
+  }
+}
+.pDesc {
+  // margin-top: 10px;
+  display: flex;
+  display: -webkit-box;
+  max-width: 100%;
+  font-size: 13px;
+  height: 56px;
+  margin: 10px auto;
+  line-height: 1.5;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pDesc:after {
+  content: '...';
+}
+
+.centerPosition {
+  justify-content: center;
+  vertical-align: middle;
+  margin-top: 120px;
+  // color: #909090;
+  // font-style: oblique;
+  padding: 15px;
+}
+
+.statusText {
+  display: flex;
+  justify-content: flex-end;
+  float: right;
+  text-transform: capitalize;
+  border-radius: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 95px;
+  height: 18px;
+  margin-top: 14px;
+}
+::ng-deep .btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #ffffff;
+  background-color: lighten(#34905c, 15%) !important;
+  border-color: lighten(#34905c, 15%) !important;
+}
+
+::ng-deep .btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #ffffff;
+  background-color: lighten(#34905c, 15%) !important;
+  border-color: lighten(#34905c, 15%) !important;
+}
+::ng-deep .authorList .tooltip {
+  opacity: 1;
+}
+::ng-deep .tooltip-inner {
+  background-color: #42b574;
+  color: #fff;
+  ::ng-deep .authorList .tooltip {
+    opacity: 1;
+  }
+}
+::ng-deep .tooltip.top .tooltip-arrow:before,
+::ng-deep .tooltip.top .tooltip-arrow {
+  border-top-color: #42b574;
+}
+@media (max-width: 1280px) {
+  // .simpleShadow {
+  //   min-height: 438px;
+  // }
+}
+.docTitle {
+  cursor: pointer;
+  color: $link !important;
+  display: flex;
+  font-size: 16px;
+  justify-content: flex-start;
+}

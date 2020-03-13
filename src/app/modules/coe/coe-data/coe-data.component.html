@@ -1,0 +1,114 @@
+<app-breadcrumbs page="COE"></app-breadcrumbs>
+<section class="novi-background section-50 section-sm-50">
+  <div class="container">
+    <div class="row justify-content-sm-center">
+      <div class="col-sm-10 col-md-9 col-lg-10 col-xl-12">
+        <div
+          class="owl-carousel owl-carousel-default veil-xl-owl-dots veil-owl-nav owl-loaded justify-content-sm-center editCoe"
+          data-items="1" data-sm-items="2" data-lg-items="3" data-xl-items="5" data-dots="true">
+
+          <div class="owl-stage-outer catOuter">
+            <div class="owl-stage catInner">
+              <div class="owl-item active catActive">
+                <div class="activeCat actCat" *ngFor="let coename of coeNames; let i=index">
+                  <a>
+                    <ul class="list list-unstyled list-vertical-right-line bg-primartey catUl">
+                      <li [class.greenbox]="selectedIndex === i" (click)="setIndex(i)">
+                        <div class="coeCat" (click)=coeClickData(coename)>
+                          <span class="res icon icon-lg mdi {{imageIcons[i]}}" (click)=coeClickData(coename)></span>
+                          <div class="h5 coeTitle">{{coename}}</div>
+                        </div>
+                      </li>
+                    </ul>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="owl-nav disabled">
+            <div class="owl-prev"></div>
+            <div class="owl-next"></div>
+          </div>
+
+          <div class="owl-dots">
+            <div class="owl-dot active"><span></span></div>
+            <div class="owl-dot"><span></span></div>
+            <div class="owl-dot"><span></span></div>
+            <div class="owl-dot"><span></span></div>
+            <div class="owl-dot"><span></span></div>
+          </div>
+
+          <section class="section novi-background section-50 section-sm-50 fixed-min-height ">
+            <div class="container">
+              <div class="responsive-tabs responsive-tabs-classic myTabs" data-type="horizontal">
+                <tabset>
+                  <tab heading="People ({{count.profile}})" id="tab1" (select)="onSelect($event)"
+                    [active]="activeTab == 'profile'">  
+                    <div class="text-center text-lg-left">
+                      <div class="row justify-content-sm-center section-34">
+                        <div class="col-md-12 col-lg-12">                          
+                          <ng-container *ngIf="count.profile; else not_found">
+                            <app-profile-list 
+                            infiniteScroll
+                            [infiniteScrollDistance]="0"
+                            [infiniteScrollThrottle]="100"                               
+                            (scrolled)="onScrollEvent($event)" 
+                            [scrollWindow]="false"
+                            
+                            [profileList]="employees"                         
+                                                  
+                            >
+                            </app-profile-list>
+                          </ng-container>
+                        </div>
+                      </div>
+                    </div>
+                  </tab>
+                  <tab heading="Project ({{count.project}})" (select)="onSelect($event)">
+                    <div class="text-center text-lg-left">
+                      <div class="row justify-content-sm-center section-34">
+                        <div class="col-md-12 col-lg-12">
+                          <ng-container *ngIf="count.project; else not_found">
+                            <app-project-list [fetchData]="fetchDetails" [projectList]="coeData[0].projects">
+                            </app-project-list>
+                          </ng-container>
+                        </div>
+                      </div>
+                    </div>
+                  </tab>
+                  <tab heading="Blog ({{count.blog}})" (select)="resizeEvent()">
+                    <div class="text-center text-lg-left">
+                      <div class="row justify-content-sm-center section-34">
+                        <div class="col-md-12 col-lg-12">
+                          <ng-container *ngIf="count.blog;else not_found">
+                            <app-blog-list-masonry *ngIf="demolist" [blogList]="demolist"
+                              [updateMasonryLayout]="masonryLayout">
+                            </app-blog-list-masonry>
+                          </ng-container>
+                        </div>
+                      </div>
+                    </div>
+                  </tab>
+                </tabset>
+              </div>
+            </div>
+            <!-- <ng-template #not_found>No Result Found</ng-template> -->
+            <ng-template #not_found>
+              <div *ngIf="count.profile">No Records Found</div>
+            </ng-template>
+            <ng-template #noProjectFound>
+              <div *ngIf="count.project">No Records Found</div>
+            </ng-template>
+            <ng-template #noBlogFound>
+              <div *ngIf="count.blog">No Records Found</div>
+            </ng-template>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="showloader" class="spinLoader">
+    <img class= "loader-img" src="../../../../../assets/images/Loader.gif" alt="Breeze"/>
+  </div>
+</section>

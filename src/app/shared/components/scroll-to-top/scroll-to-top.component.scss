@@ -1,0 +1,31 @@
+@import '~mixin.scss';
+@import '~variables.scss';
+.scrollTop {
+  position: fixed;
+  bottom: 55px;
+  right: 0;
+  background: $gray;
+  height: 45px;
+  width: 45px;
+  margin: 0 20px 20px 0;
+  border-radius: 50%;
+  @include transition(all, 0.05s, linear);
+  opacity: 0;
+  z-index: 9;
+  a {
+    color: $secondary !important;
+    padding: 10px 12px;
+    cursor: pointer;
+  }
+  &.scrollIcon {
+    opacity: 1;
+    @include transition(all, 0.5s, linear);
+  }
+}
+::ng-deep .toastMsg {
+  .ui-toast-top-right {
+    top: 15%;
+    right: 0px;
+    z-index: 6;
+  }
+}

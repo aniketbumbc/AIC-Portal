@@ -1,0 +1,221 @@
+<div class="auth-landing-page">
+  <div class="container">
+    <div class="row justify-content-sm-center align-items-center">
+      <div class="col col-xl-6 col-lg-6 col-md-8 col-sm-12 col-12">
+        <div class="landing-content">
+          <a href="#" class="logo">
+            <div class="img-wrap">
+              <img src="assets/images/logo.png" alt="Breeze"/>
+            </div>
+          </a>
+          <h1>
+            Welcome to Accion <br />
+            Innovation Center
+          </h1>
+          <p class="font">
+            AccionLabs is a fast growing global IT solutions and services
+            company building innovative next generation digital products and
+            applications based on emerging technologies!
+          </p>
+          <!-- <a href="http://aic.accionlabs.com/#/request_access" class="reqBtn btn btn-default" target="_self">Request for
+            Access
+          </a> -->
+        </div>
+      </div>
+      <div class="col col-xl-5 col-lg-6 col-md-8 col-sm-12 col-12">
+        <div class="registration-login-form" style="padding-left:0px!important;">
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane active"id="profile" role="tabpanel" data-mh="log-tab">
+              <div  *ngIf="!show && !display"class="title h6">Login to your account</div>
+              <form class="content"[formGroup]="loginForm" (ngSubmit)="userLogIn(loginForm.value)">
+                <div class="row">
+                  <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <div *ngIf="!show && !display" class="login">
+                      <div class="form-group label-floating">
+                        <!-- <label class="control-label titles">Your Email</label> -->
+                        <input type="text" id="email" name="email" class="form-control ng-pristine ng-invalid is-invalid ng-touched" placeholder="E-mail" formControlName="username" type="email"
+                          [ngClass]="{
+                            'is-invalid':
+                              loginForm.controls['username'].errors &&
+                              loginForm.controls['username'].touched
+                          }"
+                        />
+                        <div
+                          *ngIf="
+                            loginForm.controls['username'].invalid &&
+                            (loginForm.controls['username'].dirty ||
+                              loginForm.controls['username'].touched)" >
+                          <div
+                            *ngIf=" loginForm.controls['username'].errors.required"class="color-red">
+                            The email address is required.
+                          </div>
+                          <div
+                            *ngIf="
+                              loginForm.controls['username'].errors.username ||
+                              loginForm.controls['username'].errors.pattern" class="color-red" >
+                            Please enter valid email id.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="section-10"></div>
+
+                      <div class="form-group label-floating">
+                        <!-- <label class="control-label titles">Your Password</label> -->
+                        <input
+                          class="form-control"
+                          placeholder="Password"
+                          formControlName="password"
+                          type="password"
+                          minlength="6"
+                          [ngClass]="{
+                            'is-invalid':
+                              loginForm.controls['password'].errors &&
+                              loginForm.controls['password'].touched
+                          }"
+                        />
+                        <div
+                          *ngIf="
+                            loginForm.controls['password'].invalid &&
+                            (loginForm.controls['password'].dirty ||
+                              loginForm.controls['password'].touched) " class="invalid-feedback" >
+                          <div
+                            *ngIf="
+                              loginForm.controls['password'].errors.required" class="color-red">
+                            Password is required.
+                          </div>
+                          <div
+                            *ngIf="
+                              loginForm.controls['password'].errors.minlength "class="color-red" >
+                            Password must be atleast 6 characters.
+                          </div>
+                          <div
+                            *ngIf="
+                              loginForm.controls['password'].errors.pattern " class="color-red" >
+                            Password must contain any combination of letters,
+                            digits & special characters.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="section-10"></div>
+                      <button
+                        class="btn btn-block btn-primary"
+                        [disabled]="!loginForm.valid"
+                        type="submit"
+                      >
+                        Login
+                      </button>
+                      <div class="section-10"></div>
+                    </div>
+                    <div *ngIf="show && !display" class="requests">
+                    <div class="heading"> <p class="head h6">Request for access</p>
+                      <p class="head margin">Enter authorized email address only !</p></div>
+                      <form class="requestform"[formGroup]="requestForm" (ngSubmit)="requestForAccess(requestForm.value)">
+                        <input type="email" name="email"  class="form-control" placeholder="Enter E-mail" formControlName="username" [ngClass]="{
+                          'is-invalid':
+                          requestForm.controls['username'].errors &&
+                          requestForm.controls['username'].touched
+                        }">
+                        <div
+                        *ngIf="
+                        requestForm.controls['username'].invalid &&
+                          (requestForm.controls['username'].dirty ||
+                          requestForm.controls['username'].touched)" >
+                        <div
+                          *ngIf=" loginForm.controls['username'].errors.required"class="color-red">
+                          The email address is required.
+                        </div>
+                        <div
+                          *ngIf="
+                          requestForm.controls['username'].errors.username ||
+                          requestForm.controls['username'].errors.pattern" class="color-red" >
+                          Please enter valid email id.
+                        </div>
+                      </div>
+                       <!-- <div class="request"> -->
+                         <a (click)="forgotclicked()" class="forgot titles"target="_self" >Forgot password</a>
+                        <!-- </div> -->
+                       <div class="buttons"> 
+                         <button class="btn btn-primary button" type="submit" [disabled]="!requestForm.valid">Submit</button>
+                          <button class="btn btn-danger button" type="button"  (click)="cancelBtnClicked($event)">Cancel</button>
+                      </div>
+                        <!-- <div class="section-10"></div> -->
+                      </form>
+                    </div>
+                    <div *ngIf="display" class="requests">
+                        <div class="heading">
+                      <p class="head h6 forgotform">Forgot your password?</p>
+                      </div>
+                      <form class="requestform" [formGroup]="forgotForm" (ngSubmit)="forgetPassword(forgotForm.value)">
+                        <input type="email" name="email"  class="form-control" placeholder="Enter E-mail"formControlName="username" [ngClass]="{
+                          'is-invalid':
+                          forgotForm.controls['username'].errors &&
+                          forgotForm.controls['username'].touched
+                        }">
+                        <div
+                        *ngIf="
+                        forgotForm.controls['username'].invalid &&
+                          (forgotForm.controls['username'].dirty ||
+                          forgotForm.controls['username'].touched)" >
+                        <div
+                          *ngIf=" forgotForm.controls['username'].errors.required"class="color-red">
+                          The email address is required.
+                        </div>
+                        <div
+                          *ngIf="
+                          forgotForm.controls['username'].errors.username ||
+                          forgotForm.controls['username'].errors.pattern" class="color-red" >
+                          Please enter valid email id.
+                        </div>
+                      </div>
+                       <div class="forgotbuttons"> 
+                      <button class="btn btn-primary button" [disabled]="!forgotForm.valid" type="submit">Submit</button>
+                      <button class="btn btn-danger button" type="button"  (click)="cancelBtnClicked($event)">Cancel</button>
+
+                      </div>
+                        <!-- <div class="section-10"></div> -->
+                      </form>
+                    </div>
+                    <div *ngIf="!show && !display">
+                      <a href="{{ loginUrl }}" class="btn btn-block btn-info">
+                        <!-- <i class="fab fa-google-plus-g" aria-hidden="true"></i> -->
+                        Login with Google</a>
+                      <div class="section-10"></div>
+                      <div class="or"></div>
+                      <div class="section-10"></div>
+                    </div>
+                    <div *ngIf="!display && !show">
+                      <button  (click)="clicked()" class="btn btn-access btn-block btn-info">
+                        <!-- <i class="fab fa-google-plus-g" aria-hidden="true"></i> -->
+                        Request For Access
+                      </button>
+                      <div *ngIf="!display" class="remember remMe">
+                        <!-- <div class="custom-control custom-checkbox d-inline-block">
+                          <input class="custom-control-input" id="customCheckbox2" name="optionsCheckboxes" type="checkbox" />
+                          <label class="custom-control-label titles" for="customCheckbox2">
+                            Remember Me
+                          </label>
+                        </div> -->
+                        <a (click)="forgotclicked()"class="forgot titles"target="_self" >Forgot password</a>
+                      </div>
+                      <!-- <div class="section-10"></div> -->
+                      <!-- <div class="requests"><p> 
+                        <small>
+                          <strong>© Accion Labs <span id="htmlYear">2019</span> </strong> All rights reserved.
+                        </small> 
+                      </p></div> -->
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- ... end Login-Registration Form  -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<p-toast class="toastMsg" position="top-right">
+</p-toast>

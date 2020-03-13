@@ -1,0 +1,306 @@
+<div class="teamImg plus" style="position: absolute;top: 80px">
+  <div style="width: 120px;height: 120px;margin-left: 0px !important;">
+    <span
+      class="text-middle mdi mdi-account-plus mdi-account-plus-circle-outline icon-xlg "
+      style="position: relative;top: 13px;font-size: 140px;right: 10px;"
+      data-toggle="modal"
+      data-target="#edit-widget-modal-confirm"
+    ></span>
+  </div>
+</div>
+<div class="text-center offset-top-20" style="position: relative;top: 185px;">
+  <h5 class="font-weight-bold text-primary ">
+    <span class="designation ng-star-inserted">Add Member</span>
+  </h5>
+</div>
+<div class="landing-item">
+  <div
+    class="modal fade modalProject"
+    id="edit-widget-modal-confirm"
+    tabindex="-1"
+    aria-labelledby="edit-widget-modal-confirm"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog window-popup modal-dialog-centered edit-widget edit-widget-modal-confirm ">
+      <div class="modal-content">
+        <!-- <div class="modal-header modalTitle">
+          <span
+            class="icon novi-icon icon-xxs mdi close mdi-close closeIcon"
+            data-dismiss="modal"
+            aria-label="Close"
+          ></span>
+        </div> -->
+        <div class="modal-body projMember">
+          <div>
+            <span
+              class="icon novi-icon icon-xxs mdi close mdi-close closeIcon"
+              data-dismiss="modal"
+              aria-label="Close"
+            ></span>
+          </div>
+          <tabset>
+            <tab heading="Existing Member">
+              <form [formGroup]="memberForm">
+                <div class="addmoreControl">
+                  <label class="titles"
+                    >Member
+                    <span class="color-red">*</span>
+                  </label>
+                  <p-autoComplete
+                    class="dataListAuthor"
+                    formControlName="member"
+                    placeholder="Search Member"
+                    required
+                    name="usernames"
+                    [forceSelection]="true"
+                  >
+                  </p-autoComplete>
+                </div>
+                <div class="addmoreControl">
+                  <label class="titles"
+                    >Role
+                    <span class="color-red">*</span>
+                  </label>
+                  <input
+                  class="form-control"
+                    formControlName="role"
+                    placeholder="Enter Role Name"
+                    id="input-styles-1"
+                    type="text"
+                    required
+                    name="role"
+                    [ngClass]="{
+                      'is-invalid': m.role.touched && m.role.invalid
+                    }"
+                  />
+                  <div *ngIf="m.role.invalid" class="invalid-feedback">
+                    <span
+                      *ngIf="
+                        m.role.invalid &&
+                        m.role.touched &&
+                        !m.role.errors.pattern
+                      "
+                    >
+                   
+                      Role is required
+                    </span>
+                    <span *ngIf="m.role.errors.pattern">
+                      Only Alphabets is Required
+                    </span>
+                  </div>
+                </div>
+
+                <div class="addmoreControl">
+                  <label class="titles"  for="input-labels-1">
+                    Start Date
+                    <span class="color-red">*</span>
+                  </label>
+                  <p-calendar
+                    class="projectDate1"
+                    formControlName="start_date"
+                    [monthNavigator]="true"
+                    [yearNavigator]="true"
+                    yearRange="1980:2080"
+                    [showIcon]="true"
+                    [readonlyInput]="true"
+                    dateFormat="dd/mm/yy"
+                  >
+                  </p-calendar>
+                  <div
+                    *ngIf="m.start_date.touched && m.start_date.errors"
+                    class="color-red"
+                  >
+                    <span *ngIf="m.start_date.errors && m.start_date.invalid">
+                      Start date required
+                    </span>
+                  </div>
+                </div>
+                <div class="addmoreControl">
+                  <div class="endDate">
+                    <label class="titles" for="input-labels-1">
+                      End Date
+                      <span class="color-red">*</span>
+                    </label>
+                    <div
+                      class="custom-control custom-checkbox d-inline-block mx-2"
+                    >
+                      <input
+                        class="custom-control-input"
+                        id="memberEndDateOngoing"
+                        name="input-group-checkbox"
+                        value="checkbox-1"
+                        type="checkbox"
+                      />
+                      <label
+                        class="custom-control-label"
+                        for="memberEndDateOngoing"
+                      >
+                        Ongoing
+                      </label>
+                    </div>
+                  </div>
+                  <p-calendar
+                    class="projectDate1"
+                    formControlName="end_date"
+                    [monthNavigator]="true"
+                    [yearNavigator]="true"
+                    yearRange="1980:2080"
+                    [showIcon]="true"
+                    [readonlyInput]="true"
+                    dateFormat="dd/mm/yy"
+                  >
+                  </p-calendar>
+                  <div
+                    *ngIf="m.end_date.touched && m.end_date.errors"
+                    class="color-red"
+                  >
+                    <span *ngIf="m.end_date.errors && m.end_date.invalid">
+                      End date required
+                    </span>
+                  </div>
+                </div>
+                <div class="saveMember">
+                  <button class="btn btn-primary saveMembe" type="button">
+                    Save
+                  </button>
+                </div>
+              </form>
+            </tab>
+            <tab heading="New Requirement">
+              <form [formGroup]="newmemberForm" (ngSubmit)="newmemberSubmit()">
+                <div class="addmoreControl">
+                  <label class="titles"
+                    >Role
+                    <span class="color-red">*</span>
+                  </label>
+                  <input
+                    class="form-control"
+                    placeholder="Enter Role" id="demo"
+                    type="text" formControlName="newrole" required name="newrole"
+                    [ngClass]="{ 'is-invalid': submitted && newmember.newrole.errors && newmember.newrole.touched }" />
+                    <div *ngIf="submitted && newmember['newrole'].errors && newmember['newrole'].touched" class="invalid-feedback">
+                        <div *ngIf="newmember['newrole'].errors.required">Role is required</div>
+                    </div>
+                </div>
+                <div class="addmoreControl">
+                  <label class="titles"
+                    >Skill set
+                    <span class="color-red">*</span>
+                  </label>
+                  <div class="tagSkill">
+                    <tag-input [(ngModel)]='skillSet' blinkIfDupe='true' theme='bootstrap' formControlName="skills" ></tag-input>
+                    <div *ngIf="newmember['skills'].errors && (newmember['skills'].dirty ||
+                    newmember['skills'].touched)"   class="invalid-feedbackNGX">
+                    <div *ngIf="submitted && newmember['skills'].errors.required">
+                        Tags are required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="addmoreControl">
+                  <label class="titles">
+                    Open Position
+                    <span class="color-red">*</span>
+                  </label>
+                  <input
+                    class="form-control"
+                    placeholder="Enter Position"
+                    type="text" formControlName="positions" required name="positions"
+                    [ngClass]="{ 'is-invalid': submitted && newmember.positions.errors && newmember.positions.touched }" />
+                    <div *ngIf="submitted && newmember['positions'].errors && newmember['positions'].touched" class="invalid-feedback">
+                      <div *ngIf="newmember['positions'].errors.required">Position is required</div>
+                    </div>
+                </div>
+                <div class="addmoreControl">
+                  <label class="titles">
+                    Preferred Location
+                    <span class="color-red">*</span>
+                  </label>
+                  <div class="singleSelectDDl">
+                    <ngx-select-dropdown
+                    tab-index="0"
+                    [config]="configLocation"
+                    [options]="locations"
+                    [multiple]="false"
+                    formControlName="location"
+                  >
+                  </ngx-select-dropdown>
+                  <span _ngcontent-c11="" class="icon novi-icon icon-xxs text-middle text-dark mdi mdi-menu-down"></span>
+                  </div>
+                  <div *ngIf="newmember['location'].errors || newmember['location'].dirty || newmember['location'].touched "
+                class="invalid-feedbackNGX">
+                    <div *ngIf="submitted && newmember['location'].errors.required" >
+                        Location is required.
+                    </div>
+                  </div>
+                </div>
+                <div class="addmoreControl">
+                  <label class="titles">
+                    Project Name
+                    <span class="color-red">*</span>
+                  </label>
+                  <input
+                    class="form-control"
+                    placeholder="Enter Project Name"
+                    id="demo"
+                    type="text" formControlName="project" required name="project"
+                    [ngClass]="{ 'is-invalid': submitted && newmember.project.errors && newmember.project.touched }" />
+                    <div *ngIf="submitted && newmember['project'].errors && newmember['project'].touched" class="invalid-feedback">
+                      <div *ngIf="newmember['project'].errors.required">Position is required</div>
+                    </div>
+                </div>
+                <div class="addmoreControl">
+                  <label class="titles">
+                    Raised By
+                    <span class="color-red">*</span>
+                  </label>
+                  <input
+                    class="form-control"
+                    placeholder="Name"
+                    formControlName="raisedBy"
+                    type="text"
+                    id="demo"
+                    disabled
+                  />
+                </div>
+                <div class="addmoreControl">
+                  <label class="titles">
+                    Recruiter Assigned
+                    <span class="color-red">*</span>
+                  </label>
+                  <input
+                    class="form-control"
+                    id="demo"
+                    placeholder="Name"
+                    type="text"
+                    formControlName="assigned"
+                    disabled
+                  />
+                </div>
+                <div class="addmoreControl">
+                  <label class="titles">
+                    Request Number
+                    <span class="color-red">*</span>
+                  </label>
+                  <input
+                    class="form-control"
+                    placeholder="Number"
+                    type="text"
+                    id="demo"
+                    formControlName="request"
+                    disabled
+                  />
+                </div>
+                <div class="saveMember">
+                  <button class="btn btn-primary saveMembe" [disabled]="!newmemberForm.valid" type="submit" >
+                    Save
+                  </button>
+                </div>
+              </form>
+            </tab>
+          </tabset>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

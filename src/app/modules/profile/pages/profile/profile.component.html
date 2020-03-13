@@ -1,0 +1,19 @@
+<app-breadcrumbs page="Profiles" [breadcrums]="breadCrumb"></app-breadcrumbs>
+<!--Section Real Estate Agents-->
+<section class="section novi-background section-50 section-sm-50 fixed-min-height ">
+  <div class="container">
+    <div class="responsive-tabs responsive-tabs-classic myTabs" data-type="horizontal"
+      [ngClass]="tabHide? tabHide: null">
+      <tabset *ngIf="aicLevels">
+        <tab *ngFor="let aiclevel of aicLevels | slice:0:21; let i = index;" heading="{{aiclevel}}"
+          id="{{aiclevel.id}}" (select)="aiclevels(i,aiclevel)">
+          <div class="text-center text-lg-left">
+            <app-profile-list [profileList]="newAicUserData" [hidden]= "newAicUserData.length == 0" infiniteScroll [infiniteScrollDistance]="0" [pageEdit]="false"
+              [infiniteScrollThrottle]="500" (scrolled)="onScroll($event)" [infiniteScrollDisabled]="disableScroll">
+            </app-profile-list>
+          </div>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+</section>

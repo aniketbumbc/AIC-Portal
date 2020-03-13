@@ -1,0 +1,96 @@
+.imgDiv {
+  width: 250px;
+  .userProfilePhoto {
+    img {
+      max-width: 100%;
+      border-radius: 50%;
+    }
+  }
+  .camIcon {
+    border-radius: 50%;
+    position: relative;
+    .cameraIcon {
+      position: relative;
+      padding: 10px;
+      bottom: 80px;
+      display: inline;
+      left: 95px;
+      border-radius: 50%;
+      background-color: mediumseagreen;
+      cursor: pointer;
+    }
+  }
+}
+.oriImg {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  vertical-align: middle;
+}
+
+::ng-deep .cropper {
+  width: 200px;
+  height: 200px;
+}
+
+.cropImg {
+  overflow: hidden;
+
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  .cropedImage {
+    border-radius: 50%;
+    width: 250px;
+  }
+}
+.editProfileBtn {
+  justify-content: center !important;
+  margin-top: 10px;
+  .selectPhoto {
+    margin-top: 10px;
+    color: #ffffff;
+    background-color: #0fadf6;
+    border-color: #0fadf6;
+    margin-top: 10px;
+    // &:hover{
+    //   color: lighten(#64aae1, 15%) !important;
+    // }
+  }
+  // ::ng-deep .selectPhoto:hover{
+  //   color: lighten(#64aae1, 15%) !important;
+  // }
+}
+// button[disabled] {
+//   cursor: not-allowed;
+// }
+.confirmButton,
+.modalTitle {
+  justify-content: center !important;
+}
+::ng-deep .btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #ffffff;
+  background-color: lighten(#34905c, 15%) !important;
+  border-color: lighten(#34905c, 15%) !important;
+}
+::ng-deep .selectPhoto:hover,
+.selectPhoto:focus,
+.selectPhoto:active {
+  color: #ffffff;
+  background-color: lighten(#0fadf6, 15%) !important;
+  border-color: lighten(#0fadf6, 15%) !important;
+}
+
+::ng-deep button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+::ng-deep .modal-dialog {
+  // margin-top: 272px !important;
+  margin-top: 114px !important;
+}

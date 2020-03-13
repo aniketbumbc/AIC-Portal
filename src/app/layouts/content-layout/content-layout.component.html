@@ -1,0 +1,33 @@
+<div class="page text-center">
+  <!-- Page Header-->
+  <app-header></app-header>
+  <p-toast [style]="{marginTop: '80px'}"></p-toast>
+  <router-outlet (activate)="onActivate()"></router-outlet>
+  <app-scroll-to-top></app-scroll-to-top>
+  <ngx-spinner
+    bdOpacity="0.9"
+    bdColor="transparent"
+    size="medium"
+    color="#42b574"
+    type="line-spin-fade"
+    fullScreen="off">
+  </ngx-spinner>
+
+  <!-- Spinner for infinite scroll listing  -->
+  <!-- <ngx-spinner
+    bdOpacity="0.9"
+    bdColor="#333"
+    size="dark"
+    color="#fff"
+    type="line-scale"
+    fullScreen="off"
+  >
+  </ngx-spinner> -->
+
+  <!-- Page Footers-->
+  <!-- <chat-window></chat-window> -->
+  <app-footer></app-footer>
+</div>
+
+<!-- type="line-spin-clockwise-fade" -->
+

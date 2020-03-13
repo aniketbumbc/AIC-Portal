@@ -1,0 +1,600 @@
+@import 'variables.scss';
+
+.editProjectDetails,
+.modal-header,
+.modal-body {
+  text-align: left !important;
+  .titles {
+    font-size: 16px;
+    font-weight: 600;
+    font-style: initial;
+  }
+}
+::ng-deep {
+  .ui-confirmdialog.ui-dialog .ui-dialog-content {
+    text-align: left !important;
+  }
+  .ui-dialog .ui-dialog-titlebar {
+    text-align: left !important;
+  }
+  .projectDate .ui-calendar.ui-calendar-w-btn input {
+  border-right: 1px solid #d9d9d9 !important;
+  }
+  .ui-calendar.ui-calendar-w-btn .ui-inputtext:enabled:hover:not(.ui-state-error), .ui-calendar.ui-calendar-w-btn .ui-inputtext:enabled:focus:not(.ui-state-error) {
+  border-right: 1px solid #212121 !important;
+  }
+  .ui-calendar.ui-calendar-w-btn .ui-inputtext:enabled:focus:not(.ui-state-error) {
+  border-right: 1px solid #007ad9 !important;
+  }
+}
+.word-wrap {
+  word-break: break-word;
+}
+
+.x-scroll {
+  overflow-x: hidden;
+}
+
+.modal-footer {
+  padding: 16px !important;
+}
+
+.projectDesc {
+  font-size: 13px;
+}
+
+
+.member-Name {
+  padding: 10px;
+  width: 100%;
+  font-size: 13px;
+  border: 1px solid #d9d9d9;
+}
+
+::ng-deep .btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #ffffff;
+  background-color: lighten(#34905c, 15%) !important;
+  border-color: lighten(#34905c, 15%) !important;
+}
+::ng-deep button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+
+.simpleShadow {
+  box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.15);
+  padding: 20px 0;
+  display: flex;
+  min-height: 420px;
+  flex-direction: column;
+}
+
+.modal-content {
+  text-align: right;
+  border: none;
+  border-radius: 0%;
+}
+
+.modalTitle .titles {
+  margin-bottom: 0px !important;
+  margin-top: 5px;
+}
+
+.editProject .addDoc,
+.teamMembers {
+  text-align: center;
+}
+::ng-deep .modal-body {
+  overflow-y: auto;
+  .startDate,
+  .endDate {
+    &::-ms-clear {
+      display: none;
+      -webkit-appearance: none;
+    }
+  }
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-clear-button {
+  display: none;
+}
+
+::ng-deep .ngx-dropdown-button::after {
+  top: 0px;
+  left: 232px;
+}
+
+.memstartDate,
+.memendDate {
+  width: 48%;
+  &::-ms-clear {
+    display: none;
+    -webkit-appearance: none;
+  }
+}
+
+.teamRole,
+.endDate {
+  width: 46%;
+  &::-ms-clear {
+    display: none;
+    -webkit-appearance: none;
+  }
+}
+
+.projMembers {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+.teamMembers:hover .projMembers {
+  opacity: 0.3;
+}
+
+.teamMembers:hover .middleImg {
+  opacity: 1;
+}
+
+.teamMembers .projMembers .middleImg {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.modalProject {
+  margin-top: 85px;
+}
+::ng-deep .uploaddoc {
+  .form-control::-webkit-input-placeholder {
+    height: 40px !important;
+    margin-bottom: -22px;
+    // width: 555px !important;
+  }
+}
+.modalProjectTeam {
+  margin-top: 85px;
+}
+
+.dropMenu {
+  width: 80%;
+}
+.teamSize {
+  width: 46%;
+}
+.dropDownCat {
+  max-height: 259px;
+  overflow: hidden;
+  min-height: 0px;
+  position: absolute;
+  transform: translate3d(0px, -2px, 0px);
+  top: 0px;
+  left: 0px;
+  will-change: transform;
+}
+::ng-deep .dropDownCat {
+  text-align: center;
+}
+
+.dropCategory {
+  text-align: center !important;
+  color: $primary;
+  font-size: 13px;
+  font-weight: 500;
+}
+.dropCategory:hover {
+  color: $primary;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+::ng-deep .custom-checkbox .custom-control-label::before {
+  border-radius: 0px;
+  top: 0.26rem;
+  left: -1.5rem;
+  display: block;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+::ng-deep .custom-checkbox .custom-control-label::after {
+  left: -1.4rem;
+}
+
+.buttonDrop {
+  width: 100% !important;
+  text-transform: capitalize !important;
+}
+
+.dropdownDM {
+  width: 100%;
+  border: 2px solid black;
+  margin: 0;
+  top: 0px;
+}
+
+// Image Upload Css
+img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+.hoverable {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+  border: 3px solid #000;
+  border-radius: 50%;
+}
+.hoverable .hover-text {
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.hoverable .background {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 1;
+}
+.hoverable:hover .hover-text {
+  display: block;
+}
+.hoverable:hover .background {
+  display: block;
+}
+
+#fileInput {
+  display: none;
+}
+
+.iframeDoc {
+  height: 300px;
+}
+
+::ng-deep .modal-dialog {
+  // overflow-y: none;
+  // max-height: 0%;
+  // margin-top: 42px !important;
+  // flex-basis: 600px;
+}
+::ng-deep .uploadDocWidget{
+  overflow-y: none;
+  max-height: 0%;
+  margin-top: 85px !important;
+}
+::ng-deep .ui-datepicker td > a {
+  padding: 2px;
+}
+
+::ng-deep .available-items {
+  text-align: left;
+}
+::ng-deep .modal-body {
+  .ngx-dropdown-container {
+    width: 100% !important;
+    font-size: 13px;
+    .ngx-dropdown-button {
+      outline: none;
+      height: 50px;
+    }
+  }
+}
+.color-red {
+  color: #dc3545;
+  font-size: 13px;
+}
+
+.startDate {
+  background-color: transparent;
+  background-clip: padding-box;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+::ng-deep p-calendar {
+  .ui-datepicker {
+    position: none;
+  }
+  .ng-trigger-overlayAnimation {
+    left: 0px;
+    background-color: white;
+    opacity: 1;
+    top: 50px!important;
+  }
+  .ui-calendar-button {
+    display: none;
+  }
+  .ui-state-disabled {
+    cursor: default;
+    color: lightgray;
+  }
+
+  .ui-inputtext {
+    // width: 568px;
+    width: 568px;
+    height: 50px;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .ui-state-disabled {
+    color: $light-grey;
+  }
+}
+::ng-deep p-autoComplete {
+  .ui-inputtext {
+    width: 566px;
+    height: 50px;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    font-size: 13px;
+    padding: 10px;
+  }
+  .ui-autocomplete-panel {
+    position: initial;
+  }
+}
+.memDetails {
+  position: relative;
+
+  .usernmMenu {
+    position: absolute;
+    right: 25px;
+    top: 60px;
+    z-index: 0;
+    cursor: pointer;
+    color: $primary !important;
+    pointer-events: none;
+  }
+}
+
+::ng-deep .projectDate {
+  .ui-inputtext {
+    width: 568px;
+  }
+  .ui-calendar.ui-calendar-w-btn input {
+    border-radius: 4px;
+  }
+}
+
+::ng-deep .projectDate1 {
+  .ui-inputtext {
+    width: 568px;
+  }
+  .ui-calendar.ui-calendar-w-btn input {
+    border-radius: 4px;
+  }
+}
+
+// css for the Project Document Table
+.projDocModal {
+  margin-top: -30px;
+}
+.editDoc,
+.removeDoc {
+  cursor: pointer;
+}
+.titleDoc {
+  width: 10%;
+}
+.addedBy {
+  width: 25%;
+}
+.addedOn {
+  width: 25%;
+}
+.actionDoc {
+  width: 5%;
+}
+.docTitle {
+  cursor: default;
+  color: $theme1 !important;
+}
+.docUrl   {
+  cursor: pointer;
+  color: $theme1 !important;
+}
+.table {
+  text-align: center;
+}
+.backColor{
+  background-color: whitesmoke;
+}
+.catList {
+  cursor: pointer;
+  &:hover,
+  &.active {
+    color: $theme1 !important;
+  }
+}
+.card {
+  border-radius: 5px;
+  background-color: #fff;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 2px 6px 15px 0 rgba(69, 65, 78, 0.1);
+  -moz-box-shadow: 2px 6px 15px 0 rgba(69, 65, 78, 0.1);
+  box-shadow: 2px 6px 15px 0 rgba(69, 65, 78, 0.1);
+  border: 0;
+}
+
+//css of card header
+.btn-round {
+  border-radius: 100px !important;
+}
+.btn {
+  padding: 0.65rem 1.4rem;
+  font-size: 14px;
+  // opacity: 1;
+  border-radius: 3px;
+}
+//css of card body
+.card .card-body,
+.card-light .card-body {
+  padding: 1.25rem;
+}
+.table-responsive {
+  width: 100% !important;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+div.table-responsive > div.dataTables_wrapper > div.row {
+  margin: 0;
+}
+div.table-responsive
+  > div.dataTables_wrapper
+  > div.row
+  > div[class^='col-']:first-child,
+div.table-responsive
+  > div.dataTables_wrapper
+  > div.row
+  > div[class^='col-']:last-child {
+  padding-left: 0;
+  padding-right: 0;
+}
+table.dataTable {
+  clear: both;
+  // max-width: none !important;
+  border-collapse: separate !important;
+}
+.table td,
+.table th {
+  font-size: 14px;
+  border-top-width: 0;
+  border-bottom: 1px solid;
+  border-color: #ebedf2 !important;
+  padding: 5px 10px !important;
+  height: 50px;
+  vertical-align: middle !important;
+}
+.table-striped-project td,
+.table-striped-project th {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+.table thead th {
+  border-bottom-width: 2px;
+  font-weight: 600;
+  text-align: center;
+}
+table.dataTable td,
+table.dataTable th {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+  vertical-align: middle;
+}
+.table > tbody > tr > td,
+.table > tbody > tr > th {
+  padding: 8px;
+}
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+  vertical-align: middle;
+}
+.table-striped-project tbody tr:nth-of-type(even),
+.table-striped-project thead tr:nth-of-type(odd) {
+  background-color: $light-grey;
+}
+.form-button-action {
+  display: inline-flex;
+}
+.icon-lg-project {
+  font-size: 15px;
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-weight: 400;
+}
+.icon-link-project {
+  border: 0 !important;
+  background: 0 0 !important;
+}
+.mdi-pencil:before {
+  cursor: pointer;
+  margin-right: 10px;
+  color: grey;
+}
+.mdi-delete:before {
+  cursor: pointer;
+  color: red;
+}
+
+::ng-deep .ng2-tag-input__text-input {
+  font-size: 13.5px!important;
+}
+
+::ng-deep .inputWrapper{
+  .ng-select {
+    z-index: 3;
+    .ng-select-container {
+      color: #333;
+      cursor: default;
+      display: flex;
+      outline: 0;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      height: 50px;
+    }
+  }
+ }
+
+::ng-deep .ng2-tags-container {
+  tag {
+    background: $theme2 !important;
+    height: 36px !important;
+    padding: 0px 10px 0px 10px !important;
+    line-height: 36px !important;
+    border-radius: 25px !important;
+    color: $secondary !important;
+  }
+  .bootstrap path {
+    fill: $primary;
+  }
+}
+// @media screen and ( max-height: 670px ){
+// *{
+//   color: red!important;
+// }
+//   .modal-content{
+//     height: 90px;
+//     background-color: pink;
+//   }
+// }
+
+::ng-deep .projectDateZ {
+  .ui-calendar:last-child {
+    z-index: 2;
+  } 
+}
+
+::ng-deep .cke_panel {
+  z-index: 1!important;
+}

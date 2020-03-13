@@ -1,0 +1,16 @@
+<div class="simpleShadow card-body">
+  <h5 class="cardTitle card-title text-left text-primary">Featured Profiles</h5>
+  <div class="alignProfile" *ngFor="let featuresdata of homeProfilesData">
+    <ngx-avatar class="newjImg" src="{{imageUrl}}{{featuresdata?.picture?.url}}{{decached}}" name="{{featuresdata.name}} "
+      size="60" [routerLink]="['/profile/', featuresdata.id]"></ngx-avatar>
+    <ul class=" list-unstyled p newjInfo">
+      <a class="docTitle" [routerLink]="['/profile/', featuresdata.id]">
+      <li class="newpID"> <span>{{featuresdata.name}} </span> </li> </a>
+      <!-- <li class="newDesg">{{featuresdata.designation}}</li> -->
+      <li class="projAssigned">{{featuresdata.location.location}}</li>
+    </ul>
+  </div> 
+  <div class="showBtn mt-auto offset-top-10">
+    <a class="btn btn-primary" [routerLink]="['/profile/']">View All</a>
+  </div>
+</div>

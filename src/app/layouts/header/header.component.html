@@ -1,0 +1,170 @@
+<header class="page-head">
+    <!-- RD Navbar Transparent-->
+    <div class="rd-navbar-wrap">
+      <!-- rd-navbar--is-stuck -->
+      <nav class="rd-navbar openToast rd-navbar-default rd-navbar-light rd-navbar-original rd-navbar-static"
+        data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-auto-height="true"
+        data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-stick-up="true"
+        [class.rd-navbar--is-stuck]="isBw">
+        <div class="rd-navbar-inner" [ngClass]="toggleSearch ? 'active' : null">
+          <!-- RD Navbar Panel-->
+          <div class="rd-navbar-panel">
+            <!-- RD Navbar Toggle-->
+            <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap">
+              <span></span>
+            </button>
+  
+            <!--Navbar Brand-->
+            <div class="rd-navbar-brand">
+              <a [routerLink]="['/home']"><img class="logoAccion" width="250" src="assets/images/logo.png" alt="Breeze" /></a>
+            </div>
+  
+            <ul class="mobileMenu">
+  
+  
+              <li routerLinkActive="active" id="user-profile"
+                class="rd-navbar--has-dropdown rd-navbar-submenu mobileUser">
+                <a class="ddlLink pointer" (click)="profileClk2()"><span
+                    class="mdi novi-icon mdi-account-circle pointer"></span></a>
+                <span class="rd-navbar-submenu-toggle"></span>
+  
+                <ul class="ul-profile profileDdl" [ngClass]="toggleUserMobile ? 'toggleUserMobile' : null">
+                  <!-- <span class="icon novi-icon mdi mdi-menu-up upArrowMobile"></span> -->
+                  <div class="userTest">
+                    <li class="usernm">
+                      <a [routerLink]="['/profile/' + profileId]"><span>{{ userData['firstName'] }}</span></a>
+                    </li>
+                    <li class="usernm">
+                      <a (click)="logoutClick()"><span>logOut</span></a>
+                    </li>
+                  </div>
+                </ul>
+              </li>
+              <!-- RD navbar  searchbar for mobile devices -->
+              <li class="rd-navbar-search" [ngClass]="toggleSearch ? 'active' : null">
+                <a class="rd-navbar-search-toggle mdi" data-rd-navbar-toggle=".rd-navbar-inner,.rd-navbar-search"
+                  (click)="searchOpen()" [ngClass]="toggleSearch ? 'active' : null"><span></span>
+                </a>
+                <form class="rd-navbar-search-form search-form-icon-right rd-search" method="GET" action="search">
+                  <div class="form-group">
+                    <div class="searchInput">
+                      <input class="rd-navbar-search-form-control form-control form-control-gray-lightest searchBox"
+                        id="rd-navbar-search-form-control" (click)="inputFocus = true" type="text" name="q"
+                       autocomplete="off" [value]="searchValue" #searchInput (keyup.enter)="navigate(searchValue)" />
+                    </div>
+                  </div>
+                </form>
+              </li>
+              <li class="hamburgerMenuOnTablet hidden-lg-up">
+                <button class="rd-navbar-nav menuButton" (click)="menuOpen()">
+                  <span class="mdi novi-icon" [ngClass]="toggleMenu ? ' mdi-close' : 'mdi-menu'"></span>
+                </button>
+              </li>
+            </ul>
+          </div>
+  
+          <div class="rd-navbar-menu-wrap" [ngClass]="toggleMenu ? 'mobileOn' : null">
+            <!-- Navbar wrap Menus -->
+            <div class="rd-navbar-nav-wrap">
+              <div class="rd-navbar-mobile-scroll">
+                <!--Navbar Brand Mobile-->
+                <div class="rd-navbar-mobile-brand">
+                  <a [routerLink]="['/home']"><img style="margin-top: -5px;margin-left: -15px;" width="250"
+                      src="assets/images/logo.png" alt="Breeze" /></a>
+                </div>
+                <div class="form-search-wrap">
+                  <!-- RD Search Form-->
+                  <form class="form-search rd-search" action="search-results.html" method="GET">
+                    <div class="form-group">
+                      <label class="form-label form-search-label form-label-sm"
+                        for="rd-navbar-form-search-widget">Search</label>
+                      <input class="form-search-input input-sm form-control form-control-gray-lightest input-sm"
+                        id="rd-navbar-form-search-widget" placeholder="What would you like to search here?" type="text"
+                        name="s" autocomplete="off" />
+                    </div>
+                    <button class="form-search-submit" type="submit">
+                      <span class="novi-icon mdi mdi-magnify"></span>
+                    </button>
+                  </form>
+                </div>
+                <!-- RD Navbar Nav-->
+                <ul class="rd-navbar-nav">
+                  <!-- Home Menu -->
+                  <!-- <li routerLinkActive="active">
+                    <a [routerLink]="['/home']"><span class="font-menu-title">Home</span></a>
+                  </li> -->
+                  <!-- Profiles Menu -->
+                  <li routerLinkActive="active">
+                    <a [routerLink]="['/profile']" (click)="profilesClk()"><span
+                        class="font-menu-title">Profiles</span></a>
+                  </li>
+                  <!-- Blogs Menu -->
+                  <li routerLinkActive="active">
+                    <a [routerLink]="['/blog']"><span class="font-menu-title">Blogs</span></a>
+                  </li>
+                  <!-- Projects Menu -->
+                  <li routerLinkActive="active">
+                    <a [routerLink]="['/project']"><span class="font-menu-title">Projects</span></a>
+                  </li>
+                  <li routerLinkActive="active">
+                    <a [routerLink]="['/client']"><span class="font-menu-title">Clients</span></a>
+                  </li>
+                  <li routerLinkActive="active" [hidden]="!isAdmin">
+                    <a [routerLink]="['/skills-matrix']"><span class="font-menu-title">Skills Matrix</span></a>
+                  </li>
+                  <!-- <li routerLinkActive="active">
+                    <a [routerLink]="['/coe/UI']"><span class="font-menu-title">COE</span></a>
+                  </li> -->
+                  <!-- user profile -->
+                  <li routerLinkActive="active" id="user-profile"
+                    class="rd-navbar--has-dropdown rd-navbar-submenu desktopUser" [ngClass]="ddlOpen ? 'focus' : null">
+                    <a class="ddlLink pointer" (click)="profileClk()" [ngClass]="ddlOpen ? 'focus' : null"><span
+                        class="mdi novi-icon mdi-account-circle pointer"></span></a>
+                    <span class="rd-navbar-submenu-toggle"></span>
+                    <ul class="rd-navbar-dropdown profileDdl pointer">
+                      <span class="icon novi-icon mdi mdi-menu-up upArrow"></span>
+                      <!-- <li><a [routerLink]="['/profile/' + userData['id']]"
+                          target="_parent"> <span>{{userData['id']}}</span>
+                        
+                        </a> 
+                      </li>-->
+                      <li *ngIf="profileId">
+                          <a [routerLink]="['/profile', profileId]"><span>My Profile</span></a>
+                      </li>
+                      <li>
+                           <a (click)="logoutClick()"><span>log Out</span></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+  
+              </div>
+  
+            </div>
+            <!-- RD navbar searchbar for desktop devices -->
+            <div class="rd-navbar-search" [ngClass]="toggleSearch ? 'active' : null">
+              <a class="rd-navbar-search-toggle mdi mobileSearch1 desktopSearch1 click-widget"
+                data-rd-navbar-toggle=".rd-navbar-inner,.rd-navbar-search" (click)="searchOpen()"
+                [ngClass]="toggleSearch ? 'active' : null"><span></span>
+              </a>
+              <form class="rd-navbar-search-form search-form-icon-right rd-search" method="GET" action="search">
+                <div class="form-group">
+                  <div class="searchInput" (clickOutside)="clickOutside($event)" appClickOutside>
+                    <input class="rd-navbar-search-form-control form-control form-control-gray-lightest searchBox click-widget"
+                      id="rd-navbar-search-form-control1" (click)="inputFocus = true" type="text" name="q" 
+                      autocomplete="off" [placeholder]="recording ? 'Say something!' : 'What would you like to search?'" [value]="searchValue" #searchInput1
+                      (keyup.enter)="navigate(searchValue)" [(ngModel)]="searchValue" />
+                        <a class="micro-icon click-widget">
+                          <i [hidden]="recording" class="fa-microphone fa mic-icon" (click)="startRecording();"></i>
+                          <i class="fa-microphone fa mic-icon-active" [hidden]="!recording" (click)="stopRecording()"></i>
+                          <div [hidden]="!recording" class="pulse-ring"></div>
+                        </a>
+                      </div>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
